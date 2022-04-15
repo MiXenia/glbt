@@ -1,0 +1,4 @@
+G:/kay/Desktop/Progs/c/glbt/bindings/c/out/build/x64-Debug/CMakeFiles/glbt_c.dir
+G:/kay/Desktop/Progs/c/glbt/bindings/c/out/build/x64-Debug/CMakeFiles/copy_resources.dir
+G:/kay/Desktop/Progs/c/glbt/bindings/c/out/build/x64-Debug/CMakeFiles/edit_cache.dir
+G:/kay/Desktop/Progs/c/glbt/bindings/c/out/build/x64-Debug/CMakeFiles/rebuild_cache.dir

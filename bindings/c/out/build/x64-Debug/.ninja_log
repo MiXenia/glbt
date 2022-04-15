@@ -1,0 +1,14 @@
+# ninja log v5
+1	47	0	CMakeFiles/copy_resources	4a05d26a04ea74d6
+1	47	0	G:/kay/Desktop/Progs/c/glbt/bindings/c/out/build/x64-Debug/CMakeFiles/copy_resources	4a05d26a04ea74d6
+86	464	6717150805599526	CMakeFiles/glbt_c.dir/CMakeFiles/ShowIncludes/main.c.obj	16d2e2289f9a8855
+61	471	6717150805729546	CMakeFiles/glbt_c.dir/G_/kay/Desktop/Progs/c/glbt/src/texture.c.obj	e78afa3e1dacabec
+79	486	6717150805729546	CMakeFiles/glbt_c.dir/CMakeFiles/3.22.22022201-MSVC_2/CompilerIdC/CMakeCCompilerId.c.obj	3027e10c91652b7e
+56	483	6717150805709531	CMakeFiles/glbt_c.dir/G_/kay/Desktop/Progs/c/glbt/src/pipeline.c.obj	38788eaa23858571
+66	448	6717150805609524	CMakeFiles/glbt_c.dir/G_/kay/Desktop/Progs/c/glbt/src/window.c.obj	85baed9c41d83b7e
+49	481	6717150805709531	CMakeFiles/glbt_c.dir/G_/kay/Desktop/Progs/c/glbt/src/buffer.c.obj	2baae9127f21c2a0
+46	480	6717150805639512	CMakeFiles/glbt_c.dir/G_/kay/Desktop/Progs/c/glbt/src/framebuffer.c.obj	430995cb9ee69479
+83	500	6717150806159520	CMakeFiles/glbt_c.dir/main.c.obj	5b02673a7c8e5cca
+51	618	6717150807339507	CMakeFiles/glbt_c.dir/G_/kay/Desktop/Progs/c/glbt/src/internal/glad.c.obj	46f7d55088a5d124
+47	378	6717151636890656	CMakeFiles/glbt_c.dir/src/main.c.obj	f879fb3889ece8d3
+379	1428	6717151642120632	glbt_c.exe	3fd8b8563d9c21bd
