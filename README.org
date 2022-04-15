@@ -5,3 +5,5 @@ A slightly-abstracted layer on top of raw GL/GLAD/GLFW.
 - Written in plain C89 with no frills so as to be extensible in other languages via FFI.
 - Designed to be flexible enough to swap out for vulkan, metal, dx12, etc. etc. if I ever feel like it.
 - Honestly I just got tired of writing boilerplate GL code in whatever languages I wanted to explore.
+
+Contributors to ./bindings/ welcome if you know how to write C bindings in your favorite language!
