@@ -10,6 +10,7 @@ target_include_directories(${PROJECT_NAME} PRIVATE ../../include/ ../../include/
 
 find_package(glfw3 REQUIRED)
 target_link_libraries(${PROJECT_NAME} PRIVATE glfw)
+target_link_libraries(${PROJECT_NAME} PRIVATE m dl)
 
 ADD_CUSTOM_TARGET(
         copy_resources
