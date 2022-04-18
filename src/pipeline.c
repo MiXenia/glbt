@@ -8,8 +8,7 @@ struct Pipeline {
   GLuint vao;
   GLuint program_id;
   int vertex_input_size;
-  struct VertexInput
-      *vertex_inputs; // just use a linear search, man. This is gonna be okay.
+  struct VertexInput *vertex_inputs;
   int texture_input_size;
   struct TextureInput *texture_inputs;
   struct Buffer *index_buffer;
@@ -41,8 +40,7 @@ struct Pipeline *create_pipeline(int vs_len, char *vs, int fs_len, char *fs,
   int i, r;
   for (i = 0; i < p->vertex_input_size; ++i) {
     if (p->vertex_inputs[i].stride == 0) {
-      p->vertex_inputs[i].stride =
-          p->vertex_inputs[i].rows * p->vertex_inputs[i].size * sizeof(GLfloat);
+      p->vertex_inputs[i].stride = p->vertex_inputs[i].rows * p->vertex_inputs[i].size * sizeof(GLfloat);
     }
     for (r = 0; r < p->vertex_inputs[i].rows; r++) {
       glEnableVertexAttribArray(p->vertex_inputs[i].location + r);
@@ -119,8 +117,7 @@ void bind_buffer(struct Pipeline *p, struct Buffer *b, int location) {
     }
   }
   if (!v) {
-    fprintf(stderr, "Pipeline does not have an attribute at location %d.\n",
-            location);
+    fprintf(stderr, "Pipeline does not have an attribute at location %d.\n", location);
     return;
   }
   v->buffer = b;
@@ -129,8 +126,7 @@ void bind_buffer(struct Pipeline *p, struct Buffer *b, int location) {
     int offset = v->offset + i * v->size * sizeof(GLfloat);
     // fprintf(stderr, "%s: %d, %d, %d, %d\n", v->name, v->location + i,
     // v->size, v->stride, offset);
-    glVertexAttribPointer(v->location + i, v->size, GL_FLOAT, GL_FALSE,
-                          v->stride, (void *)(offset));
+    glVertexAttribPointer(v->location + i, v->size, GL_FLOAT, GL_FALSE, v->stride, (void *)(offset));
   }
   if (v->rate == INSTANCE) {
     p->instance_count = b->length / (v->size * v->rows);
@@ -138,8 +134,7 @@ void bind_buffer(struct Pipeline *p, struct Buffer *b, int location) {
     p->count = b->length / (v->size * v->rows);
   }
   if (check_errors()) {
-    fprintf(stderr, "Above errors while binding buffer location %d.\n",
-            location);
+    fprintf(stderr, "Above errors while binding buffer location %d.\n", location);
   }
 }
 void bind_buffer_name(struct Pipeline *p, struct Buffer *b, const char *name) {
@@ -173,8 +168,7 @@ void bind_texture(struct Pipeline *p, struct Texture *t, int location) {
     }
   }
   if (!ti) {
-    fprintf(stderr, "Pipeline does not have a texture at location %d.\n",
-            location);
+    fprintf(stderr, "Pipeline does not have a texture at location %d.\n", location);
     return;
   }
   ti->texture = t;
@@ -211,8 +205,7 @@ void bind_pipeline(struct Pipeline *p) {
         for (i = 0; i < vi->rows; i++) {
           glBindBuffer(GL_ARRAY_BUFFER, vi->buffer->id);
           int offset = vi->offset + i * vi->size * sizeof(GLfloat);
-          glVertexAttribPointer(vi->location + i, vi->size, GL_FLOAT, GL_FALSE,
-                                vi->stride, (void *)(offset));
+          glVertexAttribPointer(vi->location + i, vi->size, GL_FLOAT, GL_FALSE, vi->stride, (void *)(offset));
         }
       }
     }
@@ -221,6 +214,7 @@ void bind_pipeline(struct Pipeline *p) {
         struct TextureInput *ti = &p->texture_inputs[t];
         glActiveTexture(GL_TEXTURE0 + ti->location);
         glBindTexture(ti->texture->target, ti->texture->id);
+        // glUniform1i(glGetUniformLocation(p->program_id, ti->name), ti->location);
       }
     }
     if (p->index_buffer) {
@@ -235,8 +229,7 @@ void bind_pipeline(struct Pipeline *p) {
 void run_pipeline(struct Pipeline *p) {
   if (p->instance_count) {
     if (p->index_count) {
-      glDrawElementsInstanced(GL_TRIANGLES, p->index_count, GL_UNSIGNED_INT, 0,
-                              p->instance_count);
+      glDrawElementsInstanced(GL_TRIANGLES, p->index_count, GL_UNSIGNED_INT, 0, p->instance_count);
     } else {
       glDrawArraysInstanced(GL_TRIANGLES, 0, p->count, p->instance_count);
     }
@@ -289,16 +282,13 @@ void push_constant_ivec4(struct Pipeline *p, const char *name, int t[4]) {
 void push_constant_uint(struct Pipeline *p, const char *name, unsigned int t) {
   glUniform1ui(glGetUniformLocation(p->program_id, name), t);
 }
-void push_constant_uvec2(struct Pipeline *p, const char *name,
-                         unsigned int t[2]) {
+void push_constant_uvec2(struct Pipeline *p, const char *name, unsigned int t[2]) {
   glUniform2uiv(glGetUniformLocation(p->program_id, name), 1, t);
 }
-void push_constant_uvec3(struct Pipeline *p, const char *name,
-                         unsigned int t[3]) {
+void push_constant_uvec3(struct Pipeline *p, const char *name, unsigned int t[3]) {
   glUniform3uiv(glGetUniformLocation(p->program_id, name), 1, t);
 }
-void push_constant_uvec4(struct Pipeline *p, const char *name,
-                         unsigned int t[4]) {
+void push_constant_uvec4(struct Pipeline *p, const char *name, unsigned int t[4]) {
   glUniform4uiv(glGetUniformLocation(p->program_id, name), 1, t);
 }
 void push_constant_double(struct Pipeline *p, const char *name, double t) {
