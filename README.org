@@ -7,3 +7,12 @@ A slightly-abstracted layer on top of raw GL/GLAD/GLFW.
 - Honestly I just got tired of writing boilerplate GL code in whatever languages I wanted to explore.
 
 Contributors to [[./bindings/]] welcome if you know how to write C bindings in your favorite language!
+
+TODOs:
+- make API more modern and less GL-specific. Remove quirks.
+- target WebGL2-level functionality and make full use of those features. We're already using 4.0 baseline so why not.
+- rework textures to use separate sampler objects. 
+- add fixed pipeline functionality to Pipeline such as depth testing, alpha blending, etc.
+- swap out push constants for constant buffers i.e. UBOs and add them to the Pipeline creation along with textures.
+- rework Pipeline to use some kind of bind group rather than just setting textures and buffers and constants individually
+- I know it kinda clashes with GL's API but if I want to swap out for webgpu or vulkan down the road this needs to happen.
