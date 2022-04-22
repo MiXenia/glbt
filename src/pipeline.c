@@ -124,8 +124,7 @@ void bind_buffer(struct Pipeline *p, struct Buffer *b, int location) {
   for (i = 0; i < v->rows; i++) {
     glBindBuffer(GL_ARRAY_BUFFER, v->buffer->id);
     int offset = v->offset + i * v->size * sizeof(GLfloat);
-    // fprintf(stderr, "%s: %d, %d, %d, %d\n", v->name, v->location + i,
-    // v->size, v->stride, offset);
+    // fprintf(stderr, "%s: %d, %d, %d, %d\n", v->name, v->location + i, v->size, v->stride, offset);
     glVertexAttribPointer(v->location + i, v->size, GL_FLOAT, GL_FALSE, v->stride, (void *)(offset));
   }
   if (v->rate == INSTANCE) {
@@ -214,7 +213,7 @@ void bind_pipeline(struct Pipeline *p) {
         struct TextureInput *ti = &p->texture_inputs[t];
         glActiveTexture(GL_TEXTURE0 + ti->location);
         glBindTexture(ti->texture->target, ti->texture->id);
-        // glUniform1i(glGetUniformLocation(p->program_id, ti->name), ti->location);
+        glUniform1i(glGetUniformLocation(p->program_id, ti->name), ti->location); //required for <4.2
       }
     }
     if (p->index_buffer) {

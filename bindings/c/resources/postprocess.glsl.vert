@@ -1,4 +1,4 @@
-#version 420
+#version 400
 out vec2 frag_texcoord;
 void main() {
     float x = -1.0 + float((gl_VertexID & 1) << 2);

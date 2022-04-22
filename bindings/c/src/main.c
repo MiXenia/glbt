@@ -18,8 +18,7 @@ char *load_file(const char *path, int *out_length) {
     if (!src) {
       return NULL;
     }
-    length = (int)fread(src, 1, length,
-                        f); // update length because ftell is not accurate.
+    length = (int)fread(src, 1, length, f); // update length because ftell is not accurate.
     fclose(f);
     if (out_length) {
       *out_length = length;
