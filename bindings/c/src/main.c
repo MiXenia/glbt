@@ -60,33 +60,30 @@ int main(int argc, char *argv[]) {
   char *vert_src = load_file("resources/basic.glsl.vert", &vert_len);
   int frag_len;
   char *frag_src = load_file("resources/basic.glsl.frag", &frag_len);
-  struct Pipeline *p =
-      create_pipeline(vert_len, vert_src, frag_len, frag_src, 4, v, 1, t);
+  struct Pipeline *p = create_pipeline(vert_len, vert_src, frag_len, frag_src, 4, v, 1, t);
   free(vert_src);
   free(frag_src);
 
   printf("Creating buffers...\n");
   struct Buffer *positions = create_buffer(4 * 3, (float[4 * 3]){
-                                                      -0.5f,
-                                                      +0.5f,
-                                                      0.0f,
-                                                      +0.5f,
-                                                      +0.5f,
-                                                      0.0f,
-                                                      +0.5f,
-                                                      -0.5f,
-                                                      0.0f,
-                                                      -0.5f,
-                                                      -0.5f,
-                                                      0.0f,
-                                                  });
-  struct Buffer *texcoords = create_buffer(
-      4 * 2, (float[4 * 2]){0.0, 0.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1.0});
-  struct Buffer *colors = create_buffer(
-      4 * 4, (float[4 * 4]){1.0f, 0.0f, 0.0f, 1.0f, 0.0f, 1.0f, 0.0f, 1.0f,
-                            0.0f, 0.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 0.0f});
-  struct Buffer *indices =
-      create_index_buffer(6, (unsigned int[6]){0, 1, 2, 0, 2, 3});
+    -0.5f, +0.5f, 0.0f,
+    +0.5f, +0.5f, 0.0f,
+    +0.5f, -0.5f, 0.0f,
+    -0.5f, -0.5f, 0.0f,
+  });
+  struct Buffer *texcoords = create_buffer(4 * 2, (float[4 * 2]){
+    0.0, 0.0,
+    1.0, 0.0,
+    1.0, 1.0,
+    0.0, 1.0
+  });
+  struct Buffer *colors = create_buffer(4 * 4, (float[4 * 4]){
+    1.0f, 0.0f, 0.0f, 1.0f,
+    0.0f, 1.0f, 0.0f, 1.0f,
+    0.0f, 0.0f, 1.0f, 1.0f,
+    1.0f, 1.0f, 1.0f, 0.0f
+  });
+  struct Buffer *indices = create_index_buffer(6, (unsigned int[6]){0, 1, 2, 0, 2, 3});
 
   struct Texture *texture = load_texture("resources/go-home.png");
 
@@ -100,8 +97,10 @@ int main(int argc, char *argv[]) {
   // 3 instances
   // one at the center
   mat4 origin = {
-      1.0f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f,  0.0f,
-      0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, -0.5f, 1.0f,
+    1.0f, 0.0f, 0.0f, 0.0f,
+    0.0f, 1.0f, 0.0f, 0.0f,
+    0.0f, 0.0f, 1.0f, 0.0f,
+    0.0f, 0.0f, -0.5f, 1.0f,
   };
   // one slightly to the right, rotated
   mat4 right;
@@ -138,8 +137,7 @@ int main(int argc, char *argv[]) {
   vert_src = load_file("resources/postprocess.glsl.vert", &vert_len);
   frag_src = load_file("resources/postprocess.glsl.frag", &frag_len);
   struct TextureInput ppt[] = {{0, "color0"}};
-  struct Pipeline *pp =
-      create_pipeline(vert_len, vert_src, frag_len, frag_src, 0, 0, 1, ppt);
+  struct Pipeline *pp = create_pipeline(vert_len, vert_src, frag_len, frag_src, 0, 0, 1, ppt);
   free(vert_src);
   free(frag_src);
   bind_texture(pp, resolve_color, 0);
@@ -157,16 +155,14 @@ int main(int argc, char *argv[]) {
     }
 
     bind_framebuffer(f);
-    viewport(0, 0, 128, 128);
-    clear_screen(1, 0, 1, 1);
+    clear(1, 0, 1, 1);
     bind_pipeline(p);
     run_pipeline(p);
 
     copy_framebuffer(f, resolve);
 
-    bind_framebuffer(NULL);
-    viewport(0, 0, 640, 400);
-    clear_screen(0, 0, 0, 0);
+    bind_framebuffer(screen(win));
+    clear(0, 0, 0, 0);
     bind_pipeline(pp);
     push_constant_int(pp, "bnw", 1); // enable black-n-white
     run_pipeline_n(pp, 3);

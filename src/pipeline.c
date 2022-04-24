@@ -4,6 +4,23 @@
 #include <stdio.h>
 #include <string.h>
 
+
+struct FixedFunctionState {
+  int depth_test;
+  int alpha_blending;
+//what kinds of alpha blending...?
+  int alpha_src;
+  int alpha_dst;
+  int culling;
+  int render_style;//polygons lines points
+};
+
+struct PipelineOutput {
+  int color_attachments; //n
+  int depth_attachment; //yes/no
+  struct Framebuffer *target; //might very well be NULL.
+};
+
 struct Pipeline {
   GLuint vao;
   GLuint program_id;
@@ -105,7 +122,6 @@ void destroy_pipeline(struct Pipeline *p) {
   free(p);
 }
 
-void bind_buffer_direct(struct VertexInput *v) {}
 void bind_buffer(struct Pipeline *p, struct Buffer *b, int location) {
   glBindVertexArray(p->vao);
   struct VertexInput *v = NULL;

@@ -24,6 +24,12 @@ struct TextureInput {
 	const char* name;
 	struct Texture* texture; //hehe
 };
+
+struct UniformInput {
+	int location;
+	const char* name;
+};
+
 struct Pipeline* create_pipeline(int vs_len, char* vs, int fs_len, char* fs, int attribute_count, struct VertexInput* v, int texture_count, struct TextureInput* t);
 void destroy_pipeline(struct Pipeline* p);
 void push_constant_float(struct Pipeline* p, const char* name, float t);
@@ -71,13 +77,14 @@ void bind_texture(struct Pipeline* p, struct Texture* t, int location);
 void bind_texture_name(struct Pipeline* p, struct Texture* t, const char* name);
 
 struct Framebuffer;
-struct Framebuffer* create_framebuffer(int color_count, struct Texture* color[8], struct Texture* depth);
+struct Framebuffer* create_framebuffer(int color_count, struct Texture** color, struct Texture* depth);
 void destroy_framebuffer(struct Framebuffer* f);
-void bind_framebuffer(struct Framebuffer* f); // or NULL
+void bind_framebuffer(struct Framebuffer* f);
+void clear(float r, float g, float b, float a);
 void copy_framebuffer(struct Framebuffer* src, struct Framebuffer* dst);
-void copy_framebuffer_to_screen(struct Framebuffer* src, int x, int y, int width, int height);
-void viewport(int x, int y, int w, int h);
-void clear_screen(float r, float g, float b, float a);
+void copy_framebuffer_region(struct Framebuffer* src, struct Framebuffer* dst,
+							 int sx, int sy, int sw, int sh,
+							 int dx, int dy, int dw, int dh);
 
 struct Window;
 struct Window* create_window(const char* title, int width, int height);
@@ -85,6 +92,7 @@ enum WindowStatus { CLOSED, RUNNING };
 enum WindowStatus window_status(struct Window* w);
 void refresh(struct Window* w);
 void close_window(struct Window* w);
+struct Framebuffer *screen(struct Window* w);
 void window_cursor_position(struct Window* w, int* x, int* y);
 int window_cursor_x(struct Window* w);
 int window_cursor_y(struct Window* w);
