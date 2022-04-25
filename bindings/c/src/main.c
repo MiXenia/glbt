@@ -123,13 +123,9 @@ int main(int argc, char *argv[]) {
   printf("Creating framebuffers\n");
 
   // downscaled framebuffer
-  struct Texture *color0 = create_texture_2d(NULL, 128, 128, 0);
-  struct Texture *depth = create_texture_2d(NULL, 128, 128, 0 | DEPTH);
-  struct Framebuffer *f = create_framebuffer(1, &color0, depth);
-
-  // framebuffer to resolve antialiasing to before final render
-  struct Texture *resolve_color = create_texture_2d(NULL, 128, 128, 0);
-  struct Framebuffer *resolve = create_framebuffer(1, &resolve_color, NULL);
+  struct Texture *color0 = create_texture_2d(NULL, 128, 128, ANTIALIASED);
+  struct Texture *depth = create_texture_2d(NULL, 128, 128, ANTIALIASED | DEPTH);
+  struct RenderTarget *rt = create_render_target(1, &color0, depth);
 
   printf("Setting up postprocessing pipeline\n");
 
@@ -140,7 +136,7 @@ int main(int argc, char *argv[]) {
   struct Pipeline *pp = create_pipeline(vert_len, vert_src, frag_len, frag_src, 0, 0, 1, ppt);
   free(vert_src);
   free(frag_src);
-  bind_texture(pp, resolve_color, 0);
+  bind_texture(pp, render_texture(rt), 0);
 
   printf("Starting main loop...\n");
   while (window_status(win) == RUNNING) {
@@ -154,18 +150,18 @@ int main(int argc, char *argv[]) {
       printf("%d, %d\n", x, y);
     }
 
-    bind_framebuffer(f);
+    begin_pass(rt);
     clear(1, 0, 1, 1);
     bind_pipeline(p);
     run_pipeline(p);
+    end_pass(rt);
 
-    copy_framebuffer(f, resolve);
-
-    bind_framebuffer(screen(win));
+    begin_pass(screen(win));
     clear(0, 0, 0, 0);
     bind_pipeline(pp);
     push_constant_int(pp, "bnw", 1); // enable black-n-white
     run_pipeline_n(pp, 3);
+    end_pass(screen(win));
 
     refresh(win);
   }
@@ -181,10 +177,8 @@ int main(int argc, char *argv[]) {
   destroy_texture(texture);
   destroy_texture(color0);
   destroy_texture(depth);
-  destroy_framebuffer(f);
+  destroy_render_target(rt);
   destroy_pipeline(pp);
-  destroy_texture(resolve_color);
-  destroy_framebuffer(resolve);
   quit();
   return 0;
 }

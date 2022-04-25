@@ -76,15 +76,17 @@ void destroy_texture(struct Texture* t);
 void bind_texture(struct Pipeline* p, struct Texture* t, int location);
 void bind_texture_name(struct Pipeline* p, struct Texture* t, const char* name);
 
-struct Framebuffer;
-struct Framebuffer* create_framebuffer(int color_count, struct Texture** color, struct Texture* depth);
-void destroy_framebuffer(struct Framebuffer* f);
-void bind_framebuffer(struct Framebuffer* f);
+struct RenderTarget;
+struct RenderTarget* create_render_target(int color_count, struct Texture** color, struct Texture* depth);
+void destroy_render_target(struct RenderTarget* rt);
+struct Texture* render_texture(struct RenderTarget* rt);
+void begin_pass(struct RenderTarget* rt);
+void end_pass(struct RenderTarget* rt);
 void clear(float r, float g, float b, float a);
-void copy_framebuffer(struct Framebuffer* src, struct Framebuffer* dst);
-void copy_framebuffer_region(struct Framebuffer* src, struct Framebuffer* dst,
-							 int sx, int sy, int sw, int sh,
-							 int dx, int dy, int dw, int dh);
+void copy(struct RenderTarget* src, struct RenderTarget* dst);
+void copy_region(struct RenderTarget* src, struct RenderTarget* dst,
+				 int sx, int sy, int sw, int sh,
+				 int dx, int dy, int dw, int dh);
 
 struct Window;
 struct Window* create_window(const char* title, int width, int height);
@@ -92,7 +94,7 @@ enum WindowStatus { CLOSED, RUNNING };
 enum WindowStatus window_status(struct Window* w);
 void refresh(struct Window* w);
 void close_window(struct Window* w);
-struct Framebuffer *screen(struct Window* w);
+struct RenderTarget *screen(struct Window* w);
 void window_cursor_position(struct Window* w, int* x, int* y);
 int window_cursor_x(struct Window* w);
 int window_cursor_y(struct Window* w);

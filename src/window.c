@@ -1,5 +1,5 @@
 #include "glbt.h"
-#include "internal/framebuffer.h"
+#include "internal/render.h"
 #include "internal/texture.h"
 
 void fail(int error_code, const char *error_message) {
@@ -35,7 +35,7 @@ int check_errors() {
 
 struct Window {
   GLFWwindow *window;
-  struct Framebuffer screen;
+  struct RenderTarget screen;
 };
 static GLFWwindow *main_window = NULL;
 static int app_state = 0;
@@ -149,17 +149,17 @@ struct Window *create_window(const char *title, int width, int height) {
   glEnable(GL_BLEND);
   glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
-  //create dummy framebuffer to represent the default framebuffer
+  //create dummy render target to represent the default framebuffer
   w->screen.id = 0;
   struct Texture *tex = malloc(sizeof(struct Texture));
   tex->width = width;
   tex->height = height;
-  w->screen.color = tex;
+  w->screen.first = tex;
 
   return w;
 }
 
-struct Framebuffer* screen(struct Window* w) {
+struct RenderTarget* screen(struct Window* w) {
   return &w->screen;
 }
 
@@ -171,7 +171,7 @@ enum WindowStatus window_status(struct Window *w) {
     if (main_window == w->window) {
       main_window = NULL;
     }
-    free(w->screen.color);
+    free(w->screen.first);
     free(w);
     return CLOSED;
   } else {

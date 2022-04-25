@@ -9,6 +9,7 @@ void destroy_texture(struct Texture* t) {
 
 struct Texture* create_texture_2d(char *data, int width, int height, enum TextureFlags flags) {
 	struct Texture* t = malloc(sizeof(struct Texture));
+	t->flags = flags;
 	t->width = width;
 	t->height = height;
 	t->depth = 1;
