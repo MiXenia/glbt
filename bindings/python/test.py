@@ -2,6 +2,19 @@ from glbt import ffi
 from glbt.lib import *
 
 #these classes will make dealing with FFI easier so you don't have to.
+
+class Window:
+	def __init__(self, title, width, height):
+		self.window = create_window(title.encode('ascii'), width, height)
+	def status(self):
+		return window_status(self.window)
+	def close(self):
+		close_window(self.window)
+	def refresh(self):
+		refresh(self.window)
+	def screen(self):
+		return screen(self.window)
+
 class Pipeline:
 	def __init__(self, vertex_shader_filename, fragment_shader_filename, inputs):
 		vertex_shader = open(vertex_shader_filename)
@@ -42,6 +55,9 @@ class Buffer:
 		self.buffer = create_buffer(len(data), self.data)
 	def __del__(self):
 		destroy_buffer(self.buffer)
+	def update(self, data):
+		self.data = ffi.new("float[]", data)
+		buffer_data(self.buffer, len(data), self.data)
 class IndexBuffer:
 	def __init__(self, indices):
 		self.indices = ffi.new("unsigned int[]", indices)
@@ -53,35 +69,52 @@ class IndexBuffer:
 
 # here's the actual program.
 
-win = create_window("UwU".encode('ascii'), 640, 400)
+win = Window("UwU", 640, 400)
 
+#list of inputs to the shader, each a matrix, [index, name, num_rows, num_columns]
 layout = [[0, "position", 1, 3], 
 	    [1, "color", 1, 4]]
 colored_polygons = Pipeline("shaders/color.glsl.vert", "shaders/color.glsl.frag", layout)
 
-positions = Buffer([
+#create buffers which store data on the GPU itself so the shader can access it.
+#in this case we're drawing a rectangle with 4 points
+quad = [
 	-0.5, 0.5, 0.0,
 	0.5, 0.5, 0.0,
 	0.5, -0.5, 0.0,
 	-0.5, -0.5, 0.0
-])
+]
+positions = Buffer(quad)
+#each of the 4 points has an associated color, in RGBA
 colors = Buffer([
 	1.0, 0.0, 0.0, 1.0,
 	0.0, 1.0, 0.0, 1.0,
 	0.0, 0.0, 1.0, 1.0,
 	1.0, 1.0, 1.0, 1.0
 ])
+#indices are to convert the points in the rectangle to 2 triangles.
 indices = IndexBuffer([0, 1, 2, 0, 2, 3])
 
+#bind these buffers to the shader pipeline at the specified points.
 colored_polygons.bind(positions, 0)
 colored_polygons.bind(colors, 1)
 colored_polygons.bind(indices)
 
-while window_status(win) == RUNNING:
-    if input_state(KEYBOARD_ESCAPE) == PRESSED:
-        close_window(win)
+while win.status() == RUNNING:
+	if input_state(KEYBOARD_ESCAPE) == PRESSED:
+		win.close()
 
-    clear(1, 0, 1, 1)
-    colored_polygons.run()
+	if(input_state(MOUSE_BUTTON_LEFT) == DOWN):
+		#heehee move the top-left corner of the quad with the mouse
+		quad[0] = -1.0 + cursor_x()/320
+		quad[1] = 1.0 - cursor_y()/200
+		positions.update(quad)
+	elif(input_state(MOUSE_BUTTON_LEFT) == RELEASED):
+		quad[0] = -0.5
+		quad[1] = 0.5
+		positions.update(quad)
 
-    refresh(win)
+	clear(1, 0, 1, 1)
+	colored_polygons.run()
+
+	win.refresh()
