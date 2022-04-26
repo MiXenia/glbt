@@ -26,8 +26,27 @@ class Pipeline:
 	def __del__(self):
 		destroy_pipeline(self.pipeline)
 
+	def bind(self, o, location=-1):
+		if isinstance(o, Buffer):
+			bind_buffer(self.pipeline, o.buffer, location)
+		elif isinstance(o, IndexBuffer):
+			bind_index_buffer(self.pipeline, o.buffer)
+
 	def run(self):
 		run_pipeline(self.pipeline)
+
+class Buffer:
+	def __init__(self, data):
+		self.data = ffi.new("float[]", data)
+		self.buffer = create_buffer(len(data), self.data)
+	def __del__(self):
+		destroy_buffer(self.buffer)
+class IndexBuffer:
+	def __init__(self, indices):
+		self.indices = ffi.new("unsigned int[]", indices)
+		self.buffer = create_index_buffer(len(indices), self.indices)
+	def __del__(self):
+		destroy_buffer(self.buffer)
 
 win = create_window("UwU".encode('ascii'), 640, 400)
 
@@ -35,26 +54,23 @@ layout = [[0, "position", 1, 3],
 	    [1, "color", 1, 4]]
 colored_polygons = Pipeline("shaders/color.glsl.vert", "shaders/color.glsl.frag", layout)
 
-positions = ffi.new("float[]", [
+positions = Buffer([
 	-0.5, 0.5, 0.0,
 	0.5, 0.5, 0.0,
 	0.5, -0.5, 0.0,
 	-0.5, -0.5, 0.0
 ])
-posbuf = create_buffer(4*3, positions)
-colors = ffi.new("float[]", [
+colors = Buffer([
 	1.0, 0.0, 0.0, 1.0,
 	0.0, 1.0, 0.0, 1.0,
 	0.0, 0.0, 1.0, 1.0,
 	1.0, 1.0, 1.0, 1.0
 ])
-colbuf = create_buffer(4*4, colors)
-indices = ffi.new("unsigned int[]", [0, 1, 2, 0, 2, 3])
-ibuf = create_index_buffer(6, indices)
+indices = IndexBuffer([0, 1, 2, 0, 2, 3])
 
-bind_buffer(colored_polygons.pipeline, posbuf, 0)
-bind_buffer(colored_polygons.pipeline, colbuf, 1)
-bind_index_buffer(colored_polygons.pipeline, ibuf)
+colored_polygons.bind(positions, 0)
+colored_polygons.bind(colors, 1)
+colored_polygons.bind(indices)
 
 while window_status(win) == RUNNING:
     if input_state(KEYBOARD_ESCAPE) == PRESSED:
@@ -64,7 +80,3 @@ while window_status(win) == RUNNING:
     colored_polygons.run()
 
     refresh(win)
-
-destroy_buffer(posbuf)
-destroy_buffer(colbuf)
-destroy_buffer(ibuf)
