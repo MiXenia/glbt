@@ -1,6 +1,7 @@
 from glbt import ffi
 from glbt.lib import *
 
+#these classes will make dealing with FFI easier so you don't have to.
 class Pipeline:
 	def __init__(self, vertex_shader_filename, fragment_shader_filename, inputs):
 		vertex_shader = open(vertex_shader_filename)
@@ -47,6 +48,10 @@ class IndexBuffer:
 		self.buffer = create_index_buffer(len(indices), self.indices)
 	def __del__(self):
 		destroy_buffer(self.buffer)
+
+
+
+# here's the actual program.
 
 win = create_window("UwU".encode('ascii'), 640, 400)
 
