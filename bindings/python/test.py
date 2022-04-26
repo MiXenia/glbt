@@ -6,6 +6,6 @@ while window_status(win) == RUNNING:
     if input_state(KEYBOARD_ESCAPE) == PRESSED:
         close_window(win)
 
-    clear_screen(1, 0, 1, 1)
+    clear(1, 0, 1, 1)
 
     refresh(win)

@@ -123,8 +123,8 @@ int main(int argc, char *argv[]) {
   printf("Creating framebuffers\n");
 
   // downscaled framebuffer
-  struct Texture *color0 = create_texture_2d(NULL, 128, 128, ANTIALIASED);
-  struct Texture *depth = create_texture_2d(NULL, 128, 128, ANTIALIASED | DEPTH);
+  struct Texture *color0 = create_texture_2d(NULL, 128, 128, 0);
+  struct Texture *depth = create_texture_2d(NULL, 128, 128, 0 | DEPTH);
   struct RenderTarget *rt = create_render_target(1, &color0, depth);
 
   printf("Setting up postprocessing pipeline\n");

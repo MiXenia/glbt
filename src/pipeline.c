@@ -18,7 +18,12 @@ struct FixedFunctionState {
 struct PipelineOutput {
   int color_attachments; //n
   int depth_attachment; //yes/no
-  struct Framebuffer *target; //might very well be NULL.
+  struct RenderTarget *target; //might very well be NULL.
+};
+
+struct UniformInput {
+  int location;
+  const char* name;
 };
 
 struct Pipeline {

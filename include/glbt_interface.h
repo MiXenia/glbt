@@ -25,32 +25,8 @@ struct TextureInput {
 	struct Texture* texture; //hehe
 };
 
-struct UniformInput {
-	int location;
-	const char* name;
-};
-
 struct Pipeline* create_pipeline(int vs_len, char* vs, int fs_len, char* fs, int attribute_count, struct VertexInput* v, int texture_count, struct TextureInput* t);
 void destroy_pipeline(struct Pipeline* p);
-void push_constant_float(struct Pipeline* p, const char* name, float t);
-void push_constant_vec2(struct Pipeline* p, const char* name, float t[2]);
-void push_constant_vec3(struct Pipeline* p, const char* name, float t[3]);
-void push_constant_vec4(struct Pipeline* p, const char* name, float t[4]);
-void push_constant_mat2(struct Pipeline* p, const char* name, float t[2 * 2]);
-void push_constant_mat3(struct Pipeline* p, const char* name, float t[3 * 3]);
-void push_constant_mat4(struct Pipeline* p, const char* name, float t[4 * 4]);
-void push_constant_int(struct Pipeline* p, const char* name, int t);
-void push_constant_ivec2(struct Pipeline* p, const char* name, int t[2]);
-void push_constant_ivec3(struct Pipeline* p, const char* name, int t[3]);
-void push_constant_ivec4(struct Pipeline* p, const char* name, int t[4]);
-void push_constant_uint(struct Pipeline* p, const char* name, unsigned int t);
-void push_constant_uvec2(struct Pipeline* p, const char* name, unsigned int t[2]);
-void push_constant_uvec3(struct Pipeline* p, const char* name, unsigned int t[3]);
-void push_constant_uvec4(struct Pipeline* p, const char* name, unsigned int t[4]);
-void push_constant_double(struct Pipeline* p, const char* name, double t);
-void push_constant_dvec2(struct Pipeline* p, const char* name, double t[2]);
-void push_constant_dvec3(struct Pipeline* p, const char* name, double t[3]);
-void push_constant_dvec4(struct Pipeline* p, const char* name, double t[4]);
 void bind_pipeline(struct Pipeline* p); //or NULL
 void run_pipeline(struct Pipeline* p);
 void run_pipeline_n(struct Pipeline* p, int n);

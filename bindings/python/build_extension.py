@@ -21,7 +21,7 @@ ffibuilder.set_source("glbt",
     sources=[
         '../../src/internal/glad.c',
         '../../src/buffer.c',
-        '../../src/framebuffer.c',
+        '../../src/render.c',
         '../../src/pipeline.c',
         '../../src/texture.c',
         '../../src/window.c'

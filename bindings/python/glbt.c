@@ -573,11 +573,11 @@ static void (*_cffi_call_python_org)(struct _cffi_externpy_s *, char *);
 /************************************************************/
 
 static void *_cffi_types[] = {
-/*  0 */ _CFFI_OP(_CFFI_OP_FUNCTION, 182), // enum InputState()(enum InputCode)
+/*  0 */ _CFFI_OP(_CFFI_OP_FUNCTION, 147), // enum InputState()(enum InputCode)
 /*  1 */ _CFFI_OP(_CFFI_OP_ENUM, 0), // enum InputCode
 /*  2 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
-/*  3 */ _CFFI_OP(_CFFI_OP_FUNCTION, 184), // enum WindowStatus()(struct Window *)
-/*  4 */ _CFFI_OP(_CFFI_OP_POINTER, 191), // struct Window *
+/*  3 */ _CFFI_OP(_CFFI_OP_FUNCTION, 149), // enum WindowStatus()(struct Window *)
+/*  4 */ _CFFI_OP(_CFFI_OP_POINTER, 156), // struct Window *
 /*  5 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
 /*  6 */ _CFFI_OP(_CFFI_OP_FUNCTION, 12), // int()(struct Window *)
 /*  7 */ _CFFI_OP(_CFFI_OP_NOOP, 4),
@@ -586,186 +586,152 @@ static void *_cffi_types[] = {
 /* 10 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
 /* 11 */ _CFFI_OP(_CFFI_OP_FUNCTION, 66), // struct Buffer *()(int, float *)
 /* 12 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 7), // int
-/* 13 */ _CFFI_OP(_CFFI_OP_POINTER, 46), // float *
+/* 13 */ _CFFI_OP(_CFFI_OP_POINTER, 52), // float *
 /* 14 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
 /* 15 */ _CFFI_OP(_CFFI_OP_FUNCTION, 66), // struct Buffer *()(int, unsigned int *)
 /* 16 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 7),
-/* 17 */ _CFFI_OP(_CFFI_OP_POINTER, 140), // unsigned int *
+/* 17 */ _CFFI_OP(_CFFI_OP_POINTER, 157), // unsigned int *
 /* 18 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
-/* 19 */ _CFFI_OP(_CFFI_OP_FUNCTION, 86), // struct Framebuffer *()(int, struct Texture * *, struct Texture *)
+/* 19 */ _CFFI_OP(_CFFI_OP_FUNCTION, 86), // struct Pipeline *()(int, char *, int, char *, int, struct VertexInput *, int, struct TextureInput *)
 /* 20 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 7),
-/* 21 */ _CFFI_OP(_CFFI_OP_POINTER, 22), // struct Texture * *
-/* 22 */ _CFFI_OP(_CFFI_OP_POINTER, 188), // struct Texture *
-/* 23 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
-/* 24 */ _CFFI_OP(_CFFI_OP_FUNCTION, 100), // struct Pipeline *()(int, char *, int, char *, int, struct VertexInput *, int, struct TextureInput *)
-/* 25 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 7),
-/* 26 */ _CFFI_OP(_CFFI_OP_POINTER, 181), // char *
-/* 27 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 7),
-/* 28 */ _CFFI_OP(_CFFI_OP_NOOP, 26),
-/* 29 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 7),
-/* 30 */ _CFFI_OP(_CFFI_OP_POINTER, 190), // struct VertexInput *
-/* 31 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 7),
-/* 32 */ _CFFI_OP(_CFFI_OP_POINTER, 189), // struct TextureInput *
+/* 21 */ _CFFI_OP(_CFFI_OP_POINTER, 146), // char *
+/* 22 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 7),
+/* 23 */ _CFFI_OP(_CFFI_OP_NOOP, 21),
+/* 24 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 7),
+/* 25 */ _CFFI_OP(_CFFI_OP_POINTER, 155), // struct VertexInput *
+/* 26 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 7),
+/* 27 */ _CFFI_OP(_CFFI_OP_POINTER, 154), // struct TextureInput *
+/* 28 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
+/* 29 */ _CFFI_OP(_CFFI_OP_FUNCTION, 44), // struct RenderTarget *()(int, struct Texture * *, struct Texture *)
+/* 30 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 7),
+/* 31 */ _CFFI_OP(_CFFI_OP_POINTER, 32), // struct Texture * *
+/* 32 */ _CFFI_OP(_CFFI_OP_POINTER, 153), // struct Texture *
 /* 33 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
-/* 34 */ _CFFI_OP(_CFFI_OP_FUNCTION, 22), // struct Texture *()(char *, int, int, enum TextureFlags)
-/* 35 */ _CFFI_OP(_CFFI_OP_NOOP, 26),
-/* 36 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 7),
-/* 37 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 7),
-/* 38 */ _CFFI_OP(_CFFI_OP_ENUM, 2), // enum TextureFlags
-/* 39 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
-/* 40 */ _CFFI_OP(_CFFI_OP_FUNCTION, 4), // struct Window *()(char const *, int, int)
-/* 41 */ _CFFI_OP(_CFFI_OP_POINTER, 181), // char const *
-/* 42 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 7),
-/* 43 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 7),
-/* 44 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
-/* 45 */ _CFFI_OP(_CFFI_OP_FUNCTION, 192), // void()(float, float, float, float)
-/* 46 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 13), // float
-/* 47 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 13),
-/* 48 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 13),
-/* 49 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 13),
+/* 34 */ _CFFI_OP(_CFFI_OP_FUNCTION, 44), // struct RenderTarget *()(struct Window *)
+/* 35 */ _CFFI_OP(_CFFI_OP_NOOP, 4),
+/* 36 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
+/* 37 */ _CFFI_OP(_CFFI_OP_FUNCTION, 32), // struct Texture *()(char *, int, int, enum TextureFlags)
+/* 38 */ _CFFI_OP(_CFFI_OP_NOOP, 21),
+/* 39 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 7),
+/* 40 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 7),
+/* 41 */ _CFFI_OP(_CFFI_OP_ENUM, 2), // enum TextureFlags
+/* 42 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
+/* 43 */ _CFFI_OP(_CFFI_OP_FUNCTION, 32), // struct Texture *()(struct RenderTarget *)
+/* 44 */ _CFFI_OP(_CFFI_OP_POINTER, 152), // struct RenderTarget *
+/* 45 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
+/* 46 */ _CFFI_OP(_CFFI_OP_FUNCTION, 4), // struct Window *()(char const *, int, int)
+/* 47 */ _CFFI_OP(_CFFI_OP_POINTER, 146), // char const *
+/* 48 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 7),
+/* 49 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 7),
 /* 50 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
-/* 51 */ _CFFI_OP(_CFFI_OP_FUNCTION, 192), // void()(int *, int *)
-/* 52 */ _CFFI_OP(_CFFI_OP_POINTER, 12), // int *
-/* 53 */ _CFFI_OP(_CFFI_OP_NOOP, 52),
-/* 54 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
-/* 55 */ _CFFI_OP(_CFFI_OP_FUNCTION, 192), // void()(int, char const *)
-/* 56 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 7),
-/* 57 */ _CFFI_OP(_CFFI_OP_NOOP, 41),
-/* 58 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
-/* 59 */ _CFFI_OP(_CFFI_OP_FUNCTION, 192), // void()(int, int, int, int)
-/* 60 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 7),
-/* 61 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 7),
+/* 51 */ _CFFI_OP(_CFFI_OP_FUNCTION, 158), // void()(float, float, float, float)
+/* 52 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 13), // float
+/* 53 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 13),
+/* 54 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 13),
+/* 55 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 13),
+/* 56 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
+/* 57 */ _CFFI_OP(_CFFI_OP_FUNCTION, 158), // void()(int *, int *)
+/* 58 */ _CFFI_OP(_CFFI_OP_POINTER, 12), // int *
+/* 59 */ _CFFI_OP(_CFFI_OP_NOOP, 58),
+/* 60 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
+/* 61 */ _CFFI_OP(_CFFI_OP_FUNCTION, 158), // void()(int, char const *)
 /* 62 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 7),
-/* 63 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 7),
+/* 63 */ _CFFI_OP(_CFFI_OP_NOOP, 47),
 /* 64 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
-/* 65 */ _CFFI_OP(_CFFI_OP_FUNCTION, 192), // void()(struct Buffer *)
-/* 66 */ _CFFI_OP(_CFFI_OP_POINTER, 185), // struct Buffer *
+/* 65 */ _CFFI_OP(_CFFI_OP_FUNCTION, 158), // void()(struct Buffer *)
+/* 66 */ _CFFI_OP(_CFFI_OP_POINTER, 150), // struct Buffer *
 /* 67 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
-/* 68 */ _CFFI_OP(_CFFI_OP_FUNCTION, 192), // void()(struct Buffer *, int, float *)
+/* 68 */ _CFFI_OP(_CFFI_OP_FUNCTION, 158), // void()(struct Buffer *, int, float *)
 /* 69 */ _CFFI_OP(_CFFI_OP_NOOP, 66),
 /* 70 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 7),
 /* 71 */ _CFFI_OP(_CFFI_OP_NOOP, 13),
 /* 72 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
-/* 73 */ _CFFI_OP(_CFFI_OP_FUNCTION, 192), // void()(struct Buffer *, int, unsigned int *)
+/* 73 */ _CFFI_OP(_CFFI_OP_FUNCTION, 158), // void()(struct Buffer *, int, unsigned int *)
 /* 74 */ _CFFI_OP(_CFFI_OP_NOOP, 66),
 /* 75 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 7),
 /* 76 */ _CFFI_OP(_CFFI_OP_NOOP, 17),
 /* 77 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
-/* 78 */ _CFFI_OP(_CFFI_OP_FUNCTION, 192), // void()(struct Buffer *, size_t, int, int, float *)
+/* 78 */ _CFFI_OP(_CFFI_OP_FUNCTION, 158), // void()(struct Buffer *, size_t, int, int, float *)
 /* 79 */ _CFFI_OP(_CFFI_OP_NOOP, 66),
 /* 80 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 28), // size_t
 /* 81 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 7),
 /* 82 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 7),
 /* 83 */ _CFFI_OP(_CFFI_OP_NOOP, 13),
 /* 84 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
-/* 85 */ _CFFI_OP(_CFFI_OP_FUNCTION, 192), // void()(struct Framebuffer *)
-/* 86 */ _CFFI_OP(_CFFI_OP_POINTER, 186), // struct Framebuffer *
+/* 85 */ _CFFI_OP(_CFFI_OP_FUNCTION, 158), // void()(struct Pipeline *)
+/* 86 */ _CFFI_OP(_CFFI_OP_POINTER, 151), // struct Pipeline *
 /* 87 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
-/* 88 */ _CFFI_OP(_CFFI_OP_FUNCTION, 192), // void()(struct Framebuffer *, int, int, int, int)
+/* 88 */ _CFFI_OP(_CFFI_OP_FUNCTION, 158), // void()(struct Pipeline *, int)
 /* 89 */ _CFFI_OP(_CFFI_OP_NOOP, 86),
 /* 90 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 7),
-/* 91 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 7),
-/* 92 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 7),
-/* 93 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 7),
-/* 94 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
-/* 95 */ _CFFI_OP(_CFFI_OP_FUNCTION, 192), // void()(struct Framebuffer *, struct Framebuffer *)
-/* 96 */ _CFFI_OP(_CFFI_OP_NOOP, 86),
+/* 91 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
+/* 92 */ _CFFI_OP(_CFFI_OP_FUNCTION, 158), // void()(struct Pipeline *, struct Buffer *)
+/* 93 */ _CFFI_OP(_CFFI_OP_NOOP, 86),
+/* 94 */ _CFFI_OP(_CFFI_OP_NOOP, 66),
+/* 95 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
+/* 96 */ _CFFI_OP(_CFFI_OP_FUNCTION, 158), // void()(struct Pipeline *, struct Buffer *, char const *)
 /* 97 */ _CFFI_OP(_CFFI_OP_NOOP, 86),
-/* 98 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
-/* 99 */ _CFFI_OP(_CFFI_OP_FUNCTION, 192), // void()(struct Pipeline *)
-/* 100 */ _CFFI_OP(_CFFI_OP_POINTER, 187), // struct Pipeline *
-/* 101 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
-/* 102 */ _CFFI_OP(_CFFI_OP_FUNCTION, 192), // void()(struct Pipeline *, char const *, double *)
-/* 103 */ _CFFI_OP(_CFFI_OP_NOOP, 100),
-/* 104 */ _CFFI_OP(_CFFI_OP_NOOP, 41),
-/* 105 */ _CFFI_OP(_CFFI_OP_POINTER, 110), // double *
-/* 106 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
-/* 107 */ _CFFI_OP(_CFFI_OP_FUNCTION, 192), // void()(struct Pipeline *, char const *, double)
-/* 108 */ _CFFI_OP(_CFFI_OP_NOOP, 100),
-/* 109 */ _CFFI_OP(_CFFI_OP_NOOP, 41),
-/* 110 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 14), // double
-/* 111 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
-/* 112 */ _CFFI_OP(_CFFI_OP_FUNCTION, 192), // void()(struct Pipeline *, char const *, float *)
-/* 113 */ _CFFI_OP(_CFFI_OP_NOOP, 100),
-/* 114 */ _CFFI_OP(_CFFI_OP_NOOP, 41),
-/* 115 */ _CFFI_OP(_CFFI_OP_NOOP, 13),
-/* 116 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
-/* 117 */ _CFFI_OP(_CFFI_OP_FUNCTION, 192), // void()(struct Pipeline *, char const *, float)
-/* 118 */ _CFFI_OP(_CFFI_OP_NOOP, 100),
-/* 119 */ _CFFI_OP(_CFFI_OP_NOOP, 41),
-/* 120 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 13),
-/* 121 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
-/* 122 */ _CFFI_OP(_CFFI_OP_FUNCTION, 192), // void()(struct Pipeline *, char const *, int *)
-/* 123 */ _CFFI_OP(_CFFI_OP_NOOP, 100),
-/* 124 */ _CFFI_OP(_CFFI_OP_NOOP, 41),
-/* 125 */ _CFFI_OP(_CFFI_OP_NOOP, 52),
-/* 126 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
-/* 127 */ _CFFI_OP(_CFFI_OP_FUNCTION, 192), // void()(struct Pipeline *, char const *, int)
-/* 128 */ _CFFI_OP(_CFFI_OP_NOOP, 100),
-/* 129 */ _CFFI_OP(_CFFI_OP_NOOP, 41),
+/* 98 */ _CFFI_OP(_CFFI_OP_NOOP, 66),
+/* 99 */ _CFFI_OP(_CFFI_OP_NOOP, 47),
+/* 100 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
+/* 101 */ _CFFI_OP(_CFFI_OP_FUNCTION, 158), // void()(struct Pipeline *, struct Buffer *, int)
+/* 102 */ _CFFI_OP(_CFFI_OP_NOOP, 86),
+/* 103 */ _CFFI_OP(_CFFI_OP_NOOP, 66),
+/* 104 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 7),
+/* 105 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
+/* 106 */ _CFFI_OP(_CFFI_OP_FUNCTION, 158), // void()(struct Pipeline *, struct Texture *, char const *)
+/* 107 */ _CFFI_OP(_CFFI_OP_NOOP, 86),
+/* 108 */ _CFFI_OP(_CFFI_OP_NOOP, 32),
+/* 109 */ _CFFI_OP(_CFFI_OP_NOOP, 47),
+/* 110 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
+/* 111 */ _CFFI_OP(_CFFI_OP_FUNCTION, 158), // void()(struct Pipeline *, struct Texture *, int)
+/* 112 */ _CFFI_OP(_CFFI_OP_NOOP, 86),
+/* 113 */ _CFFI_OP(_CFFI_OP_NOOP, 32),
+/* 114 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 7),
+/* 115 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
+/* 116 */ _CFFI_OP(_CFFI_OP_FUNCTION, 158), // void()(struct RenderTarget *)
+/* 117 */ _CFFI_OP(_CFFI_OP_NOOP, 44),
+/* 118 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
+/* 119 */ _CFFI_OP(_CFFI_OP_FUNCTION, 158), // void()(struct RenderTarget *, struct RenderTarget *)
+/* 120 */ _CFFI_OP(_CFFI_OP_NOOP, 44),
+/* 121 */ _CFFI_OP(_CFFI_OP_NOOP, 44),
+/* 122 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
+/* 123 */ _CFFI_OP(_CFFI_OP_FUNCTION, 158), // void()(struct RenderTarget *, struct RenderTarget *, int, int, int, int, int, int, int, int)
+/* 124 */ _CFFI_OP(_CFFI_OP_NOOP, 44),
+/* 125 */ _CFFI_OP(_CFFI_OP_NOOP, 44),
+/* 126 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 7),
+/* 127 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 7),
+/* 128 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 7),
+/* 129 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 7),
 /* 130 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 7),
-/* 131 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
-/* 132 */ _CFFI_OP(_CFFI_OP_FUNCTION, 192), // void()(struct Pipeline *, char const *, unsigned int *)
-/* 133 */ _CFFI_OP(_CFFI_OP_NOOP, 100),
-/* 134 */ _CFFI_OP(_CFFI_OP_NOOP, 41),
-/* 135 */ _CFFI_OP(_CFFI_OP_NOOP, 17),
-/* 136 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
-/* 137 */ _CFFI_OP(_CFFI_OP_FUNCTION, 192), // void()(struct Pipeline *, char const *, unsigned int)
-/* 138 */ _CFFI_OP(_CFFI_OP_NOOP, 100),
-/* 139 */ _CFFI_OP(_CFFI_OP_NOOP, 41),
-/* 140 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 8), // unsigned int
-/* 141 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
-/* 142 */ _CFFI_OP(_CFFI_OP_FUNCTION, 192), // void()(struct Pipeline *, int)
-/* 143 */ _CFFI_OP(_CFFI_OP_NOOP, 100),
-/* 144 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 7),
+/* 131 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 7),
+/* 132 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 7),
+/* 133 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 7),
+/* 134 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
+/* 135 */ _CFFI_OP(_CFFI_OP_FUNCTION, 158), // void()(struct Texture *)
+/* 136 */ _CFFI_OP(_CFFI_OP_NOOP, 32),
+/* 137 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
+/* 138 */ _CFFI_OP(_CFFI_OP_FUNCTION, 158), // void()(struct Window *)
+/* 139 */ _CFFI_OP(_CFFI_OP_NOOP, 4),
+/* 140 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
+/* 141 */ _CFFI_OP(_CFFI_OP_FUNCTION, 158), // void()(struct Window *, int *, int *)
+/* 142 */ _CFFI_OP(_CFFI_OP_NOOP, 4),
+/* 143 */ _CFFI_OP(_CFFI_OP_NOOP, 58),
+/* 144 */ _CFFI_OP(_CFFI_OP_NOOP, 58),
 /* 145 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
-/* 146 */ _CFFI_OP(_CFFI_OP_FUNCTION, 192), // void()(struct Pipeline *, struct Buffer *)
-/* 147 */ _CFFI_OP(_CFFI_OP_NOOP, 100),
-/* 148 */ _CFFI_OP(_CFFI_OP_NOOP, 66),
-/* 149 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
-/* 150 */ _CFFI_OP(_CFFI_OP_FUNCTION, 192), // void()(struct Pipeline *, struct Buffer *, char const *)
-/* 151 */ _CFFI_OP(_CFFI_OP_NOOP, 100),
-/* 152 */ _CFFI_OP(_CFFI_OP_NOOP, 66),
-/* 153 */ _CFFI_OP(_CFFI_OP_NOOP, 41),
-/* 154 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
-/* 155 */ _CFFI_OP(_CFFI_OP_FUNCTION, 192), // void()(struct Pipeline *, struct Buffer *, int)
-/* 156 */ _CFFI_OP(_CFFI_OP_NOOP, 100),
-/* 157 */ _CFFI_OP(_CFFI_OP_NOOP, 66),
-/* 158 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 7),
-/* 159 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
-/* 160 */ _CFFI_OP(_CFFI_OP_FUNCTION, 192), // void()(struct Pipeline *, struct Texture *, char const *)
-/* 161 */ _CFFI_OP(_CFFI_OP_NOOP, 100),
-/* 162 */ _CFFI_OP(_CFFI_OP_NOOP, 22),
-/* 163 */ _CFFI_OP(_CFFI_OP_NOOP, 41),
-/* 164 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
-/* 165 */ _CFFI_OP(_CFFI_OP_FUNCTION, 192), // void()(struct Pipeline *, struct Texture *, int)
-/* 166 */ _CFFI_OP(_CFFI_OP_NOOP, 100),
-/* 167 */ _CFFI_OP(_CFFI_OP_NOOP, 22),
-/* 168 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 7),
-/* 169 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
-/* 170 */ _CFFI_OP(_CFFI_OP_FUNCTION, 192), // void()(struct Texture *)
-/* 171 */ _CFFI_OP(_CFFI_OP_NOOP, 22),
-/* 172 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
-/* 173 */ _CFFI_OP(_CFFI_OP_FUNCTION, 192), // void()(struct Window *)
-/* 174 */ _CFFI_OP(_CFFI_OP_NOOP, 4),
-/* 175 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
-/* 176 */ _CFFI_OP(_CFFI_OP_FUNCTION, 192), // void()(struct Window *, int *, int *)
-/* 177 */ _CFFI_OP(_CFFI_OP_NOOP, 4),
-/* 178 */ _CFFI_OP(_CFFI_OP_NOOP, 52),
-/* 179 */ _CFFI_OP(_CFFI_OP_NOOP, 52),
-/* 180 */ _CFFI_OP(_CFFI_OP_FUNCTION_END, 0),
-/* 181 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 2), // char
-/* 182 */ _CFFI_OP(_CFFI_OP_ENUM, 1), // enum InputState
-/* 183 */ _CFFI_OP(_CFFI_OP_ENUM, 3), // enum VertexRate
-/* 184 */ _CFFI_OP(_CFFI_OP_ENUM, 4), // enum WindowStatus
-/* 185 */ _CFFI_OP(_CFFI_OP_STRUCT_UNION, 0), // struct Buffer
-/* 186 */ _CFFI_OP(_CFFI_OP_STRUCT_UNION, 1), // struct Framebuffer
-/* 187 */ _CFFI_OP(_CFFI_OP_STRUCT_UNION, 2), // struct Pipeline
-/* 188 */ _CFFI_OP(_CFFI_OP_STRUCT_UNION, 3), // struct Texture
-/* 189 */ _CFFI_OP(_CFFI_OP_STRUCT_UNION, 4), // struct TextureInput
-/* 190 */ _CFFI_OP(_CFFI_OP_STRUCT_UNION, 5), // struct VertexInput
-/* 191 */ _CFFI_OP(_CFFI_OP_STRUCT_UNION, 6), // struct Window
-/* 192 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 0), // void
+/* 146 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 2), // char
+/* 147 */ _CFFI_OP(_CFFI_OP_ENUM, 1), // enum InputState
+/* 148 */ _CFFI_OP(_CFFI_OP_ENUM, 3), // enum VertexRate
+/* 149 */ _CFFI_OP(_CFFI_OP_ENUM, 4), // enum WindowStatus
+/* 150 */ _CFFI_OP(_CFFI_OP_STRUCT_UNION, 0), // struct Buffer
+/* 151 */ _CFFI_OP(_CFFI_OP_STRUCT_UNION, 1), // struct Pipeline
+/* 152 */ _CFFI_OP(_CFFI_OP_STRUCT_UNION, 2), // struct RenderTarget
+/* 153 */ _CFFI_OP(_CFFI_OP_STRUCT_UNION, 3), // struct Texture
+/* 154 */ _CFFI_OP(_CFFI_OP_STRUCT_UNION, 4), // struct TextureInput
+/* 155 */ _CFFI_OP(_CFFI_OP_STRUCT_UNION, 5), // struct VertexInput
+/* 156 */ _CFFI_OP(_CFFI_OP_STRUCT_UNION, 6), // struct Window
+/* 157 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 8), // unsigned int
+/* 158 */ _CFFI_OP(_CFFI_OP_PRIMITIVE, 0), // void
 };
 
 static int _cffi_const_KEYBOARD_0(unsigned long long *o)
@@ -1195,6 +1161,42 @@ static int _cffi_const_RUNNING(unsigned long long *o)
   return n;
 }
 
+static void _cffi_d_begin_pass(struct RenderTarget * x0)
+{
+  begin_pass(x0);
+}
+#ifndef PYPY_VERSION
+static PyObject *
+_cffi_f_begin_pass(PyObject *self, PyObject *arg0)
+{
+  struct RenderTarget * x0;
+  Py_ssize_t datasize;
+  struct _cffi_freeme_s *large_args_free = NULL;
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(44), arg0, (char **)&x0);
+  if (datasize != 0) {
+    x0 = ((size_t)datasize) <= 640 ? (struct RenderTarget *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(44), arg0, (char **)&x0,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  Py_BEGIN_ALLOW_THREADS
+  _cffi_restore_errno();
+  { begin_pass(x0); }
+  _cffi_save_errno();
+  Py_END_ALLOW_THREADS
+
+  (void)self; /* unused */
+  if (large_args_free != NULL) _cffi_free_array_arguments(large_args_free);
+  Py_INCREF(Py_None);
+  return Py_None;
+}
+#else
+#  define _cffi_f_begin_pass _cffi_d_begin_pass
+#endif
+
 static void _cffi_d_bind_buffer(struct Pipeline * x0, struct Buffer * x1, int x2)
 {
   bind_buffer(x0, x1, x2);
@@ -1216,10 +1218,10 @@ _cffi_f_bind_buffer(PyObject *self, PyObject *args)
     return NULL;
 
   datasize = _cffi_prepare_pointer_call_argument(
-      _cffi_type(100), arg0, (char **)&x0);
+      _cffi_type(86), arg0, (char **)&x0);
   if (datasize != 0) {
     x0 = ((size_t)datasize) <= 640 ? (struct Pipeline *)alloca((size_t)datasize) : NULL;
-    if (_cffi_convert_array_argument(_cffi_type(100), arg0, (char **)&x0,
+    if (_cffi_convert_array_argument(_cffi_type(86), arg0, (char **)&x0,
             datasize, &large_args_free) < 0)
       return NULL;
   }
@@ -1273,10 +1275,10 @@ _cffi_f_bind_buffer_name(PyObject *self, PyObject *args)
     return NULL;
 
   datasize = _cffi_prepare_pointer_call_argument(
-      _cffi_type(100), arg0, (char **)&x0);
+      _cffi_type(86), arg0, (char **)&x0);
   if (datasize != 0) {
     x0 = ((size_t)datasize) <= 640 ? (struct Pipeline *)alloca((size_t)datasize) : NULL;
-    if (_cffi_convert_array_argument(_cffi_type(100), arg0, (char **)&x0,
+    if (_cffi_convert_array_argument(_cffi_type(86), arg0, (char **)&x0,
             datasize, &large_args_free) < 0)
       return NULL;
   }
@@ -1291,10 +1293,10 @@ _cffi_f_bind_buffer_name(PyObject *self, PyObject *args)
   }
 
   datasize = _cffi_prepare_pointer_call_argument(
-      _cffi_type(41), arg2, (char **)&x2);
+      _cffi_type(47), arg2, (char **)&x2);
   if (datasize != 0) {
     x2 = ((size_t)datasize) <= 640 ? (char const *)alloca((size_t)datasize) : NULL;
-    if (_cffi_convert_array_argument(_cffi_type(41), arg2, (char **)&x2,
+    if (_cffi_convert_array_argument(_cffi_type(47), arg2, (char **)&x2,
             datasize, &large_args_free) < 0)
       return NULL;
   }
@@ -1312,42 +1314,6 @@ _cffi_f_bind_buffer_name(PyObject *self, PyObject *args)
 }
 #else
 #  define _cffi_f_bind_buffer_name _cffi_d_bind_buffer_name
-#endif
-
-static void _cffi_d_bind_framebuffer(struct Framebuffer * x0)
-{
-  bind_framebuffer(x0);
-}
-#ifndef PYPY_VERSION
-static PyObject *
-_cffi_f_bind_framebuffer(PyObject *self, PyObject *arg0)
-{
-  struct Framebuffer * x0;
-  Py_ssize_t datasize;
-  struct _cffi_freeme_s *large_args_free = NULL;
-
-  datasize = _cffi_prepare_pointer_call_argument(
-      _cffi_type(86), arg0, (char **)&x0);
-  if (datasize != 0) {
-    x0 = ((size_t)datasize) <= 640 ? (struct Framebuffer *)alloca((size_t)datasize) : NULL;
-    if (_cffi_convert_array_argument(_cffi_type(86), arg0, (char **)&x0,
-            datasize, &large_args_free) < 0)
-      return NULL;
-  }
-
-  Py_BEGIN_ALLOW_THREADS
-  _cffi_restore_errno();
-  { bind_framebuffer(x0); }
-  _cffi_save_errno();
-  Py_END_ALLOW_THREADS
-
-  (void)self; /* unused */
-  if (large_args_free != NULL) _cffi_free_array_arguments(large_args_free);
-  Py_INCREF(Py_None);
-  return Py_None;
-}
-#else
-#  define _cffi_f_bind_framebuffer _cffi_d_bind_framebuffer
 #endif
 
 static void _cffi_d_bind_index_buffer(struct Pipeline * x0, struct Buffer * x1)
@@ -1369,10 +1335,10 @@ _cffi_f_bind_index_buffer(PyObject *self, PyObject *args)
     return NULL;
 
   datasize = _cffi_prepare_pointer_call_argument(
-      _cffi_type(100), arg0, (char **)&x0);
+      _cffi_type(86), arg0, (char **)&x0);
   if (datasize != 0) {
     x0 = ((size_t)datasize) <= 640 ? (struct Pipeline *)alloca((size_t)datasize) : NULL;
-    if (_cffi_convert_array_argument(_cffi_type(100), arg0, (char **)&x0,
+    if (_cffi_convert_array_argument(_cffi_type(86), arg0, (char **)&x0,
             datasize, &large_args_free) < 0)
       return NULL;
   }
@@ -1414,10 +1380,10 @@ _cffi_f_bind_pipeline(PyObject *self, PyObject *arg0)
   struct _cffi_freeme_s *large_args_free = NULL;
 
   datasize = _cffi_prepare_pointer_call_argument(
-      _cffi_type(100), arg0, (char **)&x0);
+      _cffi_type(86), arg0, (char **)&x0);
   if (datasize != 0) {
     x0 = ((size_t)datasize) <= 640 ? (struct Pipeline *)alloca((size_t)datasize) : NULL;
-    if (_cffi_convert_array_argument(_cffi_type(100), arg0, (char **)&x0,
+    if (_cffi_convert_array_argument(_cffi_type(86), arg0, (char **)&x0,
             datasize, &large_args_free) < 0)
       return NULL;
   }
@@ -1458,19 +1424,19 @@ _cffi_f_bind_texture(PyObject *self, PyObject *args)
     return NULL;
 
   datasize = _cffi_prepare_pointer_call_argument(
-      _cffi_type(100), arg0, (char **)&x0);
+      _cffi_type(86), arg0, (char **)&x0);
   if (datasize != 0) {
     x0 = ((size_t)datasize) <= 640 ? (struct Pipeline *)alloca((size_t)datasize) : NULL;
-    if (_cffi_convert_array_argument(_cffi_type(100), arg0, (char **)&x0,
+    if (_cffi_convert_array_argument(_cffi_type(86), arg0, (char **)&x0,
             datasize, &large_args_free) < 0)
       return NULL;
   }
 
   datasize = _cffi_prepare_pointer_call_argument(
-      _cffi_type(22), arg1, (char **)&x1);
+      _cffi_type(32), arg1, (char **)&x1);
   if (datasize != 0) {
     x1 = ((size_t)datasize) <= 640 ? (struct Texture *)alloca((size_t)datasize) : NULL;
-    if (_cffi_convert_array_argument(_cffi_type(22), arg1, (char **)&x1,
+    if (_cffi_convert_array_argument(_cffi_type(32), arg1, (char **)&x1,
             datasize, &large_args_free) < 0)
       return NULL;
   }
@@ -1515,28 +1481,28 @@ _cffi_f_bind_texture_name(PyObject *self, PyObject *args)
     return NULL;
 
   datasize = _cffi_prepare_pointer_call_argument(
-      _cffi_type(100), arg0, (char **)&x0);
+      _cffi_type(86), arg0, (char **)&x0);
   if (datasize != 0) {
     x0 = ((size_t)datasize) <= 640 ? (struct Pipeline *)alloca((size_t)datasize) : NULL;
-    if (_cffi_convert_array_argument(_cffi_type(100), arg0, (char **)&x0,
+    if (_cffi_convert_array_argument(_cffi_type(86), arg0, (char **)&x0,
             datasize, &large_args_free) < 0)
       return NULL;
   }
 
   datasize = _cffi_prepare_pointer_call_argument(
-      _cffi_type(22), arg1, (char **)&x1);
+      _cffi_type(32), arg1, (char **)&x1);
   if (datasize != 0) {
     x1 = ((size_t)datasize) <= 640 ? (struct Texture *)alloca((size_t)datasize) : NULL;
-    if (_cffi_convert_array_argument(_cffi_type(22), arg1, (char **)&x1,
+    if (_cffi_convert_array_argument(_cffi_type(32), arg1, (char **)&x1,
             datasize, &large_args_free) < 0)
       return NULL;
   }
 
   datasize = _cffi_prepare_pointer_call_argument(
-      _cffi_type(41), arg2, (char **)&x2);
+      _cffi_type(47), arg2, (char **)&x2);
   if (datasize != 0) {
     x2 = ((size_t)datasize) <= 640 ? (char const *)alloca((size_t)datasize) : NULL;
-    if (_cffi_convert_array_argument(_cffi_type(41), arg2, (char **)&x2,
+    if (_cffi_convert_array_argument(_cffi_type(47), arg2, (char **)&x2,
             datasize, &large_args_free) < 0)
       return NULL;
   }
@@ -1765,13 +1731,13 @@ _cffi_f_check_errors(PyObject *self, PyObject *noarg)
 #  define _cffi_f_check_errors _cffi_d_check_errors
 #endif
 
-static void _cffi_d_clear_screen(float x0, float x1, float x2, float x3)
+static void _cffi_d_clear(float x0, float x1, float x2, float x3)
 {
-  clear_screen(x0, x1, x2, x3);
+  clear(x0, x1, x2, x3);
 }
 #ifndef PYPY_VERSION
 static PyObject *
-_cffi_f_clear_screen(PyObject *self, PyObject *args)
+_cffi_f_clear(PyObject *self, PyObject *args)
 {
   float x0;
   float x1;
@@ -1782,7 +1748,7 @@ _cffi_f_clear_screen(PyObject *self, PyObject *args)
   PyObject *arg2;
   PyObject *arg3;
 
-  if (!PyArg_UnpackTuple(args, "clear_screen", 4, 4, &arg0, &arg1, &arg2, &arg3))
+  if (!PyArg_UnpackTuple(args, "clear", 4, 4, &arg0, &arg1, &arg2, &arg3))
     return NULL;
 
   x0 = (float)_cffi_to_c_float(arg0);
@@ -1803,7 +1769,7 @@ _cffi_f_clear_screen(PyObject *self, PyObject *args)
 
   Py_BEGIN_ALLOW_THREADS
   _cffi_restore_errno();
-  { clear_screen(x0, x1, x2, x3); }
+  { clear(x0, x1, x2, x3); }
   _cffi_save_errno();
   Py_END_ALLOW_THREADS
 
@@ -1812,7 +1778,7 @@ _cffi_f_clear_screen(PyObject *self, PyObject *args)
   return Py_None;
 }
 #else
-#  define _cffi_f_clear_screen _cffi_d_clear_screen
+#  define _cffi_f_clear _cffi_d_clear
 #endif
 
 static void _cffi_d_close_window(struct Window * x0)
@@ -1851,45 +1817,45 @@ _cffi_f_close_window(PyObject *self, PyObject *arg0)
 #  define _cffi_f_close_window _cffi_d_close_window
 #endif
 
-static void _cffi_d_copy_framebuffer(struct Framebuffer * x0, struct Framebuffer * x1)
+static void _cffi_d_copy(struct RenderTarget * x0, struct RenderTarget * x1)
 {
-  copy_framebuffer(x0, x1);
+  copy(x0, x1);
 }
 #ifndef PYPY_VERSION
 static PyObject *
-_cffi_f_copy_framebuffer(PyObject *self, PyObject *args)
+_cffi_f_copy(PyObject *self, PyObject *args)
 {
-  struct Framebuffer * x0;
-  struct Framebuffer * x1;
+  struct RenderTarget * x0;
+  struct RenderTarget * x1;
   Py_ssize_t datasize;
   struct _cffi_freeme_s *large_args_free = NULL;
   PyObject *arg0;
   PyObject *arg1;
 
-  if (!PyArg_UnpackTuple(args, "copy_framebuffer", 2, 2, &arg0, &arg1))
+  if (!PyArg_UnpackTuple(args, "copy", 2, 2, &arg0, &arg1))
     return NULL;
 
   datasize = _cffi_prepare_pointer_call_argument(
-      _cffi_type(86), arg0, (char **)&x0);
+      _cffi_type(44), arg0, (char **)&x0);
   if (datasize != 0) {
-    x0 = ((size_t)datasize) <= 640 ? (struct Framebuffer *)alloca((size_t)datasize) : NULL;
-    if (_cffi_convert_array_argument(_cffi_type(86), arg0, (char **)&x0,
+    x0 = ((size_t)datasize) <= 640 ? (struct RenderTarget *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(44), arg0, (char **)&x0,
             datasize, &large_args_free) < 0)
       return NULL;
   }
 
   datasize = _cffi_prepare_pointer_call_argument(
-      _cffi_type(86), arg1, (char **)&x1);
+      _cffi_type(44), arg1, (char **)&x1);
   if (datasize != 0) {
-    x1 = ((size_t)datasize) <= 640 ? (struct Framebuffer *)alloca((size_t)datasize) : NULL;
-    if (_cffi_convert_array_argument(_cffi_type(86), arg1, (char **)&x1,
+    x1 = ((size_t)datasize) <= 640 ? (struct RenderTarget *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(44), arg1, (char **)&x1,
             datasize, &large_args_free) < 0)
       return NULL;
   }
 
   Py_BEGIN_ALLOW_THREADS
   _cffi_restore_errno();
-  { copy_framebuffer(x0, x1); }
+  { copy(x0, x1); }
   _cffi_save_errno();
   Py_END_ALLOW_THREADS
 
@@ -1899,22 +1865,27 @@ _cffi_f_copy_framebuffer(PyObject *self, PyObject *args)
   return Py_None;
 }
 #else
-#  define _cffi_f_copy_framebuffer _cffi_d_copy_framebuffer
+#  define _cffi_f_copy _cffi_d_copy
 #endif
 
-static void _cffi_d_copy_framebuffer_to_screen(struct Framebuffer * x0, int x1, int x2, int x3, int x4)
+static void _cffi_d_copy_region(struct RenderTarget * x0, struct RenderTarget * x1, int x2, int x3, int x4, int x5, int x6, int x7, int x8, int x9)
 {
-  copy_framebuffer_to_screen(x0, x1, x2, x3, x4);
+  copy_region(x0, x1, x2, x3, x4, x5, x6, x7, x8, x9);
 }
 #ifndef PYPY_VERSION
 static PyObject *
-_cffi_f_copy_framebuffer_to_screen(PyObject *self, PyObject *args)
+_cffi_f_copy_region(PyObject *self, PyObject *args)
 {
-  struct Framebuffer * x0;
-  int x1;
+  struct RenderTarget * x0;
+  struct RenderTarget * x1;
   int x2;
   int x3;
   int x4;
+  int x5;
+  int x6;
+  int x7;
+  int x8;
+  int x9;
   Py_ssize_t datasize;
   struct _cffi_freeme_s *large_args_free = NULL;
   PyObject *arg0;
@@ -1922,22 +1893,32 @@ _cffi_f_copy_framebuffer_to_screen(PyObject *self, PyObject *args)
   PyObject *arg2;
   PyObject *arg3;
   PyObject *arg4;
+  PyObject *arg5;
+  PyObject *arg6;
+  PyObject *arg7;
+  PyObject *arg8;
+  PyObject *arg9;
 
-  if (!PyArg_UnpackTuple(args, "copy_framebuffer_to_screen", 5, 5, &arg0, &arg1, &arg2, &arg3, &arg4))
+  if (!PyArg_UnpackTuple(args, "copy_region", 10, 10, &arg0, &arg1, &arg2, &arg3, &arg4, &arg5, &arg6, &arg7, &arg8, &arg9))
     return NULL;
 
   datasize = _cffi_prepare_pointer_call_argument(
-      _cffi_type(86), arg0, (char **)&x0);
+      _cffi_type(44), arg0, (char **)&x0);
   if (datasize != 0) {
-    x0 = ((size_t)datasize) <= 640 ? (struct Framebuffer *)alloca((size_t)datasize) : NULL;
-    if (_cffi_convert_array_argument(_cffi_type(86), arg0, (char **)&x0,
+    x0 = ((size_t)datasize) <= 640 ? (struct RenderTarget *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(44), arg0, (char **)&x0,
             datasize, &large_args_free) < 0)
       return NULL;
   }
 
-  x1 = _cffi_to_c_int(arg1, int);
-  if (x1 == (int)-1 && PyErr_Occurred())
-    return NULL;
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(44), arg1, (char **)&x1);
+  if (datasize != 0) {
+    x1 = ((size_t)datasize) <= 640 ? (struct RenderTarget *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(44), arg1, (char **)&x1,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
 
   x2 = _cffi_to_c_int(arg2, int);
   if (x2 == (int)-1 && PyErr_Occurred())
@@ -1951,9 +1932,29 @@ _cffi_f_copy_framebuffer_to_screen(PyObject *self, PyObject *args)
   if (x4 == (int)-1 && PyErr_Occurred())
     return NULL;
 
+  x5 = _cffi_to_c_int(arg5, int);
+  if (x5 == (int)-1 && PyErr_Occurred())
+    return NULL;
+
+  x6 = _cffi_to_c_int(arg6, int);
+  if (x6 == (int)-1 && PyErr_Occurred())
+    return NULL;
+
+  x7 = _cffi_to_c_int(arg7, int);
+  if (x7 == (int)-1 && PyErr_Occurred())
+    return NULL;
+
+  x8 = _cffi_to_c_int(arg8, int);
+  if (x8 == (int)-1 && PyErr_Occurred())
+    return NULL;
+
+  x9 = _cffi_to_c_int(arg9, int);
+  if (x9 == (int)-1 && PyErr_Occurred())
+    return NULL;
+
   Py_BEGIN_ALLOW_THREADS
   _cffi_restore_errno();
-  { copy_framebuffer_to_screen(x0, x1, x2, x3, x4); }
+  { copy_region(x0, x1, x2, x3, x4, x5, x6, x7, x8, x9); }
   _cffi_save_errno();
   Py_END_ALLOW_THREADS
 
@@ -1963,7 +1964,7 @@ _cffi_f_copy_framebuffer_to_screen(PyObject *self, PyObject *args)
   return Py_None;
 }
 #else
-#  define _cffi_f_copy_framebuffer_to_screen _cffi_d_copy_framebuffer_to_screen
+#  define _cffi_f_copy_region _cffi_d_copy_region
 #endif
 
 static struct Buffer * _cffi_d_create_buffer(int x0, float * x1)
@@ -2012,65 +2013,6 @@ _cffi_f_create_buffer(PyObject *self, PyObject *args)
 }
 #else
 #  define _cffi_f_create_buffer _cffi_d_create_buffer
-#endif
-
-static struct Framebuffer * _cffi_d_create_framebuffer(int x0, struct Texture * * x1, struct Texture * x2)
-{
-  return create_framebuffer(x0, x1, x2);
-}
-#ifndef PYPY_VERSION
-static PyObject *
-_cffi_f_create_framebuffer(PyObject *self, PyObject *args)
-{
-  int x0;
-  struct Texture * * x1;
-  struct Texture * x2;
-  Py_ssize_t datasize;
-  struct _cffi_freeme_s *large_args_free = NULL;
-  struct Framebuffer * result;
-  PyObject *pyresult;
-  PyObject *arg0;
-  PyObject *arg1;
-  PyObject *arg2;
-
-  if (!PyArg_UnpackTuple(args, "create_framebuffer", 3, 3, &arg0, &arg1, &arg2))
-    return NULL;
-
-  x0 = _cffi_to_c_int(arg0, int);
-  if (x0 == (int)-1 && PyErr_Occurred())
-    return NULL;
-
-  datasize = _cffi_prepare_pointer_call_argument(
-      _cffi_type(21), arg1, (char **)&x1);
-  if (datasize != 0) {
-    x1 = ((size_t)datasize) <= 640 ? (struct Texture * *)alloca((size_t)datasize) : NULL;
-    if (_cffi_convert_array_argument(_cffi_type(21), arg1, (char **)&x1,
-            datasize, &large_args_free) < 0)
-      return NULL;
-  }
-
-  datasize = _cffi_prepare_pointer_call_argument(
-      _cffi_type(22), arg2, (char **)&x2);
-  if (datasize != 0) {
-    x2 = ((size_t)datasize) <= 640 ? (struct Texture *)alloca((size_t)datasize) : NULL;
-    if (_cffi_convert_array_argument(_cffi_type(22), arg2, (char **)&x2,
-            datasize, &large_args_free) < 0)
-      return NULL;
-  }
-
-  Py_BEGIN_ALLOW_THREADS
-  _cffi_restore_errno();
-  { result = create_framebuffer(x0, x1, x2); }
-  _cffi_save_errno();
-  Py_END_ALLOW_THREADS
-
-  (void)self; /* unused */
-  pyresult = _cffi_from_c_pointer((char *)result, _cffi_type(86));
-  if (large_args_free != NULL) _cffi_free_array_arguments(large_args_free);
-  return pyresult;
-}
-#else
-#  define _cffi_f_create_framebuffer _cffi_d_create_framebuffer
 #endif
 
 static struct Buffer * _cffi_d_create_index_buffer(int x0, unsigned int * x1)
@@ -2158,10 +2100,10 @@ _cffi_f_create_pipeline(PyObject *self, PyObject *args)
     return NULL;
 
   datasize = _cffi_prepare_pointer_call_argument(
-      _cffi_type(26), arg1, (char **)&x1);
+      _cffi_type(21), arg1, (char **)&x1);
   if (datasize != 0) {
     x1 = ((size_t)datasize) <= 640 ? (char *)alloca((size_t)datasize) : NULL;
-    if (_cffi_convert_array_argument(_cffi_type(26), arg1, (char **)&x1,
+    if (_cffi_convert_array_argument(_cffi_type(21), arg1, (char **)&x1,
             datasize, &large_args_free) < 0)
       return NULL;
   }
@@ -2171,10 +2113,10 @@ _cffi_f_create_pipeline(PyObject *self, PyObject *args)
     return NULL;
 
   datasize = _cffi_prepare_pointer_call_argument(
-      _cffi_type(26), arg3, (char **)&x3);
+      _cffi_type(21), arg3, (char **)&x3);
   if (datasize != 0) {
     x3 = ((size_t)datasize) <= 640 ? (char *)alloca((size_t)datasize) : NULL;
-    if (_cffi_convert_array_argument(_cffi_type(26), arg3, (char **)&x3,
+    if (_cffi_convert_array_argument(_cffi_type(21), arg3, (char **)&x3,
             datasize, &large_args_free) < 0)
       return NULL;
   }
@@ -2184,10 +2126,10 @@ _cffi_f_create_pipeline(PyObject *self, PyObject *args)
     return NULL;
 
   datasize = _cffi_prepare_pointer_call_argument(
-      _cffi_type(30), arg5, (char **)&x5);
+      _cffi_type(25), arg5, (char **)&x5);
   if (datasize != 0) {
     x5 = ((size_t)datasize) <= 640 ? (struct VertexInput *)alloca((size_t)datasize) : NULL;
-    if (_cffi_convert_array_argument(_cffi_type(30), arg5, (char **)&x5,
+    if (_cffi_convert_array_argument(_cffi_type(25), arg5, (char **)&x5,
             datasize, &large_args_free) < 0)
       return NULL;
   }
@@ -2197,10 +2139,10 @@ _cffi_f_create_pipeline(PyObject *self, PyObject *args)
     return NULL;
 
   datasize = _cffi_prepare_pointer_call_argument(
-      _cffi_type(32), arg7, (char **)&x7);
+      _cffi_type(27), arg7, (char **)&x7);
   if (datasize != 0) {
     x7 = ((size_t)datasize) <= 640 ? (struct TextureInput *)alloca((size_t)datasize) : NULL;
-    if (_cffi_convert_array_argument(_cffi_type(32), arg7, (char **)&x7,
+    if (_cffi_convert_array_argument(_cffi_type(27), arg7, (char **)&x7,
             datasize, &large_args_free) < 0)
       return NULL;
   }
@@ -2212,12 +2154,71 @@ _cffi_f_create_pipeline(PyObject *self, PyObject *args)
   Py_END_ALLOW_THREADS
 
   (void)self; /* unused */
-  pyresult = _cffi_from_c_pointer((char *)result, _cffi_type(100));
+  pyresult = _cffi_from_c_pointer((char *)result, _cffi_type(86));
   if (large_args_free != NULL) _cffi_free_array_arguments(large_args_free);
   return pyresult;
 }
 #else
 #  define _cffi_f_create_pipeline _cffi_d_create_pipeline
+#endif
+
+static struct RenderTarget * _cffi_d_create_render_target(int x0, struct Texture * * x1, struct Texture * x2)
+{
+  return create_render_target(x0, x1, x2);
+}
+#ifndef PYPY_VERSION
+static PyObject *
+_cffi_f_create_render_target(PyObject *self, PyObject *args)
+{
+  int x0;
+  struct Texture * * x1;
+  struct Texture * x2;
+  Py_ssize_t datasize;
+  struct _cffi_freeme_s *large_args_free = NULL;
+  struct RenderTarget * result;
+  PyObject *pyresult;
+  PyObject *arg0;
+  PyObject *arg1;
+  PyObject *arg2;
+
+  if (!PyArg_UnpackTuple(args, "create_render_target", 3, 3, &arg0, &arg1, &arg2))
+    return NULL;
+
+  x0 = _cffi_to_c_int(arg0, int);
+  if (x0 == (int)-1 && PyErr_Occurred())
+    return NULL;
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(31), arg1, (char **)&x1);
+  if (datasize != 0) {
+    x1 = ((size_t)datasize) <= 640 ? (struct Texture * *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(31), arg1, (char **)&x1,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(32), arg2, (char **)&x2);
+  if (datasize != 0) {
+    x2 = ((size_t)datasize) <= 640 ? (struct Texture *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(32), arg2, (char **)&x2,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  Py_BEGIN_ALLOW_THREADS
+  _cffi_restore_errno();
+  { result = create_render_target(x0, x1, x2); }
+  _cffi_save_errno();
+  Py_END_ALLOW_THREADS
+
+  (void)self; /* unused */
+  pyresult = _cffi_from_c_pointer((char *)result, _cffi_type(44));
+  if (large_args_free != NULL) _cffi_free_array_arguments(large_args_free);
+  return pyresult;
+}
+#else
+#  define _cffi_f_create_render_target _cffi_d_create_render_target
 #endif
 
 static struct Texture * _cffi_d_create_texture_2d(char * x0, int x1, int x2, enum TextureFlags x3)
@@ -2245,10 +2246,10 @@ _cffi_f_create_texture_2d(PyObject *self, PyObject *args)
     return NULL;
 
   datasize = _cffi_prepare_pointer_call_argument(
-      _cffi_type(26), arg0, (char **)&x0);
+      _cffi_type(21), arg0, (char **)&x0);
   if (datasize != 0) {
     x0 = ((size_t)datasize) <= 640 ? (char *)alloca((size_t)datasize) : NULL;
-    if (_cffi_convert_array_argument(_cffi_type(26), arg0, (char **)&x0,
+    if (_cffi_convert_array_argument(_cffi_type(21), arg0, (char **)&x0,
             datasize, &large_args_free) < 0)
       return NULL;
   }
@@ -2261,7 +2262,7 @@ _cffi_f_create_texture_2d(PyObject *self, PyObject *args)
   if (x2 == (int)-1 && PyErr_Occurred())
     return NULL;
 
-  if (_cffi_to_c((char *)&x3, _cffi_type(38), arg3) < 0)
+  if (_cffi_to_c((char *)&x3, _cffi_type(41), arg3) < 0)
     return NULL;
 
   Py_BEGIN_ALLOW_THREADS
@@ -2271,7 +2272,7 @@ _cffi_f_create_texture_2d(PyObject *self, PyObject *args)
   Py_END_ALLOW_THREADS
 
   (void)self; /* unused */
-  pyresult = _cffi_from_c_pointer((char *)result, _cffi_type(22));
+  pyresult = _cffi_from_c_pointer((char *)result, _cffi_type(32));
   if (large_args_free != NULL) _cffi_free_array_arguments(large_args_free);
   return pyresult;
 }
@@ -2302,10 +2303,10 @@ _cffi_f_create_window(PyObject *self, PyObject *args)
     return NULL;
 
   datasize = _cffi_prepare_pointer_call_argument(
-      _cffi_type(41), arg0, (char **)&x0);
+      _cffi_type(47), arg0, (char **)&x0);
   if (datasize != 0) {
     x0 = ((size_t)datasize) <= 640 ? (char const *)alloca((size_t)datasize) : NULL;
-    if (_cffi_convert_array_argument(_cffi_type(41), arg0, (char **)&x0,
+    if (_cffi_convert_array_argument(_cffi_type(47), arg0, (char **)&x0,
             datasize, &large_args_free) < 0)
       return NULL;
   }
@@ -2352,19 +2353,19 @@ _cffi_f_cursor_position(PyObject *self, PyObject *args)
     return NULL;
 
   datasize = _cffi_prepare_pointer_call_argument(
-      _cffi_type(52), arg0, (char **)&x0);
+      _cffi_type(58), arg0, (char **)&x0);
   if (datasize != 0) {
     x0 = ((size_t)datasize) <= 640 ? (int *)alloca((size_t)datasize) : NULL;
-    if (_cffi_convert_array_argument(_cffi_type(52), arg0, (char **)&x0,
+    if (_cffi_convert_array_argument(_cffi_type(58), arg0, (char **)&x0,
             datasize, &large_args_free) < 0)
       return NULL;
   }
 
   datasize = _cffi_prepare_pointer_call_argument(
-      _cffi_type(52), arg1, (char **)&x1);
+      _cffi_type(58), arg1, (char **)&x1);
   if (datasize != 0) {
     x1 = ((size_t)datasize) <= 640 ? (int *)alloca((size_t)datasize) : NULL;
-    if (_cffi_convert_array_argument(_cffi_type(52), arg1, (char **)&x1,
+    if (_cffi_convert_array_argument(_cffi_type(58), arg1, (char **)&x1,
             datasize, &large_args_free) < 0)
       return NULL;
   }
@@ -2472,42 +2473,6 @@ _cffi_f_destroy_buffer(PyObject *self, PyObject *arg0)
 #  define _cffi_f_destroy_buffer _cffi_d_destroy_buffer
 #endif
 
-static void _cffi_d_destroy_framebuffer(struct Framebuffer * x0)
-{
-  destroy_framebuffer(x0);
-}
-#ifndef PYPY_VERSION
-static PyObject *
-_cffi_f_destroy_framebuffer(PyObject *self, PyObject *arg0)
-{
-  struct Framebuffer * x0;
-  Py_ssize_t datasize;
-  struct _cffi_freeme_s *large_args_free = NULL;
-
-  datasize = _cffi_prepare_pointer_call_argument(
-      _cffi_type(86), arg0, (char **)&x0);
-  if (datasize != 0) {
-    x0 = ((size_t)datasize) <= 640 ? (struct Framebuffer *)alloca((size_t)datasize) : NULL;
-    if (_cffi_convert_array_argument(_cffi_type(86), arg0, (char **)&x0,
-            datasize, &large_args_free) < 0)
-      return NULL;
-  }
-
-  Py_BEGIN_ALLOW_THREADS
-  _cffi_restore_errno();
-  { destroy_framebuffer(x0); }
-  _cffi_save_errno();
-  Py_END_ALLOW_THREADS
-
-  (void)self; /* unused */
-  if (large_args_free != NULL) _cffi_free_array_arguments(large_args_free);
-  Py_INCREF(Py_None);
-  return Py_None;
-}
-#else
-#  define _cffi_f_destroy_framebuffer _cffi_d_destroy_framebuffer
-#endif
-
 static void _cffi_d_destroy_pipeline(struct Pipeline * x0)
 {
   destroy_pipeline(x0);
@@ -2521,10 +2486,10 @@ _cffi_f_destroy_pipeline(PyObject *self, PyObject *arg0)
   struct _cffi_freeme_s *large_args_free = NULL;
 
   datasize = _cffi_prepare_pointer_call_argument(
-      _cffi_type(100), arg0, (char **)&x0);
+      _cffi_type(86), arg0, (char **)&x0);
   if (datasize != 0) {
     x0 = ((size_t)datasize) <= 640 ? (struct Pipeline *)alloca((size_t)datasize) : NULL;
-    if (_cffi_convert_array_argument(_cffi_type(100), arg0, (char **)&x0,
+    if (_cffi_convert_array_argument(_cffi_type(86), arg0, (char **)&x0,
             datasize, &large_args_free) < 0)
       return NULL;
   }
@@ -2544,6 +2509,42 @@ _cffi_f_destroy_pipeline(PyObject *self, PyObject *arg0)
 #  define _cffi_f_destroy_pipeline _cffi_d_destroy_pipeline
 #endif
 
+static void _cffi_d_destroy_render_target(struct RenderTarget * x0)
+{
+  destroy_render_target(x0);
+}
+#ifndef PYPY_VERSION
+static PyObject *
+_cffi_f_destroy_render_target(PyObject *self, PyObject *arg0)
+{
+  struct RenderTarget * x0;
+  Py_ssize_t datasize;
+  struct _cffi_freeme_s *large_args_free = NULL;
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(44), arg0, (char **)&x0);
+  if (datasize != 0) {
+    x0 = ((size_t)datasize) <= 640 ? (struct RenderTarget *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(44), arg0, (char **)&x0,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  Py_BEGIN_ALLOW_THREADS
+  _cffi_restore_errno();
+  { destroy_render_target(x0); }
+  _cffi_save_errno();
+  Py_END_ALLOW_THREADS
+
+  (void)self; /* unused */
+  if (large_args_free != NULL) _cffi_free_array_arguments(large_args_free);
+  Py_INCREF(Py_None);
+  return Py_None;
+}
+#else
+#  define _cffi_f_destroy_render_target _cffi_d_destroy_render_target
+#endif
+
 static void _cffi_d_destroy_texture(struct Texture * x0)
 {
   destroy_texture(x0);
@@ -2557,10 +2558,10 @@ _cffi_f_destroy_texture(PyObject *self, PyObject *arg0)
   struct _cffi_freeme_s *large_args_free = NULL;
 
   datasize = _cffi_prepare_pointer_call_argument(
-      _cffi_type(22), arg0, (char **)&x0);
+      _cffi_type(32), arg0, (char **)&x0);
   if (datasize != 0) {
     x0 = ((size_t)datasize) <= 640 ? (struct Texture *)alloca((size_t)datasize) : NULL;
-    if (_cffi_convert_array_argument(_cffi_type(22), arg0, (char **)&x0,
+    if (_cffi_convert_array_argument(_cffi_type(32), arg0, (char **)&x0,
             datasize, &large_args_free) < 0)
       return NULL;
   }
@@ -2578,6 +2579,42 @@ _cffi_f_destroy_texture(PyObject *self, PyObject *arg0)
 }
 #else
 #  define _cffi_f_destroy_texture _cffi_d_destroy_texture
+#endif
+
+static void _cffi_d_end_pass(struct RenderTarget * x0)
+{
+  end_pass(x0);
+}
+#ifndef PYPY_VERSION
+static PyObject *
+_cffi_f_end_pass(PyObject *self, PyObject *arg0)
+{
+  struct RenderTarget * x0;
+  Py_ssize_t datasize;
+  struct _cffi_freeme_s *large_args_free = NULL;
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(44), arg0, (char **)&x0);
+  if (datasize != 0) {
+    x0 = ((size_t)datasize) <= 640 ? (struct RenderTarget *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(44), arg0, (char **)&x0,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  Py_BEGIN_ALLOW_THREADS
+  _cffi_restore_errno();
+  { end_pass(x0); }
+  _cffi_save_errno();
+  Py_END_ALLOW_THREADS
+
+  (void)self; /* unused */
+  if (large_args_free != NULL) _cffi_free_array_arguments(large_args_free);
+  Py_INCREF(Py_None);
+  return Py_None;
+}
+#else
+#  define _cffi_f_end_pass _cffi_d_end_pass
 #endif
 
 static void _cffi_d_fail(int x0, char const * x1)
@@ -2603,10 +2640,10 @@ _cffi_f_fail(PyObject *self, PyObject *args)
     return NULL;
 
   datasize = _cffi_prepare_pointer_call_argument(
-      _cffi_type(41), arg1, (char **)&x1);
+      _cffi_type(47), arg1, (char **)&x1);
   if (datasize != 0) {
     x1 = ((size_t)datasize) <= 640 ? (char const *)alloca((size_t)datasize) : NULL;
-    if (_cffi_convert_array_argument(_cffi_type(41), arg1, (char **)&x1,
+    if (_cffi_convert_array_argument(_cffi_type(47), arg1, (char **)&x1,
             datasize, &large_args_free) < 0)
       return NULL;
   }
@@ -2648,1169 +2685,11 @@ _cffi_f_input_state(PyObject *self, PyObject *arg0)
   Py_END_ALLOW_THREADS
 
   (void)self; /* unused */
-  pyresult = _cffi_from_c_deref((char *)&result, _cffi_type(182));
+  pyresult = _cffi_from_c_deref((char *)&result, _cffi_type(147));
   return pyresult;
 }
 #else
 #  define _cffi_f_input_state _cffi_d_input_state
-#endif
-
-static void _cffi_d_push_constant_double(struct Pipeline * x0, char const * x1, double x2)
-{
-  push_constant_double(x0, x1, x2);
-}
-#ifndef PYPY_VERSION
-static PyObject *
-_cffi_f_push_constant_double(PyObject *self, PyObject *args)
-{
-  struct Pipeline * x0;
-  char const * x1;
-  double x2;
-  Py_ssize_t datasize;
-  struct _cffi_freeme_s *large_args_free = NULL;
-  PyObject *arg0;
-  PyObject *arg1;
-  PyObject *arg2;
-
-  if (!PyArg_UnpackTuple(args, "push_constant_double", 3, 3, &arg0, &arg1, &arg2))
-    return NULL;
-
-  datasize = _cffi_prepare_pointer_call_argument(
-      _cffi_type(100), arg0, (char **)&x0);
-  if (datasize != 0) {
-    x0 = ((size_t)datasize) <= 640 ? (struct Pipeline *)alloca((size_t)datasize) : NULL;
-    if (_cffi_convert_array_argument(_cffi_type(100), arg0, (char **)&x0,
-            datasize, &large_args_free) < 0)
-      return NULL;
-  }
-
-  datasize = _cffi_prepare_pointer_call_argument(
-      _cffi_type(41), arg1, (char **)&x1);
-  if (datasize != 0) {
-    x1 = ((size_t)datasize) <= 640 ? (char const *)alloca((size_t)datasize) : NULL;
-    if (_cffi_convert_array_argument(_cffi_type(41), arg1, (char **)&x1,
-            datasize, &large_args_free) < 0)
-      return NULL;
-  }
-
-  x2 = (double)_cffi_to_c_double(arg2);
-  if (x2 == (double)-1 && PyErr_Occurred())
-    return NULL;
-
-  Py_BEGIN_ALLOW_THREADS
-  _cffi_restore_errno();
-  { push_constant_double(x0, x1, x2); }
-  _cffi_save_errno();
-  Py_END_ALLOW_THREADS
-
-  (void)self; /* unused */
-  if (large_args_free != NULL) _cffi_free_array_arguments(large_args_free);
-  Py_INCREF(Py_None);
-  return Py_None;
-}
-#else
-#  define _cffi_f_push_constant_double _cffi_d_push_constant_double
-#endif
-
-static void _cffi_d_push_constant_dvec2(struct Pipeline * x0, char const * x1, double * x2)
-{
-  push_constant_dvec2(x0, x1, x2);
-}
-#ifndef PYPY_VERSION
-static PyObject *
-_cffi_f_push_constant_dvec2(PyObject *self, PyObject *args)
-{
-  struct Pipeline * x0;
-  char const * x1;
-  double * x2;
-  Py_ssize_t datasize;
-  struct _cffi_freeme_s *large_args_free = NULL;
-  PyObject *arg0;
-  PyObject *arg1;
-  PyObject *arg2;
-
-  if (!PyArg_UnpackTuple(args, "push_constant_dvec2", 3, 3, &arg0, &arg1, &arg2))
-    return NULL;
-
-  datasize = _cffi_prepare_pointer_call_argument(
-      _cffi_type(100), arg0, (char **)&x0);
-  if (datasize != 0) {
-    x0 = ((size_t)datasize) <= 640 ? (struct Pipeline *)alloca((size_t)datasize) : NULL;
-    if (_cffi_convert_array_argument(_cffi_type(100), arg0, (char **)&x0,
-            datasize, &large_args_free) < 0)
-      return NULL;
-  }
-
-  datasize = _cffi_prepare_pointer_call_argument(
-      _cffi_type(41), arg1, (char **)&x1);
-  if (datasize != 0) {
-    x1 = ((size_t)datasize) <= 640 ? (char const *)alloca((size_t)datasize) : NULL;
-    if (_cffi_convert_array_argument(_cffi_type(41), arg1, (char **)&x1,
-            datasize, &large_args_free) < 0)
-      return NULL;
-  }
-
-  datasize = _cffi_prepare_pointer_call_argument(
-      _cffi_type(105), arg2, (char **)&x2);
-  if (datasize != 0) {
-    x2 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
-    if (_cffi_convert_array_argument(_cffi_type(105), arg2, (char **)&x2,
-            datasize, &large_args_free) < 0)
-      return NULL;
-  }
-
-  Py_BEGIN_ALLOW_THREADS
-  _cffi_restore_errno();
-  { push_constant_dvec2(x0, x1, x2); }
-  _cffi_save_errno();
-  Py_END_ALLOW_THREADS
-
-  (void)self; /* unused */
-  if (large_args_free != NULL) _cffi_free_array_arguments(large_args_free);
-  Py_INCREF(Py_None);
-  return Py_None;
-}
-#else
-#  define _cffi_f_push_constant_dvec2 _cffi_d_push_constant_dvec2
-#endif
-
-static void _cffi_d_push_constant_dvec3(struct Pipeline * x0, char const * x1, double * x2)
-{
-  push_constant_dvec3(x0, x1, x2);
-}
-#ifndef PYPY_VERSION
-static PyObject *
-_cffi_f_push_constant_dvec3(PyObject *self, PyObject *args)
-{
-  struct Pipeline * x0;
-  char const * x1;
-  double * x2;
-  Py_ssize_t datasize;
-  struct _cffi_freeme_s *large_args_free = NULL;
-  PyObject *arg0;
-  PyObject *arg1;
-  PyObject *arg2;
-
-  if (!PyArg_UnpackTuple(args, "push_constant_dvec3", 3, 3, &arg0, &arg1, &arg2))
-    return NULL;
-
-  datasize = _cffi_prepare_pointer_call_argument(
-      _cffi_type(100), arg0, (char **)&x0);
-  if (datasize != 0) {
-    x0 = ((size_t)datasize) <= 640 ? (struct Pipeline *)alloca((size_t)datasize) : NULL;
-    if (_cffi_convert_array_argument(_cffi_type(100), arg0, (char **)&x0,
-            datasize, &large_args_free) < 0)
-      return NULL;
-  }
-
-  datasize = _cffi_prepare_pointer_call_argument(
-      _cffi_type(41), arg1, (char **)&x1);
-  if (datasize != 0) {
-    x1 = ((size_t)datasize) <= 640 ? (char const *)alloca((size_t)datasize) : NULL;
-    if (_cffi_convert_array_argument(_cffi_type(41), arg1, (char **)&x1,
-            datasize, &large_args_free) < 0)
-      return NULL;
-  }
-
-  datasize = _cffi_prepare_pointer_call_argument(
-      _cffi_type(105), arg2, (char **)&x2);
-  if (datasize != 0) {
-    x2 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
-    if (_cffi_convert_array_argument(_cffi_type(105), arg2, (char **)&x2,
-            datasize, &large_args_free) < 0)
-      return NULL;
-  }
-
-  Py_BEGIN_ALLOW_THREADS
-  _cffi_restore_errno();
-  { push_constant_dvec3(x0, x1, x2); }
-  _cffi_save_errno();
-  Py_END_ALLOW_THREADS
-
-  (void)self; /* unused */
-  if (large_args_free != NULL) _cffi_free_array_arguments(large_args_free);
-  Py_INCREF(Py_None);
-  return Py_None;
-}
-#else
-#  define _cffi_f_push_constant_dvec3 _cffi_d_push_constant_dvec3
-#endif
-
-static void _cffi_d_push_constant_dvec4(struct Pipeline * x0, char const * x1, double * x2)
-{
-  push_constant_dvec4(x0, x1, x2);
-}
-#ifndef PYPY_VERSION
-static PyObject *
-_cffi_f_push_constant_dvec4(PyObject *self, PyObject *args)
-{
-  struct Pipeline * x0;
-  char const * x1;
-  double * x2;
-  Py_ssize_t datasize;
-  struct _cffi_freeme_s *large_args_free = NULL;
-  PyObject *arg0;
-  PyObject *arg1;
-  PyObject *arg2;
-
-  if (!PyArg_UnpackTuple(args, "push_constant_dvec4", 3, 3, &arg0, &arg1, &arg2))
-    return NULL;
-
-  datasize = _cffi_prepare_pointer_call_argument(
-      _cffi_type(100), arg0, (char **)&x0);
-  if (datasize != 0) {
-    x0 = ((size_t)datasize) <= 640 ? (struct Pipeline *)alloca((size_t)datasize) : NULL;
-    if (_cffi_convert_array_argument(_cffi_type(100), arg0, (char **)&x0,
-            datasize, &large_args_free) < 0)
-      return NULL;
-  }
-
-  datasize = _cffi_prepare_pointer_call_argument(
-      _cffi_type(41), arg1, (char **)&x1);
-  if (datasize != 0) {
-    x1 = ((size_t)datasize) <= 640 ? (char const *)alloca((size_t)datasize) : NULL;
-    if (_cffi_convert_array_argument(_cffi_type(41), arg1, (char **)&x1,
-            datasize, &large_args_free) < 0)
-      return NULL;
-  }
-
-  datasize = _cffi_prepare_pointer_call_argument(
-      _cffi_type(105), arg2, (char **)&x2);
-  if (datasize != 0) {
-    x2 = ((size_t)datasize) <= 640 ? (double *)alloca((size_t)datasize) : NULL;
-    if (_cffi_convert_array_argument(_cffi_type(105), arg2, (char **)&x2,
-            datasize, &large_args_free) < 0)
-      return NULL;
-  }
-
-  Py_BEGIN_ALLOW_THREADS
-  _cffi_restore_errno();
-  { push_constant_dvec4(x0, x1, x2); }
-  _cffi_save_errno();
-  Py_END_ALLOW_THREADS
-
-  (void)self; /* unused */
-  if (large_args_free != NULL) _cffi_free_array_arguments(large_args_free);
-  Py_INCREF(Py_None);
-  return Py_None;
-}
-#else
-#  define _cffi_f_push_constant_dvec4 _cffi_d_push_constant_dvec4
-#endif
-
-static void _cffi_d_push_constant_float(struct Pipeline * x0, char const * x1, float x2)
-{
-  push_constant_float(x0, x1, x2);
-}
-#ifndef PYPY_VERSION
-static PyObject *
-_cffi_f_push_constant_float(PyObject *self, PyObject *args)
-{
-  struct Pipeline * x0;
-  char const * x1;
-  float x2;
-  Py_ssize_t datasize;
-  struct _cffi_freeme_s *large_args_free = NULL;
-  PyObject *arg0;
-  PyObject *arg1;
-  PyObject *arg2;
-
-  if (!PyArg_UnpackTuple(args, "push_constant_float", 3, 3, &arg0, &arg1, &arg2))
-    return NULL;
-
-  datasize = _cffi_prepare_pointer_call_argument(
-      _cffi_type(100), arg0, (char **)&x0);
-  if (datasize != 0) {
-    x0 = ((size_t)datasize) <= 640 ? (struct Pipeline *)alloca((size_t)datasize) : NULL;
-    if (_cffi_convert_array_argument(_cffi_type(100), arg0, (char **)&x0,
-            datasize, &large_args_free) < 0)
-      return NULL;
-  }
-
-  datasize = _cffi_prepare_pointer_call_argument(
-      _cffi_type(41), arg1, (char **)&x1);
-  if (datasize != 0) {
-    x1 = ((size_t)datasize) <= 640 ? (char const *)alloca((size_t)datasize) : NULL;
-    if (_cffi_convert_array_argument(_cffi_type(41), arg1, (char **)&x1,
-            datasize, &large_args_free) < 0)
-      return NULL;
-  }
-
-  x2 = (float)_cffi_to_c_float(arg2);
-  if (x2 == (float)-1 && PyErr_Occurred())
-    return NULL;
-
-  Py_BEGIN_ALLOW_THREADS
-  _cffi_restore_errno();
-  { push_constant_float(x0, x1, x2); }
-  _cffi_save_errno();
-  Py_END_ALLOW_THREADS
-
-  (void)self; /* unused */
-  if (large_args_free != NULL) _cffi_free_array_arguments(large_args_free);
-  Py_INCREF(Py_None);
-  return Py_None;
-}
-#else
-#  define _cffi_f_push_constant_float _cffi_d_push_constant_float
-#endif
-
-static void _cffi_d_push_constant_int(struct Pipeline * x0, char const * x1, int x2)
-{
-  push_constant_int(x0, x1, x2);
-}
-#ifndef PYPY_VERSION
-static PyObject *
-_cffi_f_push_constant_int(PyObject *self, PyObject *args)
-{
-  struct Pipeline * x0;
-  char const * x1;
-  int x2;
-  Py_ssize_t datasize;
-  struct _cffi_freeme_s *large_args_free = NULL;
-  PyObject *arg0;
-  PyObject *arg1;
-  PyObject *arg2;
-
-  if (!PyArg_UnpackTuple(args, "push_constant_int", 3, 3, &arg0, &arg1, &arg2))
-    return NULL;
-
-  datasize = _cffi_prepare_pointer_call_argument(
-      _cffi_type(100), arg0, (char **)&x0);
-  if (datasize != 0) {
-    x0 = ((size_t)datasize) <= 640 ? (struct Pipeline *)alloca((size_t)datasize) : NULL;
-    if (_cffi_convert_array_argument(_cffi_type(100), arg0, (char **)&x0,
-            datasize, &large_args_free) < 0)
-      return NULL;
-  }
-
-  datasize = _cffi_prepare_pointer_call_argument(
-      _cffi_type(41), arg1, (char **)&x1);
-  if (datasize != 0) {
-    x1 = ((size_t)datasize) <= 640 ? (char const *)alloca((size_t)datasize) : NULL;
-    if (_cffi_convert_array_argument(_cffi_type(41), arg1, (char **)&x1,
-            datasize, &large_args_free) < 0)
-      return NULL;
-  }
-
-  x2 = _cffi_to_c_int(arg2, int);
-  if (x2 == (int)-1 && PyErr_Occurred())
-    return NULL;
-
-  Py_BEGIN_ALLOW_THREADS
-  _cffi_restore_errno();
-  { push_constant_int(x0, x1, x2); }
-  _cffi_save_errno();
-  Py_END_ALLOW_THREADS
-
-  (void)self; /* unused */
-  if (large_args_free != NULL) _cffi_free_array_arguments(large_args_free);
-  Py_INCREF(Py_None);
-  return Py_None;
-}
-#else
-#  define _cffi_f_push_constant_int _cffi_d_push_constant_int
-#endif
-
-static void _cffi_d_push_constant_ivec2(struct Pipeline * x0, char const * x1, int * x2)
-{
-  push_constant_ivec2(x0, x1, x2);
-}
-#ifndef PYPY_VERSION
-static PyObject *
-_cffi_f_push_constant_ivec2(PyObject *self, PyObject *args)
-{
-  struct Pipeline * x0;
-  char const * x1;
-  int * x2;
-  Py_ssize_t datasize;
-  struct _cffi_freeme_s *large_args_free = NULL;
-  PyObject *arg0;
-  PyObject *arg1;
-  PyObject *arg2;
-
-  if (!PyArg_UnpackTuple(args, "push_constant_ivec2", 3, 3, &arg0, &arg1, &arg2))
-    return NULL;
-
-  datasize = _cffi_prepare_pointer_call_argument(
-      _cffi_type(100), arg0, (char **)&x0);
-  if (datasize != 0) {
-    x0 = ((size_t)datasize) <= 640 ? (struct Pipeline *)alloca((size_t)datasize) : NULL;
-    if (_cffi_convert_array_argument(_cffi_type(100), arg0, (char **)&x0,
-            datasize, &large_args_free) < 0)
-      return NULL;
-  }
-
-  datasize = _cffi_prepare_pointer_call_argument(
-      _cffi_type(41), arg1, (char **)&x1);
-  if (datasize != 0) {
-    x1 = ((size_t)datasize) <= 640 ? (char const *)alloca((size_t)datasize) : NULL;
-    if (_cffi_convert_array_argument(_cffi_type(41), arg1, (char **)&x1,
-            datasize, &large_args_free) < 0)
-      return NULL;
-  }
-
-  datasize = _cffi_prepare_pointer_call_argument(
-      _cffi_type(52), arg2, (char **)&x2);
-  if (datasize != 0) {
-    x2 = ((size_t)datasize) <= 640 ? (int *)alloca((size_t)datasize) : NULL;
-    if (_cffi_convert_array_argument(_cffi_type(52), arg2, (char **)&x2,
-            datasize, &large_args_free) < 0)
-      return NULL;
-  }
-
-  Py_BEGIN_ALLOW_THREADS
-  _cffi_restore_errno();
-  { push_constant_ivec2(x0, x1, x2); }
-  _cffi_save_errno();
-  Py_END_ALLOW_THREADS
-
-  (void)self; /* unused */
-  if (large_args_free != NULL) _cffi_free_array_arguments(large_args_free);
-  Py_INCREF(Py_None);
-  return Py_None;
-}
-#else
-#  define _cffi_f_push_constant_ivec2 _cffi_d_push_constant_ivec2
-#endif
-
-static void _cffi_d_push_constant_ivec3(struct Pipeline * x0, char const * x1, int * x2)
-{
-  push_constant_ivec3(x0, x1, x2);
-}
-#ifndef PYPY_VERSION
-static PyObject *
-_cffi_f_push_constant_ivec3(PyObject *self, PyObject *args)
-{
-  struct Pipeline * x0;
-  char const * x1;
-  int * x2;
-  Py_ssize_t datasize;
-  struct _cffi_freeme_s *large_args_free = NULL;
-  PyObject *arg0;
-  PyObject *arg1;
-  PyObject *arg2;
-
-  if (!PyArg_UnpackTuple(args, "push_constant_ivec3", 3, 3, &arg0, &arg1, &arg2))
-    return NULL;
-
-  datasize = _cffi_prepare_pointer_call_argument(
-      _cffi_type(100), arg0, (char **)&x0);
-  if (datasize != 0) {
-    x0 = ((size_t)datasize) <= 640 ? (struct Pipeline *)alloca((size_t)datasize) : NULL;
-    if (_cffi_convert_array_argument(_cffi_type(100), arg0, (char **)&x0,
-            datasize, &large_args_free) < 0)
-      return NULL;
-  }
-
-  datasize = _cffi_prepare_pointer_call_argument(
-      _cffi_type(41), arg1, (char **)&x1);
-  if (datasize != 0) {
-    x1 = ((size_t)datasize) <= 640 ? (char const *)alloca((size_t)datasize) : NULL;
-    if (_cffi_convert_array_argument(_cffi_type(41), arg1, (char **)&x1,
-            datasize, &large_args_free) < 0)
-      return NULL;
-  }
-
-  datasize = _cffi_prepare_pointer_call_argument(
-      _cffi_type(52), arg2, (char **)&x2);
-  if (datasize != 0) {
-    x2 = ((size_t)datasize) <= 640 ? (int *)alloca((size_t)datasize) : NULL;
-    if (_cffi_convert_array_argument(_cffi_type(52), arg2, (char **)&x2,
-            datasize, &large_args_free) < 0)
-      return NULL;
-  }
-
-  Py_BEGIN_ALLOW_THREADS
-  _cffi_restore_errno();
-  { push_constant_ivec3(x0, x1, x2); }
-  _cffi_save_errno();
-  Py_END_ALLOW_THREADS
-
-  (void)self; /* unused */
-  if (large_args_free != NULL) _cffi_free_array_arguments(large_args_free);
-  Py_INCREF(Py_None);
-  return Py_None;
-}
-#else
-#  define _cffi_f_push_constant_ivec3 _cffi_d_push_constant_ivec3
-#endif
-
-static void _cffi_d_push_constant_ivec4(struct Pipeline * x0, char const * x1, int * x2)
-{
-  push_constant_ivec4(x0, x1, x2);
-}
-#ifndef PYPY_VERSION
-static PyObject *
-_cffi_f_push_constant_ivec4(PyObject *self, PyObject *args)
-{
-  struct Pipeline * x0;
-  char const * x1;
-  int * x2;
-  Py_ssize_t datasize;
-  struct _cffi_freeme_s *large_args_free = NULL;
-  PyObject *arg0;
-  PyObject *arg1;
-  PyObject *arg2;
-
-  if (!PyArg_UnpackTuple(args, "push_constant_ivec4", 3, 3, &arg0, &arg1, &arg2))
-    return NULL;
-
-  datasize = _cffi_prepare_pointer_call_argument(
-      _cffi_type(100), arg0, (char **)&x0);
-  if (datasize != 0) {
-    x0 = ((size_t)datasize) <= 640 ? (struct Pipeline *)alloca((size_t)datasize) : NULL;
-    if (_cffi_convert_array_argument(_cffi_type(100), arg0, (char **)&x0,
-            datasize, &large_args_free) < 0)
-      return NULL;
-  }
-
-  datasize = _cffi_prepare_pointer_call_argument(
-      _cffi_type(41), arg1, (char **)&x1);
-  if (datasize != 0) {
-    x1 = ((size_t)datasize) <= 640 ? (char const *)alloca((size_t)datasize) : NULL;
-    if (_cffi_convert_array_argument(_cffi_type(41), arg1, (char **)&x1,
-            datasize, &large_args_free) < 0)
-      return NULL;
-  }
-
-  datasize = _cffi_prepare_pointer_call_argument(
-      _cffi_type(52), arg2, (char **)&x2);
-  if (datasize != 0) {
-    x2 = ((size_t)datasize) <= 640 ? (int *)alloca((size_t)datasize) : NULL;
-    if (_cffi_convert_array_argument(_cffi_type(52), arg2, (char **)&x2,
-            datasize, &large_args_free) < 0)
-      return NULL;
-  }
-
-  Py_BEGIN_ALLOW_THREADS
-  _cffi_restore_errno();
-  { push_constant_ivec4(x0, x1, x2); }
-  _cffi_save_errno();
-  Py_END_ALLOW_THREADS
-
-  (void)self; /* unused */
-  if (large_args_free != NULL) _cffi_free_array_arguments(large_args_free);
-  Py_INCREF(Py_None);
-  return Py_None;
-}
-#else
-#  define _cffi_f_push_constant_ivec4 _cffi_d_push_constant_ivec4
-#endif
-
-static void _cffi_d_push_constant_mat2(struct Pipeline * x0, char const * x1, float * x2)
-{
-  push_constant_mat2(x0, x1, x2);
-}
-#ifndef PYPY_VERSION
-static PyObject *
-_cffi_f_push_constant_mat2(PyObject *self, PyObject *args)
-{
-  struct Pipeline * x0;
-  char const * x1;
-  float * x2;
-  Py_ssize_t datasize;
-  struct _cffi_freeme_s *large_args_free = NULL;
-  PyObject *arg0;
-  PyObject *arg1;
-  PyObject *arg2;
-
-  if (!PyArg_UnpackTuple(args, "push_constant_mat2", 3, 3, &arg0, &arg1, &arg2))
-    return NULL;
-
-  datasize = _cffi_prepare_pointer_call_argument(
-      _cffi_type(100), arg0, (char **)&x0);
-  if (datasize != 0) {
-    x0 = ((size_t)datasize) <= 640 ? (struct Pipeline *)alloca((size_t)datasize) : NULL;
-    if (_cffi_convert_array_argument(_cffi_type(100), arg0, (char **)&x0,
-            datasize, &large_args_free) < 0)
-      return NULL;
-  }
-
-  datasize = _cffi_prepare_pointer_call_argument(
-      _cffi_type(41), arg1, (char **)&x1);
-  if (datasize != 0) {
-    x1 = ((size_t)datasize) <= 640 ? (char const *)alloca((size_t)datasize) : NULL;
-    if (_cffi_convert_array_argument(_cffi_type(41), arg1, (char **)&x1,
-            datasize, &large_args_free) < 0)
-      return NULL;
-  }
-
-  datasize = _cffi_prepare_pointer_call_argument(
-      _cffi_type(13), arg2, (char **)&x2);
-  if (datasize != 0) {
-    x2 = ((size_t)datasize) <= 640 ? (float *)alloca((size_t)datasize) : NULL;
-    if (_cffi_convert_array_argument(_cffi_type(13), arg2, (char **)&x2,
-            datasize, &large_args_free) < 0)
-      return NULL;
-  }
-
-  Py_BEGIN_ALLOW_THREADS
-  _cffi_restore_errno();
-  { push_constant_mat2(x0, x1, x2); }
-  _cffi_save_errno();
-  Py_END_ALLOW_THREADS
-
-  (void)self; /* unused */
-  if (large_args_free != NULL) _cffi_free_array_arguments(large_args_free);
-  Py_INCREF(Py_None);
-  return Py_None;
-}
-#else
-#  define _cffi_f_push_constant_mat2 _cffi_d_push_constant_mat2
-#endif
-
-static void _cffi_d_push_constant_mat3(struct Pipeline * x0, char const * x1, float * x2)
-{
-  push_constant_mat3(x0, x1, x2);
-}
-#ifndef PYPY_VERSION
-static PyObject *
-_cffi_f_push_constant_mat3(PyObject *self, PyObject *args)
-{
-  struct Pipeline * x0;
-  char const * x1;
-  float * x2;
-  Py_ssize_t datasize;
-  struct _cffi_freeme_s *large_args_free = NULL;
-  PyObject *arg0;
-  PyObject *arg1;
-  PyObject *arg2;
-
-  if (!PyArg_UnpackTuple(args, "push_constant_mat3", 3, 3, &arg0, &arg1, &arg2))
-    return NULL;
-
-  datasize = _cffi_prepare_pointer_call_argument(
-      _cffi_type(100), arg0, (char **)&x0);
-  if (datasize != 0) {
-    x0 = ((size_t)datasize) <= 640 ? (struct Pipeline *)alloca((size_t)datasize) : NULL;
-    if (_cffi_convert_array_argument(_cffi_type(100), arg0, (char **)&x0,
-            datasize, &large_args_free) < 0)
-      return NULL;
-  }
-
-  datasize = _cffi_prepare_pointer_call_argument(
-      _cffi_type(41), arg1, (char **)&x1);
-  if (datasize != 0) {
-    x1 = ((size_t)datasize) <= 640 ? (char const *)alloca((size_t)datasize) : NULL;
-    if (_cffi_convert_array_argument(_cffi_type(41), arg1, (char **)&x1,
-            datasize, &large_args_free) < 0)
-      return NULL;
-  }
-
-  datasize = _cffi_prepare_pointer_call_argument(
-      _cffi_type(13), arg2, (char **)&x2);
-  if (datasize != 0) {
-    x2 = ((size_t)datasize) <= 640 ? (float *)alloca((size_t)datasize) : NULL;
-    if (_cffi_convert_array_argument(_cffi_type(13), arg2, (char **)&x2,
-            datasize, &large_args_free) < 0)
-      return NULL;
-  }
-
-  Py_BEGIN_ALLOW_THREADS
-  _cffi_restore_errno();
-  { push_constant_mat3(x0, x1, x2); }
-  _cffi_save_errno();
-  Py_END_ALLOW_THREADS
-
-  (void)self; /* unused */
-  if (large_args_free != NULL) _cffi_free_array_arguments(large_args_free);
-  Py_INCREF(Py_None);
-  return Py_None;
-}
-#else
-#  define _cffi_f_push_constant_mat3 _cffi_d_push_constant_mat3
-#endif
-
-static void _cffi_d_push_constant_mat4(struct Pipeline * x0, char const * x1, float * x2)
-{
-  push_constant_mat4(x0, x1, x2);
-}
-#ifndef PYPY_VERSION
-static PyObject *
-_cffi_f_push_constant_mat4(PyObject *self, PyObject *args)
-{
-  struct Pipeline * x0;
-  char const * x1;
-  float * x2;
-  Py_ssize_t datasize;
-  struct _cffi_freeme_s *large_args_free = NULL;
-  PyObject *arg0;
-  PyObject *arg1;
-  PyObject *arg2;
-
-  if (!PyArg_UnpackTuple(args, "push_constant_mat4", 3, 3, &arg0, &arg1, &arg2))
-    return NULL;
-
-  datasize = _cffi_prepare_pointer_call_argument(
-      _cffi_type(100), arg0, (char **)&x0);
-  if (datasize != 0) {
-    x0 = ((size_t)datasize) <= 640 ? (struct Pipeline *)alloca((size_t)datasize) : NULL;
-    if (_cffi_convert_array_argument(_cffi_type(100), arg0, (char **)&x0,
-            datasize, &large_args_free) < 0)
-      return NULL;
-  }
-
-  datasize = _cffi_prepare_pointer_call_argument(
-      _cffi_type(41), arg1, (char **)&x1);
-  if (datasize != 0) {
-    x1 = ((size_t)datasize) <= 640 ? (char const *)alloca((size_t)datasize) : NULL;
-    if (_cffi_convert_array_argument(_cffi_type(41), arg1, (char **)&x1,
-            datasize, &large_args_free) < 0)
-      return NULL;
-  }
-
-  datasize = _cffi_prepare_pointer_call_argument(
-      _cffi_type(13), arg2, (char **)&x2);
-  if (datasize != 0) {
-    x2 = ((size_t)datasize) <= 640 ? (float *)alloca((size_t)datasize) : NULL;
-    if (_cffi_convert_array_argument(_cffi_type(13), arg2, (char **)&x2,
-            datasize, &large_args_free) < 0)
-      return NULL;
-  }
-
-  Py_BEGIN_ALLOW_THREADS
-  _cffi_restore_errno();
-  { push_constant_mat4(x0, x1, x2); }
-  _cffi_save_errno();
-  Py_END_ALLOW_THREADS
-
-  (void)self; /* unused */
-  if (large_args_free != NULL) _cffi_free_array_arguments(large_args_free);
-  Py_INCREF(Py_None);
-  return Py_None;
-}
-#else
-#  define _cffi_f_push_constant_mat4 _cffi_d_push_constant_mat4
-#endif
-
-static void _cffi_d_push_constant_uint(struct Pipeline * x0, char const * x1, unsigned int x2)
-{
-  push_constant_uint(x0, x1, x2);
-}
-#ifndef PYPY_VERSION
-static PyObject *
-_cffi_f_push_constant_uint(PyObject *self, PyObject *args)
-{
-  struct Pipeline * x0;
-  char const * x1;
-  unsigned int x2;
-  Py_ssize_t datasize;
-  struct _cffi_freeme_s *large_args_free = NULL;
-  PyObject *arg0;
-  PyObject *arg1;
-  PyObject *arg2;
-
-  if (!PyArg_UnpackTuple(args, "push_constant_uint", 3, 3, &arg0, &arg1, &arg2))
-    return NULL;
-
-  datasize = _cffi_prepare_pointer_call_argument(
-      _cffi_type(100), arg0, (char **)&x0);
-  if (datasize != 0) {
-    x0 = ((size_t)datasize) <= 640 ? (struct Pipeline *)alloca((size_t)datasize) : NULL;
-    if (_cffi_convert_array_argument(_cffi_type(100), arg0, (char **)&x0,
-            datasize, &large_args_free) < 0)
-      return NULL;
-  }
-
-  datasize = _cffi_prepare_pointer_call_argument(
-      _cffi_type(41), arg1, (char **)&x1);
-  if (datasize != 0) {
-    x1 = ((size_t)datasize) <= 640 ? (char const *)alloca((size_t)datasize) : NULL;
-    if (_cffi_convert_array_argument(_cffi_type(41), arg1, (char **)&x1,
-            datasize, &large_args_free) < 0)
-      return NULL;
-  }
-
-  x2 = _cffi_to_c_int(arg2, unsigned int);
-  if (x2 == (unsigned int)-1 && PyErr_Occurred())
-    return NULL;
-
-  Py_BEGIN_ALLOW_THREADS
-  _cffi_restore_errno();
-  { push_constant_uint(x0, x1, x2); }
-  _cffi_save_errno();
-  Py_END_ALLOW_THREADS
-
-  (void)self; /* unused */
-  if (large_args_free != NULL) _cffi_free_array_arguments(large_args_free);
-  Py_INCREF(Py_None);
-  return Py_None;
-}
-#else
-#  define _cffi_f_push_constant_uint _cffi_d_push_constant_uint
-#endif
-
-static void _cffi_d_push_constant_uvec2(struct Pipeline * x0, char const * x1, unsigned int * x2)
-{
-  push_constant_uvec2(x0, x1, x2);
-}
-#ifndef PYPY_VERSION
-static PyObject *
-_cffi_f_push_constant_uvec2(PyObject *self, PyObject *args)
-{
-  struct Pipeline * x0;
-  char const * x1;
-  unsigned int * x2;
-  Py_ssize_t datasize;
-  struct _cffi_freeme_s *large_args_free = NULL;
-  PyObject *arg0;
-  PyObject *arg1;
-  PyObject *arg2;
-
-  if (!PyArg_UnpackTuple(args, "push_constant_uvec2", 3, 3, &arg0, &arg1, &arg2))
-    return NULL;
-
-  datasize = _cffi_prepare_pointer_call_argument(
-      _cffi_type(100), arg0, (char **)&x0);
-  if (datasize != 0) {
-    x0 = ((size_t)datasize) <= 640 ? (struct Pipeline *)alloca((size_t)datasize) : NULL;
-    if (_cffi_convert_array_argument(_cffi_type(100), arg0, (char **)&x0,
-            datasize, &large_args_free) < 0)
-      return NULL;
-  }
-
-  datasize = _cffi_prepare_pointer_call_argument(
-      _cffi_type(41), arg1, (char **)&x1);
-  if (datasize != 0) {
-    x1 = ((size_t)datasize) <= 640 ? (char const *)alloca((size_t)datasize) : NULL;
-    if (_cffi_convert_array_argument(_cffi_type(41), arg1, (char **)&x1,
-            datasize, &large_args_free) < 0)
-      return NULL;
-  }
-
-  datasize = _cffi_prepare_pointer_call_argument(
-      _cffi_type(17), arg2, (char **)&x2);
-  if (datasize != 0) {
-    x2 = ((size_t)datasize) <= 640 ? (unsigned int *)alloca((size_t)datasize) : NULL;
-    if (_cffi_convert_array_argument(_cffi_type(17), arg2, (char **)&x2,
-            datasize, &large_args_free) < 0)
-      return NULL;
-  }
-
-  Py_BEGIN_ALLOW_THREADS
-  _cffi_restore_errno();
-  { push_constant_uvec2(x0, x1, x2); }
-  _cffi_save_errno();
-  Py_END_ALLOW_THREADS
-
-  (void)self; /* unused */
-  if (large_args_free != NULL) _cffi_free_array_arguments(large_args_free);
-  Py_INCREF(Py_None);
-  return Py_None;
-}
-#else
-#  define _cffi_f_push_constant_uvec2 _cffi_d_push_constant_uvec2
-#endif
-
-static void _cffi_d_push_constant_uvec3(struct Pipeline * x0, char const * x1, unsigned int * x2)
-{
-  push_constant_uvec3(x0, x1, x2);
-}
-#ifndef PYPY_VERSION
-static PyObject *
-_cffi_f_push_constant_uvec3(PyObject *self, PyObject *args)
-{
-  struct Pipeline * x0;
-  char const * x1;
-  unsigned int * x2;
-  Py_ssize_t datasize;
-  struct _cffi_freeme_s *large_args_free = NULL;
-  PyObject *arg0;
-  PyObject *arg1;
-  PyObject *arg2;
-
-  if (!PyArg_UnpackTuple(args, "push_constant_uvec3", 3, 3, &arg0, &arg1, &arg2))
-    return NULL;
-
-  datasize = _cffi_prepare_pointer_call_argument(
-      _cffi_type(100), arg0, (char **)&x0);
-  if (datasize != 0) {
-    x0 = ((size_t)datasize) <= 640 ? (struct Pipeline *)alloca((size_t)datasize) : NULL;
-    if (_cffi_convert_array_argument(_cffi_type(100), arg0, (char **)&x0,
-            datasize, &large_args_free) < 0)
-      return NULL;
-  }
-
-  datasize = _cffi_prepare_pointer_call_argument(
-      _cffi_type(41), arg1, (char **)&x1);
-  if (datasize != 0) {
-    x1 = ((size_t)datasize) <= 640 ? (char const *)alloca((size_t)datasize) : NULL;
-    if (_cffi_convert_array_argument(_cffi_type(41), arg1, (char **)&x1,
-            datasize, &large_args_free) < 0)
-      return NULL;
-  }
-
-  datasize = _cffi_prepare_pointer_call_argument(
-      _cffi_type(17), arg2, (char **)&x2);
-  if (datasize != 0) {
-    x2 = ((size_t)datasize) <= 640 ? (unsigned int *)alloca((size_t)datasize) : NULL;
-    if (_cffi_convert_array_argument(_cffi_type(17), arg2, (char **)&x2,
-            datasize, &large_args_free) < 0)
-      return NULL;
-  }
-
-  Py_BEGIN_ALLOW_THREADS
-  _cffi_restore_errno();
-  { push_constant_uvec3(x0, x1, x2); }
-  _cffi_save_errno();
-  Py_END_ALLOW_THREADS
-
-  (void)self; /* unused */
-  if (large_args_free != NULL) _cffi_free_array_arguments(large_args_free);
-  Py_INCREF(Py_None);
-  return Py_None;
-}
-#else
-#  define _cffi_f_push_constant_uvec3 _cffi_d_push_constant_uvec3
-#endif
-
-static void _cffi_d_push_constant_uvec4(struct Pipeline * x0, char const * x1, unsigned int * x2)
-{
-  push_constant_uvec4(x0, x1, x2);
-}
-#ifndef PYPY_VERSION
-static PyObject *
-_cffi_f_push_constant_uvec4(PyObject *self, PyObject *args)
-{
-  struct Pipeline * x0;
-  char const * x1;
-  unsigned int * x2;
-  Py_ssize_t datasize;
-  struct _cffi_freeme_s *large_args_free = NULL;
-  PyObject *arg0;
-  PyObject *arg1;
-  PyObject *arg2;
-
-  if (!PyArg_UnpackTuple(args, "push_constant_uvec4", 3, 3, &arg0, &arg1, &arg2))
-    return NULL;
-
-  datasize = _cffi_prepare_pointer_call_argument(
-      _cffi_type(100), arg0, (char **)&x0);
-  if (datasize != 0) {
-    x0 = ((size_t)datasize) <= 640 ? (struct Pipeline *)alloca((size_t)datasize) : NULL;
-    if (_cffi_convert_array_argument(_cffi_type(100), arg0, (char **)&x0,
-            datasize, &large_args_free) < 0)
-      return NULL;
-  }
-
-  datasize = _cffi_prepare_pointer_call_argument(
-      _cffi_type(41), arg1, (char **)&x1);
-  if (datasize != 0) {
-    x1 = ((size_t)datasize) <= 640 ? (char const *)alloca((size_t)datasize) : NULL;
-    if (_cffi_convert_array_argument(_cffi_type(41), arg1, (char **)&x1,
-            datasize, &large_args_free) < 0)
-      return NULL;
-  }
-
-  datasize = _cffi_prepare_pointer_call_argument(
-      _cffi_type(17), arg2, (char **)&x2);
-  if (datasize != 0) {
-    x2 = ((size_t)datasize) <= 640 ? (unsigned int *)alloca((size_t)datasize) : NULL;
-    if (_cffi_convert_array_argument(_cffi_type(17), arg2, (char **)&x2,
-            datasize, &large_args_free) < 0)
-      return NULL;
-  }
-
-  Py_BEGIN_ALLOW_THREADS
-  _cffi_restore_errno();
-  { push_constant_uvec4(x0, x1, x2); }
-  _cffi_save_errno();
-  Py_END_ALLOW_THREADS
-
-  (void)self; /* unused */
-  if (large_args_free != NULL) _cffi_free_array_arguments(large_args_free);
-  Py_INCREF(Py_None);
-  return Py_None;
-}
-#else
-#  define _cffi_f_push_constant_uvec4 _cffi_d_push_constant_uvec4
-#endif
-
-static void _cffi_d_push_constant_vec2(struct Pipeline * x0, char const * x1, float * x2)
-{
-  push_constant_vec2(x0, x1, x2);
-}
-#ifndef PYPY_VERSION
-static PyObject *
-_cffi_f_push_constant_vec2(PyObject *self, PyObject *args)
-{
-  struct Pipeline * x0;
-  char const * x1;
-  float * x2;
-  Py_ssize_t datasize;
-  struct _cffi_freeme_s *large_args_free = NULL;
-  PyObject *arg0;
-  PyObject *arg1;
-  PyObject *arg2;
-
-  if (!PyArg_UnpackTuple(args, "push_constant_vec2", 3, 3, &arg0, &arg1, &arg2))
-    return NULL;
-
-  datasize = _cffi_prepare_pointer_call_argument(
-      _cffi_type(100), arg0, (char **)&x0);
-  if (datasize != 0) {
-    x0 = ((size_t)datasize) <= 640 ? (struct Pipeline *)alloca((size_t)datasize) : NULL;
-    if (_cffi_convert_array_argument(_cffi_type(100), arg0, (char **)&x0,
-            datasize, &large_args_free) < 0)
-      return NULL;
-  }
-
-  datasize = _cffi_prepare_pointer_call_argument(
-      _cffi_type(41), arg1, (char **)&x1);
-  if (datasize != 0) {
-    x1 = ((size_t)datasize) <= 640 ? (char const *)alloca((size_t)datasize) : NULL;
-    if (_cffi_convert_array_argument(_cffi_type(41), arg1, (char **)&x1,
-            datasize, &large_args_free) < 0)
-      return NULL;
-  }
-
-  datasize = _cffi_prepare_pointer_call_argument(
-      _cffi_type(13), arg2, (char **)&x2);
-  if (datasize != 0) {
-    x2 = ((size_t)datasize) <= 640 ? (float *)alloca((size_t)datasize) : NULL;
-    if (_cffi_convert_array_argument(_cffi_type(13), arg2, (char **)&x2,
-            datasize, &large_args_free) < 0)
-      return NULL;
-  }
-
-  Py_BEGIN_ALLOW_THREADS
-  _cffi_restore_errno();
-  { push_constant_vec2(x0, x1, x2); }
-  _cffi_save_errno();
-  Py_END_ALLOW_THREADS
-
-  (void)self; /* unused */
-  if (large_args_free != NULL) _cffi_free_array_arguments(large_args_free);
-  Py_INCREF(Py_None);
-  return Py_None;
-}
-#else
-#  define _cffi_f_push_constant_vec2 _cffi_d_push_constant_vec2
-#endif
-
-static void _cffi_d_push_constant_vec3(struct Pipeline * x0, char const * x1, float * x2)
-{
-  push_constant_vec3(x0, x1, x2);
-}
-#ifndef PYPY_VERSION
-static PyObject *
-_cffi_f_push_constant_vec3(PyObject *self, PyObject *args)
-{
-  struct Pipeline * x0;
-  char const * x1;
-  float * x2;
-  Py_ssize_t datasize;
-  struct _cffi_freeme_s *large_args_free = NULL;
-  PyObject *arg0;
-  PyObject *arg1;
-  PyObject *arg2;
-
-  if (!PyArg_UnpackTuple(args, "push_constant_vec3", 3, 3, &arg0, &arg1, &arg2))
-    return NULL;
-
-  datasize = _cffi_prepare_pointer_call_argument(
-      _cffi_type(100), arg0, (char **)&x0);
-  if (datasize != 0) {
-    x0 = ((size_t)datasize) <= 640 ? (struct Pipeline *)alloca((size_t)datasize) : NULL;
-    if (_cffi_convert_array_argument(_cffi_type(100), arg0, (char **)&x0,
-            datasize, &large_args_free) < 0)
-      return NULL;
-  }
-
-  datasize = _cffi_prepare_pointer_call_argument(
-      _cffi_type(41), arg1, (char **)&x1);
-  if (datasize != 0) {
-    x1 = ((size_t)datasize) <= 640 ? (char const *)alloca((size_t)datasize) : NULL;
-    if (_cffi_convert_array_argument(_cffi_type(41), arg1, (char **)&x1,
-            datasize, &large_args_free) < 0)
-      return NULL;
-  }
-
-  datasize = _cffi_prepare_pointer_call_argument(
-      _cffi_type(13), arg2, (char **)&x2);
-  if (datasize != 0) {
-    x2 = ((size_t)datasize) <= 640 ? (float *)alloca((size_t)datasize) : NULL;
-    if (_cffi_convert_array_argument(_cffi_type(13), arg2, (char **)&x2,
-            datasize, &large_args_free) < 0)
-      return NULL;
-  }
-
-  Py_BEGIN_ALLOW_THREADS
-  _cffi_restore_errno();
-  { push_constant_vec3(x0, x1, x2); }
-  _cffi_save_errno();
-  Py_END_ALLOW_THREADS
-
-  (void)self; /* unused */
-  if (large_args_free != NULL) _cffi_free_array_arguments(large_args_free);
-  Py_INCREF(Py_None);
-  return Py_None;
-}
-#else
-#  define _cffi_f_push_constant_vec3 _cffi_d_push_constant_vec3
-#endif
-
-static void _cffi_d_push_constant_vec4(struct Pipeline * x0, char const * x1, float * x2)
-{
-  push_constant_vec4(x0, x1, x2);
-}
-#ifndef PYPY_VERSION
-static PyObject *
-_cffi_f_push_constant_vec4(PyObject *self, PyObject *args)
-{
-  struct Pipeline * x0;
-  char const * x1;
-  float * x2;
-  Py_ssize_t datasize;
-  struct _cffi_freeme_s *large_args_free = NULL;
-  PyObject *arg0;
-  PyObject *arg1;
-  PyObject *arg2;
-
-  if (!PyArg_UnpackTuple(args, "push_constant_vec4", 3, 3, &arg0, &arg1, &arg2))
-    return NULL;
-
-  datasize = _cffi_prepare_pointer_call_argument(
-      _cffi_type(100), arg0, (char **)&x0);
-  if (datasize != 0) {
-    x0 = ((size_t)datasize) <= 640 ? (struct Pipeline *)alloca((size_t)datasize) : NULL;
-    if (_cffi_convert_array_argument(_cffi_type(100), arg0, (char **)&x0,
-            datasize, &large_args_free) < 0)
-      return NULL;
-  }
-
-  datasize = _cffi_prepare_pointer_call_argument(
-      _cffi_type(41), arg1, (char **)&x1);
-  if (datasize != 0) {
-    x1 = ((size_t)datasize) <= 640 ? (char const *)alloca((size_t)datasize) : NULL;
-    if (_cffi_convert_array_argument(_cffi_type(41), arg1, (char **)&x1,
-            datasize, &large_args_free) < 0)
-      return NULL;
-  }
-
-  datasize = _cffi_prepare_pointer_call_argument(
-      _cffi_type(13), arg2, (char **)&x2);
-  if (datasize != 0) {
-    x2 = ((size_t)datasize) <= 640 ? (float *)alloca((size_t)datasize) : NULL;
-    if (_cffi_convert_array_argument(_cffi_type(13), arg2, (char **)&x2,
-            datasize, &large_args_free) < 0)
-      return NULL;
-  }
-
-  Py_BEGIN_ALLOW_THREADS
-  _cffi_restore_errno();
-  { push_constant_vec4(x0, x1, x2); }
-  _cffi_save_errno();
-  Py_END_ALLOW_THREADS
-
-  (void)self; /* unused */
-  if (large_args_free != NULL) _cffi_free_array_arguments(large_args_free);
-  Py_INCREF(Py_None);
-  return Py_None;
-}
-#else
-#  define _cffi_f_push_constant_vec4 _cffi_d_push_constant_vec4
 #endif
 
 static void _cffi_d_refresh(struct Window * x0)
@@ -3849,6 +2728,44 @@ _cffi_f_refresh(PyObject *self, PyObject *arg0)
 #  define _cffi_f_refresh _cffi_d_refresh
 #endif
 
+static struct Texture * _cffi_d_render_texture(struct RenderTarget * x0)
+{
+  return render_texture(x0);
+}
+#ifndef PYPY_VERSION
+static PyObject *
+_cffi_f_render_texture(PyObject *self, PyObject *arg0)
+{
+  struct RenderTarget * x0;
+  Py_ssize_t datasize;
+  struct _cffi_freeme_s *large_args_free = NULL;
+  struct Texture * result;
+  PyObject *pyresult;
+
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(44), arg0, (char **)&x0);
+  if (datasize != 0) {
+    x0 = ((size_t)datasize) <= 640 ? (struct RenderTarget *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(44), arg0, (char **)&x0,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
+
+  Py_BEGIN_ALLOW_THREADS
+  _cffi_restore_errno();
+  { result = render_texture(x0); }
+  _cffi_save_errno();
+  Py_END_ALLOW_THREADS
+
+  (void)self; /* unused */
+  pyresult = _cffi_from_c_pointer((char *)result, _cffi_type(32));
+  if (large_args_free != NULL) _cffi_free_array_arguments(large_args_free);
+  return pyresult;
+}
+#else
+#  define _cffi_f_render_texture _cffi_d_render_texture
+#endif
+
 static void _cffi_d_run_pipeline(struct Pipeline * x0)
 {
   run_pipeline(x0);
@@ -3862,10 +2779,10 @@ _cffi_f_run_pipeline(PyObject *self, PyObject *arg0)
   struct _cffi_freeme_s *large_args_free = NULL;
 
   datasize = _cffi_prepare_pointer_call_argument(
-      _cffi_type(100), arg0, (char **)&x0);
+      _cffi_type(86), arg0, (char **)&x0);
   if (datasize != 0) {
     x0 = ((size_t)datasize) <= 640 ? (struct Pipeline *)alloca((size_t)datasize) : NULL;
-    if (_cffi_convert_array_argument(_cffi_type(100), arg0, (char **)&x0,
+    if (_cffi_convert_array_argument(_cffi_type(86), arg0, (char **)&x0,
             datasize, &large_args_free) < 0)
       return NULL;
   }
@@ -3904,10 +2821,10 @@ _cffi_f_run_pipeline_n(PyObject *self, PyObject *args)
     return NULL;
 
   datasize = _cffi_prepare_pointer_call_argument(
-      _cffi_type(100), arg0, (char **)&x0);
+      _cffi_type(86), arg0, (char **)&x0);
   if (datasize != 0) {
     x0 = ((size_t)datasize) <= 640 ? (struct Pipeline *)alloca((size_t)datasize) : NULL;
-    if (_cffi_convert_array_argument(_cffi_type(100), arg0, (char **)&x0,
+    if (_cffi_convert_array_argument(_cffi_type(86), arg0, (char **)&x0,
             datasize, &large_args_free) < 0)
       return NULL;
   }
@@ -3931,54 +2848,42 @@ _cffi_f_run_pipeline_n(PyObject *self, PyObject *args)
 #  define _cffi_f_run_pipeline_n _cffi_d_run_pipeline_n
 #endif
 
-static void _cffi_d_viewport(int x0, int x1, int x2, int x3)
+static struct RenderTarget * _cffi_d_screen(struct Window * x0)
 {
-  viewport(x0, x1, x2, x3);
+  return screen(x0);
 }
 #ifndef PYPY_VERSION
 static PyObject *
-_cffi_f_viewport(PyObject *self, PyObject *args)
+_cffi_f_screen(PyObject *self, PyObject *arg0)
 {
-  int x0;
-  int x1;
-  int x2;
-  int x3;
-  PyObject *arg0;
-  PyObject *arg1;
-  PyObject *arg2;
-  PyObject *arg3;
+  struct Window * x0;
+  Py_ssize_t datasize;
+  struct _cffi_freeme_s *large_args_free = NULL;
+  struct RenderTarget * result;
+  PyObject *pyresult;
 
-  if (!PyArg_UnpackTuple(args, "viewport", 4, 4, &arg0, &arg1, &arg2, &arg3))
-    return NULL;
-
-  x0 = _cffi_to_c_int(arg0, int);
-  if (x0 == (int)-1 && PyErr_Occurred())
-    return NULL;
-
-  x1 = _cffi_to_c_int(arg1, int);
-  if (x1 == (int)-1 && PyErr_Occurred())
-    return NULL;
-
-  x2 = _cffi_to_c_int(arg2, int);
-  if (x2 == (int)-1 && PyErr_Occurred())
-    return NULL;
-
-  x3 = _cffi_to_c_int(arg3, int);
-  if (x3 == (int)-1 && PyErr_Occurred())
-    return NULL;
+  datasize = _cffi_prepare_pointer_call_argument(
+      _cffi_type(4), arg0, (char **)&x0);
+  if (datasize != 0) {
+    x0 = ((size_t)datasize) <= 640 ? (struct Window *)alloca((size_t)datasize) : NULL;
+    if (_cffi_convert_array_argument(_cffi_type(4), arg0, (char **)&x0,
+            datasize, &large_args_free) < 0)
+      return NULL;
+  }
 
   Py_BEGIN_ALLOW_THREADS
   _cffi_restore_errno();
-  { viewport(x0, x1, x2, x3); }
+  { result = screen(x0); }
   _cffi_save_errno();
   Py_END_ALLOW_THREADS
 
   (void)self; /* unused */
-  Py_INCREF(Py_None);
-  return Py_None;
+  pyresult = _cffi_from_c_pointer((char *)result, _cffi_type(44));
+  if (large_args_free != NULL) _cffi_free_array_arguments(large_args_free);
+  return pyresult;
 }
 #else
-#  define _cffi_f_viewport _cffi_d_viewport
+#  define _cffi_f_screen _cffi_d_screen
 #endif
 
 static void _cffi_d_window_cursor_position(struct Window * x0, int * x1, int * x2)
@@ -4011,19 +2916,19 @@ _cffi_f_window_cursor_position(PyObject *self, PyObject *args)
   }
 
   datasize = _cffi_prepare_pointer_call_argument(
-      _cffi_type(52), arg1, (char **)&x1);
+      _cffi_type(58), arg1, (char **)&x1);
   if (datasize != 0) {
     x1 = ((size_t)datasize) <= 640 ? (int *)alloca((size_t)datasize) : NULL;
-    if (_cffi_convert_array_argument(_cffi_type(52), arg1, (char **)&x1,
+    if (_cffi_convert_array_argument(_cffi_type(58), arg1, (char **)&x1,
             datasize, &large_args_free) < 0)
       return NULL;
   }
 
   datasize = _cffi_prepare_pointer_call_argument(
-      _cffi_type(52), arg2, (char **)&x2);
+      _cffi_type(58), arg2, (char **)&x2);
   if (datasize != 0) {
     x2 = ((size_t)datasize) <= 640 ? (int *)alloca((size_t)datasize) : NULL;
-    if (_cffi_convert_array_argument(_cffi_type(52), arg2, (char **)&x2,
+    if (_cffi_convert_array_argument(_cffi_type(58), arg2, (char **)&x2,
             datasize, &large_args_free) < 0)
       return NULL;
   }
@@ -4149,7 +3054,7 @@ _cffi_f_window_status(PyObject *self, PyObject *arg0)
   Py_END_ALLOW_THREADS
 
   (void)self; /* unused */
-  pyresult = _cffi_from_c_deref((char *)&result, _cffi_type(184));
+  pyresult = _cffi_from_c_deref((char *)&result, _cffi_type(149));
   if (large_args_free != NULL) _cffi_free_array_arguments(large_args_free);
   return pyresult;
 }
@@ -4246,60 +3151,43 @@ static const struct _cffi_global_s _cffi_globals[] = {
   { "RUNNING", (void *)_cffi_const_RUNNING, _CFFI_OP(_CFFI_OP_ENUM, -1), (void *)0 },
   { "UP", (void *)_cffi_const_UP, _CFFI_OP(_CFFI_OP_ENUM, -1), (void *)0 },
   { "VERTEX", (void *)_cffi_const_VERTEX, _CFFI_OP(_CFFI_OP_ENUM, -1), (void *)0 },
-  { "bind_buffer", (void *)_cffi_f_bind_buffer, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 155), (void *)_cffi_d_bind_buffer },
-  { "bind_buffer_name", (void *)_cffi_f_bind_buffer_name, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 150), (void *)_cffi_d_bind_buffer_name },
-  { "bind_framebuffer", (void *)_cffi_f_bind_framebuffer, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_O, 85), (void *)_cffi_d_bind_framebuffer },
-  { "bind_index_buffer", (void *)_cffi_f_bind_index_buffer, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 146), (void *)_cffi_d_bind_index_buffer },
-  { "bind_pipeline", (void *)_cffi_f_bind_pipeline, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_O, 99), (void *)_cffi_d_bind_pipeline },
-  { "bind_texture", (void *)_cffi_f_bind_texture, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 165), (void *)_cffi_d_bind_texture },
-  { "bind_texture_name", (void *)_cffi_f_bind_texture_name, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 160), (void *)_cffi_d_bind_texture_name },
+  { "begin_pass", (void *)_cffi_f_begin_pass, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_O, 116), (void *)_cffi_d_begin_pass },
+  { "bind_buffer", (void *)_cffi_f_bind_buffer, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 101), (void *)_cffi_d_bind_buffer },
+  { "bind_buffer_name", (void *)_cffi_f_bind_buffer_name, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 96), (void *)_cffi_d_bind_buffer_name },
+  { "bind_index_buffer", (void *)_cffi_f_bind_index_buffer, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 92), (void *)_cffi_d_bind_index_buffer },
+  { "bind_pipeline", (void *)_cffi_f_bind_pipeline, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_O, 85), (void *)_cffi_d_bind_pipeline },
+  { "bind_texture", (void *)_cffi_f_bind_texture, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 111), (void *)_cffi_d_bind_texture },
+  { "bind_texture_name", (void *)_cffi_f_bind_texture_name, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 106), (void *)_cffi_d_bind_texture_name },
   { "buffer_data", (void *)_cffi_f_buffer_data, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 68), (void *)_cffi_d_buffer_data },
   { "buffer_indices", (void *)_cffi_f_buffer_indices, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 73), (void *)_cffi_d_buffer_indices },
   { "buffer_sub_data", (void *)_cffi_f_buffer_sub_data, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 78), (void *)_cffi_d_buffer_sub_data },
   { "check_errors", (void *)_cffi_f_check_errors, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_N, 9), (void *)_cffi_d_check_errors },
-  { "clear_screen", (void *)_cffi_f_clear_screen, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 45), (void *)_cffi_d_clear_screen },
-  { "close_window", (void *)_cffi_f_close_window, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_O, 173), (void *)_cffi_d_close_window },
-  { "copy_framebuffer", (void *)_cffi_f_copy_framebuffer, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 95), (void *)_cffi_d_copy_framebuffer },
-  { "copy_framebuffer_to_screen", (void *)_cffi_f_copy_framebuffer_to_screen, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 88), (void *)_cffi_d_copy_framebuffer_to_screen },
+  { "clear", (void *)_cffi_f_clear, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 51), (void *)_cffi_d_clear },
+  { "close_window", (void *)_cffi_f_close_window, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_O, 138), (void *)_cffi_d_close_window },
+  { "copy", (void *)_cffi_f_copy, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 119), (void *)_cffi_d_copy },
+  { "copy_region", (void *)_cffi_f_copy_region, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 123), (void *)_cffi_d_copy_region },
   { "create_buffer", (void *)_cffi_f_create_buffer, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 11), (void *)_cffi_d_create_buffer },
-  { "create_framebuffer", (void *)_cffi_f_create_framebuffer, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 19), (void *)_cffi_d_create_framebuffer },
   { "create_index_buffer", (void *)_cffi_f_create_index_buffer, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 15), (void *)_cffi_d_create_index_buffer },
-  { "create_pipeline", (void *)_cffi_f_create_pipeline, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 24), (void *)_cffi_d_create_pipeline },
-  { "create_texture_2d", (void *)_cffi_f_create_texture_2d, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 34), (void *)_cffi_d_create_texture_2d },
-  { "create_window", (void *)_cffi_f_create_window, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 40), (void *)_cffi_d_create_window },
-  { "cursor_position", (void *)_cffi_f_cursor_position, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 51), (void *)_cffi_d_cursor_position },
+  { "create_pipeline", (void *)_cffi_f_create_pipeline, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 19), (void *)_cffi_d_create_pipeline },
+  { "create_render_target", (void *)_cffi_f_create_render_target, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 29), (void *)_cffi_d_create_render_target },
+  { "create_texture_2d", (void *)_cffi_f_create_texture_2d, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 37), (void *)_cffi_d_create_texture_2d },
+  { "create_window", (void *)_cffi_f_create_window, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 46), (void *)_cffi_d_create_window },
+  { "cursor_position", (void *)_cffi_f_cursor_position, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 57), (void *)_cffi_d_cursor_position },
   { "cursor_x", (void *)_cffi_f_cursor_x, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_N, 9), (void *)_cffi_d_cursor_x },
   { "cursor_y", (void *)_cffi_f_cursor_y, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_N, 9), (void *)_cffi_d_cursor_y },
   { "destroy_buffer", (void *)_cffi_f_destroy_buffer, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_O, 65), (void *)_cffi_d_destroy_buffer },
-  { "destroy_framebuffer", (void *)_cffi_f_destroy_framebuffer, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_O, 85), (void *)_cffi_d_destroy_framebuffer },
-  { "destroy_pipeline", (void *)_cffi_f_destroy_pipeline, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_O, 99), (void *)_cffi_d_destroy_pipeline },
-  { "destroy_texture", (void *)_cffi_f_destroy_texture, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_O, 170), (void *)_cffi_d_destroy_texture },
-  { "fail", (void *)_cffi_f_fail, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 55), (void *)_cffi_d_fail },
+  { "destroy_pipeline", (void *)_cffi_f_destroy_pipeline, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_O, 85), (void *)_cffi_d_destroy_pipeline },
+  { "destroy_render_target", (void *)_cffi_f_destroy_render_target, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_O, 116), (void *)_cffi_d_destroy_render_target },
+  { "destroy_texture", (void *)_cffi_f_destroy_texture, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_O, 135), (void *)_cffi_d_destroy_texture },
+  { "end_pass", (void *)_cffi_f_end_pass, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_O, 116), (void *)_cffi_d_end_pass },
+  { "fail", (void *)_cffi_f_fail, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 61), (void *)_cffi_d_fail },
   { "input_state", (void *)_cffi_f_input_state, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_O, 0), (void *)_cffi_d_input_state },
-  { "push_constant_double", (void *)_cffi_f_push_constant_double, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 107), (void *)_cffi_d_push_constant_double },
-  { "push_constant_dvec2", (void *)_cffi_f_push_constant_dvec2, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 102), (void *)_cffi_d_push_constant_dvec2 },
-  { "push_constant_dvec3", (void *)_cffi_f_push_constant_dvec3, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 102), (void *)_cffi_d_push_constant_dvec3 },
-  { "push_constant_dvec4", (void *)_cffi_f_push_constant_dvec4, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 102), (void *)_cffi_d_push_constant_dvec4 },
-  { "push_constant_float", (void *)_cffi_f_push_constant_float, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 117), (void *)_cffi_d_push_constant_float },
-  { "push_constant_int", (void *)_cffi_f_push_constant_int, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 127), (void *)_cffi_d_push_constant_int },
-  { "push_constant_ivec2", (void *)_cffi_f_push_constant_ivec2, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 122), (void *)_cffi_d_push_constant_ivec2 },
-  { "push_constant_ivec3", (void *)_cffi_f_push_constant_ivec3, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 122), (void *)_cffi_d_push_constant_ivec3 },
-  { "push_constant_ivec4", (void *)_cffi_f_push_constant_ivec4, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 122), (void *)_cffi_d_push_constant_ivec4 },
-  { "push_constant_mat2", (void *)_cffi_f_push_constant_mat2, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 112), (void *)_cffi_d_push_constant_mat2 },
-  { "push_constant_mat3", (void *)_cffi_f_push_constant_mat3, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 112), (void *)_cffi_d_push_constant_mat3 },
-  { "push_constant_mat4", (void *)_cffi_f_push_constant_mat4, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 112), (void *)_cffi_d_push_constant_mat4 },
-  { "push_constant_uint", (void *)_cffi_f_push_constant_uint, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 137), (void *)_cffi_d_push_constant_uint },
-  { "push_constant_uvec2", (void *)_cffi_f_push_constant_uvec2, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 132), (void *)_cffi_d_push_constant_uvec2 },
-  { "push_constant_uvec3", (void *)_cffi_f_push_constant_uvec3, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 132), (void *)_cffi_d_push_constant_uvec3 },
-  { "push_constant_uvec4", (void *)_cffi_f_push_constant_uvec4, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 132), (void *)_cffi_d_push_constant_uvec4 },
-  { "push_constant_vec2", (void *)_cffi_f_push_constant_vec2, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 112), (void *)_cffi_d_push_constant_vec2 },
-  { "push_constant_vec3", (void *)_cffi_f_push_constant_vec3, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 112), (void *)_cffi_d_push_constant_vec3 },
-  { "push_constant_vec4", (void *)_cffi_f_push_constant_vec4, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 112), (void *)_cffi_d_push_constant_vec4 },
-  { "refresh", (void *)_cffi_f_refresh, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_O, 173), (void *)_cffi_d_refresh },
-  { "run_pipeline", (void *)_cffi_f_run_pipeline, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_O, 99), (void *)_cffi_d_run_pipeline },
-  { "run_pipeline_n", (void *)_cffi_f_run_pipeline_n, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 142), (void *)_cffi_d_run_pipeline_n },
-  { "viewport", (void *)_cffi_f_viewport, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 59), (void *)_cffi_d_viewport },
-  { "window_cursor_position", (void *)_cffi_f_window_cursor_position, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 176), (void *)_cffi_d_window_cursor_position },
+  { "refresh", (void *)_cffi_f_refresh, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_O, 138), (void *)_cffi_d_refresh },
+  { "render_texture", (void *)_cffi_f_render_texture, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_O, 43), (void *)_cffi_d_render_texture },
+  { "run_pipeline", (void *)_cffi_f_run_pipeline, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_O, 85), (void *)_cffi_d_run_pipeline },
+  { "run_pipeline_n", (void *)_cffi_f_run_pipeline_n, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 88), (void *)_cffi_d_run_pipeline_n },
+  { "screen", (void *)_cffi_f_screen, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_O, 34), (void *)_cffi_d_screen },
+  { "window_cursor_position", (void *)_cffi_f_window_cursor_position, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_V, 141), (void *)_cffi_d_window_cursor_position },
   { "window_cursor_x", (void *)_cffi_f_window_cursor_x, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_O, 6), (void *)_cffi_d_window_cursor_x },
   { "window_cursor_y", (void *)_cffi_f_window_cursor_y, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_O, 6), (void *)_cffi_d_window_cursor_y },
   { "window_status", (void *)_cffi_f_window_status, _CFFI_OP(_CFFI_OP_CPYTHON_BLTN_O, 3), (void *)_cffi_d_window_status },
@@ -4311,16 +3199,16 @@ static const struct _cffi_field_s _cffi_fields[] = {
                 _CFFI_OP(_CFFI_OP_NOOP, 12) },
   { "name", offsetof(struct TextureInput, name),
             sizeof(((struct TextureInput *)0)->name),
-            _CFFI_OP(_CFFI_OP_NOOP, 41) },
+            _CFFI_OP(_CFFI_OP_NOOP, 47) },
   { "texture", offsetof(struct TextureInput, texture),
                sizeof(((struct TextureInput *)0)->texture),
-               _CFFI_OP(_CFFI_OP_NOOP, 22) },
+               _CFFI_OP(_CFFI_OP_NOOP, 32) },
   { "location", offsetof(struct VertexInput, location),
                 sizeof(((struct VertexInput *)0)->location),
                 _CFFI_OP(_CFFI_OP_NOOP, 12) },
   { "name", offsetof(struct VertexInput, name),
             sizeof(((struct VertexInput *)0)->name),
-            _CFFI_OP(_CFFI_OP_NOOP, 41) },
+            _CFFI_OP(_CFFI_OP_NOOP, 47) },
   { "rows", offsetof(struct VertexInput, rows),
             sizeof(((struct VertexInput *)0)->rows),
             _CFFI_OP(_CFFI_OP_NOOP, 12) },
@@ -4329,7 +3217,7 @@ static const struct _cffi_field_s _cffi_fields[] = {
             _CFFI_OP(_CFFI_OP_NOOP, 12) },
   { "rate", offsetof(struct VertexInput, rate),
             sizeof(((struct VertexInput *)0)->rate),
-            _CFFI_OP(_CFFI_OP_NOOP, 183) },
+            _CFFI_OP(_CFFI_OP_NOOP, 148) },
   { "stride", offsetof(struct VertexInput, stride),
               sizeof(((struct VertexInput *)0)->stride),
               _CFFI_OP(_CFFI_OP_NOOP, 12) },
@@ -4342,32 +3230,32 @@ static const struct _cffi_field_s _cffi_fields[] = {
 };
 
 static const struct _cffi_struct_union_s _cffi_struct_unions[] = {
-  { "Buffer", 185, _CFFI_F_OPAQUE,
+  { "Buffer", 150, _CFFI_F_OPAQUE,
     (size_t)-1, -1, -1, 0 /* opaque */ },
-  { "Framebuffer", 186, _CFFI_F_OPAQUE,
+  { "Pipeline", 151, _CFFI_F_OPAQUE,
     (size_t)-1, -1, -1, 0 /* opaque */ },
-  { "Pipeline", 187, _CFFI_F_OPAQUE,
+  { "RenderTarget", 152, _CFFI_F_OPAQUE,
     (size_t)-1, -1, -1, 0 /* opaque */ },
-  { "Texture", 188, _CFFI_F_OPAQUE,
+  { "Texture", 153, _CFFI_F_OPAQUE,
     (size_t)-1, -1, -1, 0 /* opaque */ },
-  { "TextureInput", 189, _CFFI_F_CHECK_FIELDS,
+  { "TextureInput", 154, _CFFI_F_CHECK_FIELDS,
     sizeof(struct TextureInput), offsetof(struct _cffi_align_struct_TextureInput, y), 0, 3 },
-  { "VertexInput", 190, _CFFI_F_CHECK_FIELDS,
+  { "VertexInput", 155, _CFFI_F_CHECK_FIELDS,
     sizeof(struct VertexInput), offsetof(struct _cffi_align_struct_VertexInput, y), 3, 8 },
-  { "Window", 191, _CFFI_F_OPAQUE,
+  { "Window", 156, _CFFI_F_OPAQUE,
     (size_t)-1, -1, -1, 0 /* opaque */ },
 };
 
 static const struct _cffi_enum_s _cffi_enums[] = {
   { "InputCode", 1, _cffi_prim_int(sizeof(enum InputCode), ((enum InputCode)-1) <= 0),
     "KEYBOARD_0,KEYBOARD_1,KEYBOARD_2,KEYBOARD_3,KEYBOARD_4,KEYBOARD_5,KEYBOARD_6,KEYBOARD_7,KEYBOARD_8,KEYBOARD_9,KEYBOARD_A,KEYBOARD_B,KEYBOARD_C,KEYBOARD_D,KEYBOARD_E,KEYBOARD_F,KEYBOARD_G,KEYBOARD_H,KEYBOARD_I,KEYBOARD_J,KEYBOARD_K,KEYBOARD_L,KEYBOARD_M,KEYBOARD_N,KEYBOARD_O,KEYBOARD_P,KEYBOARD_Q,KEYBOARD_R,KEYBOARD_S,KEYBOARD_T,KEYBOARD_U,KEYBOARD_V,KEYBOARD_W,KEYBOARD_X,KEYBOARD_Y,KEYBOARD_Z,KEYBOARD_UP,KEYBOARD_DOWN,KEYBOARD_LEFT,KEYBOARD_RIGHT,KEYBOARD_SPACE,KEYBOARD_ESCAPE,KEYBOARD_RETURN,KEYBOARD_SHIFT,KEYBOARD_CONTROL,MOUSE_BUTTON_LEFT,MOUSE_BUTTON_RIGHT,MOUSE_BUTTON_MIDDLE,INPUT_CODE_LAST" },
-  { "InputState", 182, _cffi_prim_int(sizeof(enum InputState), ((enum InputState)-1) <= 0),
+  { "InputState", 147, _cffi_prim_int(sizeof(enum InputState), ((enum InputState)-1) <= 0),
     "UP,DOWN,PRESSED,RELEASED" },
-  { "TextureFlags", 38, _cffi_prim_int(sizeof(enum TextureFlags), ((enum TextureFlags)-1) <= 0),
+  { "TextureFlags", 41, _cffi_prim_int(sizeof(enum TextureFlags), ((enum TextureFlags)-1) <= 0),
     "FILTERED,ANTIALIASED,DEPTH,ALPHA" },
-  { "VertexRate", 183, _cffi_prim_int(sizeof(enum VertexRate), ((enum VertexRate)-1) <= 0),
+  { "VertexRate", 148, _cffi_prim_int(sizeof(enum VertexRate), ((enum VertexRate)-1) <= 0),
     "VERTEX,INSTANCE" },
-  { "WindowStatus", 184, _cffi_prim_int(sizeof(enum WindowStatus), ((enum WindowStatus)-1) <= 0),
+  { "WindowStatus", 149, _cffi_prim_int(sizeof(enum WindowStatus), ((enum WindowStatus)-1) <= 0),
     "CLOSED,RUNNING" },
 };
 
@@ -4378,12 +3266,12 @@ static const struct _cffi_type_context_s _cffi_type_context = {
   _cffi_struct_unions,
   _cffi_enums,
   NULL,  /* no typenames */
-  118,  /* num_globals */
+  101,  /* num_globals */
   7,  /* num_struct_unions */
   5,  /* num_enums */
   0,  /* num_typenames */
   NULL,  /* no includes */
-  193,  /* num_types */
+  159,  /* num_types */
   0,  /* flags */
 };
 
