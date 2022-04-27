@@ -1,3 +1,4 @@
+import os
 from glbt import ffi
 from glbt.lib import *
 
@@ -74,7 +75,7 @@ win = Window("UwU", 640, 400)
 #list of inputs to the shader, each a matrix, [index, name, num_rows, num_columns]
 layout = [[0, "position", 1, 3], 
 	    [1, "color", 1, 4]]
-colored_polygons = Pipeline("shaders/color.glsl.vert", "shaders/color.glsl.frag", layout)
+colored_polygons = Pipeline(os.path.join(os.path.dirname(__file__),"shaders/color.glsl.vert"), os.path.join(os.path.dirname(__file__),"shaders/color.glsl.frag"), layout)
 
 #create buffers which store data on the GPU itself so the shader can access it.
 #in this case we're drawing a rectangle with 4 points
