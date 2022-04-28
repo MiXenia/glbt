@@ -1,0 +1,7 @@
+compile_commands.json
+.vs/
+.ccls-cache/
+*.o
+*.pyd
+*.so
+**/out/
