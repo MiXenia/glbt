@@ -18,8 +18,8 @@ class Window:
 
 class Pipeline:
 	def __init__(self, vertex_shader_filename, fragment_shader_filename, inputs):
-		vertex_shader = open(vertex_shader_filename)
-		fragment_shader = open(fragment_shader_filename)
+		vertex_shader = open(os.path.join(os.path.dirname(__file__), vertex_shader_filename))
+		fragment_shader = open(os.path.join(os.path.dirname(__file__), fragment_shader_filename))
 		vertex_shader_src = vertex_shader.read()
 		fragment_shader_src = fragment_shader.read()
 		vertex_shader.close()
@@ -75,7 +75,7 @@ win = Window("UwU", 640, 400)
 #list of inputs to the shader, each a matrix, [index, name, num_rows, num_columns]
 layout = [[0, "position", 1, 3], 
 	    [1, "color", 1, 4]]
-colored_polygons = Pipeline(os.path.join(os.path.dirname(__file__),"shaders/color.glsl.vert"), os.path.join(os.path.dirname(__file__),"shaders/color.glsl.frag"), layout)
+colored_polygons = Pipeline("shaders/color.glsl.vert","shaders/color.glsl.frag", layout)
 
 #create buffers which store data on the GPU itself so the shader can access it.
 #in this case we're drawing a rectangle with 4 points
