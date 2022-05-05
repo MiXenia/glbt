@@ -5,3 +5,5 @@ compile_commands.json
 *.pyd
 *.so
 **/out/
+**/out/*
+bindings/src
