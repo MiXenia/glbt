@@ -17,8 +17,7 @@ struct Sprite {
     float rotation;
     float rvelocity;
 };
-void update_sprite(int i, struct Sprite *sprites, mat4* mats) {
-    struct Sprite* s = &sprites[i];
+void update_sprite(struct Sprite *s, mat4* mat) {
     s->position[0] += s->velocity[0];
     s->position[1] += s->velocity[1];
     if (s->position[0] > WIDTH || s->position[0] < 0) {
@@ -32,11 +31,11 @@ void update_sprite(int i, struct Sprite *sprites, mat4* mats) {
         s->rotation -= M_PI * 2.0f;
     }
     //printf("%f\t%f\t%f\t%f\t\n", s->position[0], s->position[1], s->velocity[0], s->velocity[1]);
-    glm_mat4_identity(mats[i]);
+    glm_mat4_identity(mat);
     vec3 pos = {-1.0f + s->position[0] / ((float)WIDTH / 2.0f), -1.0f + s->position[1] / ((float)HEIGHT / 2.0f), 0};
-    glm_translate(mats[i], pos);
-    glm_scale(mats[i], (vec3) { 0.1f, 0.1f, 0.1f });
-    glm_rotate_z(mats[i], s->rotation, mats[i]);
+    glm_translate(mat, pos);
+    glm_scale(mat, (vec3) { 0.1f, 0.1f, 0.1f });
+    glm_rotate_z(mat, s->rotation, mat);
 }
 
 // resource management is outside the scope of this library, so belongs in main.
@@ -183,7 +182,7 @@ int main(int argc, char *argv[]) {
     }
 
     for (i = 0; i < NUM_SPRITES; ++i) {
-        update_sprite(i, sprites, mats);
+        update_sprite(&sprites[i], &mats[i]);
     }
 
     begin_pass(rt);
