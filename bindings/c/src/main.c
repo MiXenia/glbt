@@ -136,8 +136,8 @@ int main(int argc, char *argv[]) {
   int i;
   for (i = 0; i < NUM_SPRITES; ++i) {
       glm_mat4_identity(mats[i]);
-      sprites[i].position[0] = ((float)rand() / (float)RAND_MAX) * 640.0f;
-      sprites[i].position[1] = ((float)rand() / (float)RAND_MAX) * 400.0f;
+      sprites[i].position[0] = ((float)rand() / (float)RAND_MAX) * (float)WIDTH;
+      sprites[i].position[1] = ((float)rand() / (float)RAND_MAX) * (float)HEIGHT;
       sprites[i].velocity[0] = ((float)rand() / (float)RAND_MAX) * 16.0f;
       sprites[i].velocity[1] = ((float)rand() / (float)RAND_MAX) * 16.0f;
       sprites[i].rotation = ((float)rand() / (float)RAND_MAX) * 2.0f * M_PI;
@@ -149,8 +149,8 @@ int main(int argc, char *argv[]) {
   printf("Creating framebuffers\n");
 
   // downscaled framebuffer
-  struct Texture *color0 = create_texture_2d(NULL, WIDTH, HEIGHT, 0);
-  struct Texture *depth = create_texture_2d(NULL, WIDTH, HEIGHT, 0 | DEPTH);
+  struct Texture *color0 = create_texture_2d(NULL, WIDTH/2, HEIGHT/2, ANTIALIASED);
+  struct Texture *depth = create_texture_2d(NULL, WIDTH/2, HEIGHT/2, ANTIALIASED | DEPTH);
   struct RenderTarget *rt = create_render_target(1, &color0, depth);
 
   printf("Setting up postprocessing pipeline\n");
@@ -196,7 +196,7 @@ int main(int argc, char *argv[]) {
     begin_pass(screen(win));
     clear(0, 0, 0, 0);
     bind_pipeline(pp);
-    push_constant_int(pp, "bnw", 1); // enable black-n-white
+    //push_constant_int(pp, "bnw", 1); // enable black-n-white
     run_pipeline_n(pp, 3);
     end_pass(screen(win));
 
