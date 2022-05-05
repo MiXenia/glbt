@@ -5,6 +5,40 @@
 
 #include "cglm/cglm.h"
 
+#include <math.h>
+#include <time.h>
+
+#define WIDTH 1600
+#define HEIGHT 900
+#define NUM_SPRITES 200000
+struct Sprite {
+    vec3 position;
+    vec3 velocity;
+    float rotation;
+    float rvelocity;
+};
+void update_sprite(int i, struct Sprite *sprites, mat4* mats) {
+    struct Sprite* s = &sprites[i];
+    s->position[0] += s->velocity[0];
+    s->position[1] += s->velocity[1];
+    if (s->position[0] > WIDTH || s->position[0] < 0) {
+        s->velocity[0] = -s->velocity[0];
+    }
+    if (s->position[1] > HEIGHT || s->position[1] < 0) {
+        s->velocity[1] = -s->velocity[1];
+    }
+    s->rotation += s->rvelocity;
+    if (s->rotation > M_PI * 2.0f) {
+        s->rotation -= M_PI * 2.0f;
+    }
+    //printf("%f\t%f\t%f\t%f\t\n", s->position[0], s->position[1], s->velocity[0], s->velocity[1]);
+    glm_mat4_identity(mats[i]);
+    vec3 pos = {-1.0f + s->position[0] / ((float)WIDTH / 2.0f), -1.0f + s->position[1] / ((float)HEIGHT / 2.0f), 0};
+    glm_translate(mats[i], pos);
+    glm_scale(mats[i], (vec3) { 0.1f, 0.1f, 0.1f });
+    glm_rotate_z(mats[i], s->rotation, mats[i]);
+}
+
 // resource management is outside the scope of this library, so belongs in main.
 char *load_file(const char *path, int *out_length) {
   printf("Loading file %s\n", path);
@@ -31,7 +65,7 @@ char *load_file(const char *path, int *out_length) {
 
 struct Texture *load_texture(const char *path) {
   int width, height, components;
-  enum TextureFlags flags = FILTERED;
+  enum TextureFlags flags = 0;
   unsigned char *data = stbi_load(path, &width, &height, &components, 0);
   if (components == 4) {
     flags |= ALPHA;
@@ -46,7 +80,7 @@ struct Texture *load_texture(const char *path) {
 
 int main(int argc, char *argv[]) {
   printf("Creating window.\n");
-  struct Window *win = create_window("UwU", 640, 400);
+  struct Window *win = create_window("UwU", WIDTH, HEIGHT);
 
   printf("Creating vertex specification.\n");
   struct VertexInput v[4] = {
@@ -85,7 +119,7 @@ int main(int argc, char *argv[]) {
   });
   struct Buffer *indices = create_index_buffer(6, (unsigned int[6]){0, 1, 2, 0, 2, 3});
 
-  struct Texture *texture = load_texture("resources/go-home.png");
+  struct Texture *texture = load_texture("resources/bunny.png");
 
   printf("binding everything.\n");
   bind_buffer(p, positions, 0);
@@ -93,38 +127,31 @@ int main(int argc, char *argv[]) {
   bind_buffer(p, texcoords, 2);
   bind_index_buffer(p, indices);
   bind_texture(p, texture, 0);
+  glDisable(GL_DEPTH_TEST);
 
-  // 3 instances
-  // one at the center
-  mat4 origin = {
-    1.0f, 0.0f, 0.0f, 0.0f,
-    0.0f, 1.0f, 0.0f, 0.0f,
-    0.0f, 0.0f, 1.0f, 0.0f,
-    0.0f, 0.0f, -0.5f, 1.0f,
-  };
-  // one slightly to the right, rotated
-  mat4 right;
-  glm_mat4_identity(right);
-  glm_translate_x(right, 0.75f);
-  glm_rotate_z(right, M_PI / 16.0, right);
-  // one slightly to the left, rotated
-  mat4 left;
-  glm_mat4_identity(left);
-  glm_translate_x(left, -0.75f);
-  glm_rotate_z(left, M_PI / 4.0, left);
-  // upload instance data into a single buffer
-  struct Buffer *mvps = create_buffer(3 * 16, NULL);
-  buffer_sub_data(mvps, sizeof(mat4), 0, 1, origin);
-  buffer_sub_data(mvps, sizeof(mat4), 1, 1, left);
-  buffer_sub_data(mvps, sizeof(mat4), 2, 1, right);
+  srand(time(NULL));
+  //create our instance data amnd upload into a single buffer
+  struct Buffer *mvps = create_buffer(NUM_SPRITES * 16, NULL);
+  mat4* mats = malloc(sizeof(mat4) * NUM_SPRITES);
+  struct Sprite* sprites = malloc(sizeof(struct Sprite) * NUM_SPRITES);
+  int i;
+  for (i = 0; i < NUM_SPRITES; ++i) {
+      glm_mat4_identity(mats[i]);
+      sprites[i].position[0] = ((float)rand() / (float)RAND_MAX) * 640.0f;
+      sprites[i].position[1] = ((float)rand() / (float)RAND_MAX) * 400.0f;
+      sprites[i].velocity[0] = ((float)rand() / (float)RAND_MAX) * 16.0f;
+      sprites[i].velocity[1] = ((float)rand() / (float)RAND_MAX) * 16.0f;
+      sprites[i].rotation = ((float)rand() / (float)RAND_MAX) * 2.0f * M_PI;
+      sprites[i].rvelocity = ((float)rand() / (float)RAND_MAX) * 0.1f;
+  }
 
   bind_buffer(p, mvps, 3);
 
   printf("Creating framebuffers\n");
 
   // downscaled framebuffer
-  struct Texture *color0 = create_texture_2d(NULL, 128, 128, 0);
-  struct Texture *depth = create_texture_2d(NULL, 128, 128, 0 | DEPTH);
+  struct Texture *color0 = create_texture_2d(NULL, WIDTH, HEIGHT, 0);
+  struct Texture *depth = create_texture_2d(NULL, WIDTH, HEIGHT, 0 | DEPTH);
   struct RenderTarget *rt = create_render_target(1, &color0, depth);
 
   printf("Setting up postprocessing pipeline\n");
@@ -139,6 +166,11 @@ int main(int argc, char *argv[]) {
   bind_texture(pp, render_texture(rt), 0);
 
   printf("Starting main loop...\n");
+  double then = glfwGetTime();
+  int frames = 0;
+  char window_title[4];
+  const char *uwu = "UwU";
+  memcpy(window_title, uwu, 4);
   while (window_status(win) == RUNNING) {
     if (input_state(KEYBOARD_ESCAPE) == PRESSED) {
       close_window(win);
@@ -150,8 +182,14 @@ int main(int argc, char *argv[]) {
       printf("%d, %d\n", x, y);
     }
 
+    for (i = 0; i < NUM_SPRITES; ++i) {
+        update_sprite(i, sprites, mats);
+    }
+
     begin_pass(rt);
     clear(1, 0, 1, 1);
+    buffer_sub_data(mvps, sizeof(mat4), 0, NUM_SPRITES, &mats[0][0]);
+    //buffer_data(mvps, NUM_SPRITES * 4 * 4, &mats[0][0]);
     bind_pipeline(p);
     run_pipeline(p);
     end_pass(rt);
@@ -164,6 +202,16 @@ int main(int argc, char *argv[]) {
     end_pass(screen(win));
 
     refresh(win);
+
+    frames++;
+    double now = glfwGetTime();
+    if (now - then >= 1.0) {
+        sprintf(window_title, "%d.2", frames);
+        set_window_title(win, window_title);
+        frames = 0;
+        then = now;
+    }
+
   }
 
   printf("Closing.\n");

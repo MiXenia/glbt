@@ -201,6 +201,10 @@ void refresh(struct Window *w) {
   scan_inputs();
 }
 
+void set_window_title(struct Window* w, const char* title) {
+    glfwSetWindowTitle(w->window, title);
+}
+
 enum InputState input_state(enum InputCode input_code) {
   if (current_input_state[input_code] && !previous_input_state[input_code]) {
     return PRESSED;

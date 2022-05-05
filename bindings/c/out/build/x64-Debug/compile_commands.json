@@ -6,11 +6,6 @@
 },
 {
   "directory": "G:/kay/Desktop/Progs/c/glbt/bindings/c/out/build/x64-Debug",
-  "command": "C:\\PROGRA~1\\MICROS~2\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1431~1.311\\bin\\Hostx64\\x64\\cl.exe  /nologo -DGLFW_DLL -IG:\\kay\\Desktop\\Progs\\c\\glbt\\bindings\\c\\..\\..\\include -IG:\\kay\\Desktop\\Progs\\c\\glbt\\bindings\\c\\..\\..\\include\\internal -IG:\\kay\\Desktop\\Progs\\c\\glbt\\bindings\\c\\.\\include -external:I C:\\src\\vcpkg\\installed\\x64-windows\\include -external:W0 /DWIN32 /D_WINDOWS /W3 /MDd /Zi /Ob0 /Od /RTC1 /FoCMakeFiles\\glbt_c.dir\\G_\\kay\\Desktop\\Progs\\c\\glbt\\src\\framebuffer.c.obj /FdTARGET_COMPILE_PDB /FS -c G:\\kay\\Desktop\\Progs\\c\\glbt\\src\\framebuffer.c",
-  "file": "G:\\kay\\Desktop\\Progs\\c\\glbt\\src\\framebuffer.c"
-},
-{
-  "directory": "G:/kay/Desktop/Progs/c/glbt/bindings/c/out/build/x64-Debug",
   "command": "C:\\PROGRA~1\\MICROS~2\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1431~1.311\\bin\\Hostx64\\x64\\cl.exe  /nologo -DGLFW_DLL -IG:\\kay\\Desktop\\Progs\\c\\glbt\\bindings\\c\\..\\..\\include -IG:\\kay\\Desktop\\Progs\\c\\glbt\\bindings\\c\\..\\..\\include\\internal -IG:\\kay\\Desktop\\Progs\\c\\glbt\\bindings\\c\\.\\include -external:I C:\\src\\vcpkg\\installed\\x64-windows\\include -external:W0 /DWIN32 /D_WINDOWS /W3 /MDd /Zi /Ob0 /Od /RTC1 /FoCMakeFiles\\glbt_c.dir\\G_\\kay\\Desktop\\Progs\\c\\glbt\\src\\internal\\glad.c.obj /FdTARGET_COMPILE_PDB /FS -c G:\\kay\\Desktop\\Progs\\c\\glbt\\src\\internal\\glad.c",
   "file": "G:\\kay\\Desktop\\Progs\\c\\glbt\\src\\internal\\glad.c"
 },
@@ -18,6 +13,11 @@
   "directory": "G:/kay/Desktop/Progs/c/glbt/bindings/c/out/build/x64-Debug",
   "command": "C:\\PROGRA~1\\MICROS~2\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1431~1.311\\bin\\Hostx64\\x64\\cl.exe  /nologo -DGLFW_DLL -IG:\\kay\\Desktop\\Progs\\c\\glbt\\bindings\\c\\..\\..\\include -IG:\\kay\\Desktop\\Progs\\c\\glbt\\bindings\\c\\..\\..\\include\\internal -IG:\\kay\\Desktop\\Progs\\c\\glbt\\bindings\\c\\.\\include -external:I C:\\src\\vcpkg\\installed\\x64-windows\\include -external:W0 /DWIN32 /D_WINDOWS /W3 /MDd /Zi /Ob0 /Od /RTC1 /FoCMakeFiles\\glbt_c.dir\\G_\\kay\\Desktop\\Progs\\c\\glbt\\src\\pipeline.c.obj /FdTARGET_COMPILE_PDB /FS -c G:\\kay\\Desktop\\Progs\\c\\glbt\\src\\pipeline.c",
   "file": "G:\\kay\\Desktop\\Progs\\c\\glbt\\src\\pipeline.c"
+},
+{
+  "directory": "G:/kay/Desktop/Progs/c/glbt/bindings/c/out/build/x64-Debug",
+  "command": "C:\\PROGRA~1\\MICROS~2\\2022\\COMMUN~1\\VC\\Tools\\MSVC\\1431~1.311\\bin\\Hostx64\\x64\\cl.exe  /nologo -DGLFW_DLL -IG:\\kay\\Desktop\\Progs\\c\\glbt\\bindings\\c\\..\\..\\include -IG:\\kay\\Desktop\\Progs\\c\\glbt\\bindings\\c\\..\\..\\include\\internal -IG:\\kay\\Desktop\\Progs\\c\\glbt\\bindings\\c\\.\\include -external:I C:\\src\\vcpkg\\installed\\x64-windows\\include -external:W0 /DWIN32 /D_WINDOWS /W3 /MDd /Zi /Ob0 /Od /RTC1 /FoCMakeFiles\\glbt_c.dir\\G_\\kay\\Desktop\\Progs\\c\\glbt\\src\\render.c.obj /FdTARGET_COMPILE_PDB /FS -c G:\\kay\\Desktop\\Progs\\c\\glbt\\src\\render.c",
+  "file": "G:\\kay\\Desktop\\Progs\\c\\glbt\\src\\render.c"
 },
 {
   "directory": "G:/kay/Desktop/Progs/c/glbt/bindings/c/out/build/x64-Debug",

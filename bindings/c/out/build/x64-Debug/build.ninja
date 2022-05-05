@@ -58,15 +58,6 @@ build CMakeFiles\glbt_c.dir\G_\kay\Desktop\Progs\c\glbt\src\buffer.c.obj: C_COMP
   TARGET_COMPILE_PDB = CMakeFiles\glbt_c.dir\
   TARGET_PDB = glbt_c.pdb
 
-build CMakeFiles\glbt_c.dir\G_\kay\Desktop\Progs\c\glbt\src\framebuffer.c.obj: C_COMPILER__glbt_c_Debug G$:\kay\Desktop\Progs\c\glbt\src\framebuffer.c || cmake_object_order_depends_target_glbt_c
-  DEFINES = -DGLFW_DLL
-  FLAGS = /DWIN32 /D_WINDOWS /W3 /MDd /Zi /Ob0 /Od /RTC1
-  INCLUDES = -IG:\kay\Desktop\Progs\c\glbt\bindings\c\..\..\include -IG:\kay\Desktop\Progs\c\glbt\bindings\c\..\..\include\internal -IG:\kay\Desktop\Progs\c\glbt\bindings\c\.\include -external:I C:\src\vcpkg\installed\x64-windows\include -external:W0
-  OBJECT_DIR = CMakeFiles\glbt_c.dir
-  OBJECT_FILE_DIR = CMakeFiles\glbt_c.dir\G_\kay\Desktop\Progs\c\glbt\src
-  TARGET_COMPILE_PDB = CMakeFiles\glbt_c.dir\
-  TARGET_PDB = glbt_c.pdb
-
 build CMakeFiles\glbt_c.dir\G_\kay\Desktop\Progs\c\glbt\src\internal\glad.c.obj: C_COMPILER__glbt_c_Debug G$:\kay\Desktop\Progs\c\glbt\src\internal\glad.c || cmake_object_order_depends_target_glbt_c
   DEFINES = -DGLFW_DLL
   FLAGS = /DWIN32 /D_WINDOWS /W3 /MDd /Zi /Ob0 /Od /RTC1
@@ -77,6 +68,15 @@ build CMakeFiles\glbt_c.dir\G_\kay\Desktop\Progs\c\glbt\src\internal\glad.c.obj:
   TARGET_PDB = glbt_c.pdb
 
 build CMakeFiles\glbt_c.dir\G_\kay\Desktop\Progs\c\glbt\src\pipeline.c.obj: C_COMPILER__glbt_c_Debug G$:\kay\Desktop\Progs\c\glbt\src\pipeline.c || cmake_object_order_depends_target_glbt_c
+  DEFINES = -DGLFW_DLL
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /MDd /Zi /Ob0 /Od /RTC1
+  INCLUDES = -IG:\kay\Desktop\Progs\c\glbt\bindings\c\..\..\include -IG:\kay\Desktop\Progs\c\glbt\bindings\c\..\..\include\internal -IG:\kay\Desktop\Progs\c\glbt\bindings\c\.\include -external:I C:\src\vcpkg\installed\x64-windows\include -external:W0
+  OBJECT_DIR = CMakeFiles\glbt_c.dir
+  OBJECT_FILE_DIR = CMakeFiles\glbt_c.dir\G_\kay\Desktop\Progs\c\glbt\src
+  TARGET_COMPILE_PDB = CMakeFiles\glbt_c.dir\
+  TARGET_PDB = glbt_c.pdb
+
+build CMakeFiles\glbt_c.dir\G_\kay\Desktop\Progs\c\glbt\src\render.c.obj: C_COMPILER__glbt_c_Debug G$:\kay\Desktop\Progs\c\glbt\src\render.c || cmake_object_order_depends_target_glbt_c
   DEFINES = -DGLFW_DLL
   FLAGS = /DWIN32 /D_WINDOWS /W3 /MDd /Zi /Ob0 /Od /RTC1
   INCLUDES = -IG:\kay\Desktop\Progs\c\glbt\bindings\c\..\..\include -IG:\kay\Desktop\Progs\c\glbt\bindings\c\..\..\include\internal -IG:\kay\Desktop\Progs\c\glbt\bindings\c\.\include -external:I C:\src\vcpkg\installed\x64-windows\include -external:W0
@@ -120,7 +120,7 @@ build CMakeFiles\glbt_c.dir\src\main.c.obj: C_COMPILER__glbt_c_Debug G$:\kay\Des
 #############################################
 # Link the executable glbt_c.exe
 
-build glbt_c.exe: C_EXECUTABLE_LINKER__glbt_c_Debug CMakeFiles\glbt_c.dir\G_\kay\Desktop\Progs\c\glbt\src\buffer.c.obj CMakeFiles\glbt_c.dir\G_\kay\Desktop\Progs\c\glbt\src\framebuffer.c.obj CMakeFiles\glbt_c.dir\G_\kay\Desktop\Progs\c\glbt\src\internal\glad.c.obj CMakeFiles\glbt_c.dir\G_\kay\Desktop\Progs\c\glbt\src\pipeline.c.obj CMakeFiles\glbt_c.dir\G_\kay\Desktop\Progs\c\glbt\src\texture.c.obj CMakeFiles\glbt_c.dir\G_\kay\Desktop\Progs\c\glbt\src\window.c.obj CMakeFiles\glbt_c.dir\src\main.c.obj | C$:\src\vcpkg\installed\x64-windows\debug\lib\glfw3dll.lib || copy_resources
+build glbt_c.exe: C_EXECUTABLE_LINKER__glbt_c_Debug CMakeFiles\glbt_c.dir\G_\kay\Desktop\Progs\c\glbt\src\buffer.c.obj CMakeFiles\glbt_c.dir\G_\kay\Desktop\Progs\c\glbt\src\internal\glad.c.obj CMakeFiles\glbt_c.dir\G_\kay\Desktop\Progs\c\glbt\src\pipeline.c.obj CMakeFiles\glbt_c.dir\G_\kay\Desktop\Progs\c\glbt\src\render.c.obj CMakeFiles\glbt_c.dir\G_\kay\Desktop\Progs\c\glbt\src\texture.c.obj CMakeFiles\glbt_c.dir\G_\kay\Desktop\Progs\c\glbt\src\window.c.obj CMakeFiles\glbt_c.dir\src\main.c.obj | C$:\src\vcpkg\installed\x64-windows\debug\lib\glfw3dll.lib || copy_resources
   FLAGS = /DWIN32 /D_WINDOWS /W3 /MDd /Zi /Ob0 /Od /RTC1
   LINK_FLAGS = /machine:x64 /debug /INCREMENTAL /subsystem:console
   LINK_LIBRARIES = C:\src\vcpkg\installed\x64-windows\debug\lib\glfw3dll.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib
