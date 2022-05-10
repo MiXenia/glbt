@@ -7,6 +7,7 @@ if sys.platform == "linux":
     library_dirs = []
     libraries = ["glfw", "m", "dl"]
 elif sys.platform == "win32":
+    os.chdir(os.path.dirname(__file__))
     library_dirs = ["../../../lib/vs2022"]
     libraries = ["glfw3dll"]
 
@@ -26,7 +27,7 @@ ffibuilder.set_source("glbt",
     libraries=libraries)
 
 if __name__ == "__main__":
-    shutil.rmtree('./out/') 
+    if os.path.exists('./out/'): shutil.rmtree('./out/') 
     for f in glob.glob('./*.so') + glob.glob('./*.pyd'):
         os.remove(f)
     output_file = ffibuilder.compile(tmpdir='./out/', verbose=True)
