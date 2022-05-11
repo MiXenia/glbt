@@ -2,6 +2,8 @@ import os, shutil, sys, glob
 from cffi import FFI
 ffibuilder = FFI()
 
+os.chdir(os.path.dirname(__file__))
+
 print(sys.platform)
 if sys.platform == "linux":
     library_dirs = []
@@ -26,7 +28,7 @@ ffibuilder.set_source("glbt",
     libraries=libraries)
 
 if __name__ == "__main__":
-    shutil.rmtree('./out/') 
+    if os.path.exists('./out/'): shutil.rmtree('./out/') 
     for f in glob.glob('./*.so') + glob.glob('./*.pyd'):
         os.remove(f)
     output_file = ffibuilder.compile(tmpdir='./out/', verbose=True)

@@ -10,32 +10,34 @@
 
 #define WIDTH 1600
 #define HEIGHT 900
-#define NUM_SPRITES 200000
+#define NUM_SPRITES 100000
 struct Sprite {
-    vec3 position;
-    vec3 velocity;
-    float rotation;
-    float rvelocity;
+  vec3 position;
+  vec3 velocity;
+  float rotation;
+  float rvelocity;
 };
-void update_sprite(struct Sprite *s, mat4* mat) {
-    s->position[0] += s->velocity[0];
-    s->position[1] += s->velocity[1];
-    if (s->position[0] > WIDTH || s->position[0] < 0) {
-        s->velocity[0] = -s->velocity[0];
-    }
-    if (s->position[1] > HEIGHT || s->position[1] < 0) {
-        s->velocity[1] = -s->velocity[1];
-    }
-    s->rotation += s->rvelocity;
-    if (s->rotation > M_PI * 2.0f) {
-        s->rotation -= M_PI * 2.0f;
-    }
-    //printf("%f\t%f\t%f\t%f\t\n", s->position[0], s->position[1], s->velocity[0], s->velocity[1]);
-    glm_mat4_identity(mat);
-    vec3 pos = {-1.0f + s->position[0] / ((float)WIDTH / 2.0f), -1.0f + s->position[1] / ((float)HEIGHT / 2.0f), 0};
-    glm_translate(mat, pos);
-    glm_scale(mat, (vec3) { 0.1f, 0.1f, 0.1f });
-    glm_rotate_z(mat, s->rotation, mat);
+void update_sprite(struct Sprite *s, mat4 *mat) {
+  s->position[0] += s->velocity[0];
+  s->position[1] += s->velocity[1];
+  if (s->position[0] > WIDTH || s->position[0] < 0) {
+    s->velocity[0] = -s->velocity[0];
+  }
+  if (s->position[1] > HEIGHT || s->position[1] < 0) {
+    s->velocity[1] = -s->velocity[1];
+  }
+  s->rotation += s->rvelocity;
+  if (s->rotation > M_PI * 2.0f) {
+    s->rotation -= M_PI * 2.0f;
+  }
+  // printf("%f\t%f\t%f\t%f\t\n", s->position[0], s->position[1],
+  // s->velocity[0], s->velocity[1]);
+  glm_mat4_identity(mat);
+  vec3 pos = {-1.0f + s->position[0] / ((float)WIDTH / 2.0f),
+              -1.0f + s->position[1] / ((float)HEIGHT / 2.0f), 0};
+  glm_translate(mat, pos);
+  glm_scale(mat, (vec3){0.1f, 0.1f, 0.1f});
+  glm_rotate_z(mat, s->rotation, mat);
 }
 
 // resource management is outside the scope of this library, so belongs in main.
@@ -51,7 +53,8 @@ char *load_file(const char *path, int *out_length) {
     if (!src) {
       return NULL;
     }
-    length = (int)fread(src, 1, length, f); // update length because ftell is not accurate.
+    length = (int)fread(src, 1, length,
+                        f); // update length because ftell is not accurate.
     fclose(f);
     if (out_length) {
       *out_length = length;
@@ -99,22 +102,22 @@ int main(int argc, char *argv[]) {
 
   printf("Creating buffers...\n");
   struct Buffer *positions = create_buffer(4 * 3, (float[4 * 3]){
-    -0.5f, +0.5f, 0.0f,
-    +0.5f, +0.5f, 0.0f,
-    +0.5f, -0.5f, 0.0f,
-    -0.5f, -0.5f, 0.0f,
-  });
+                                                      -0.5f, +0.5f, 0.0f,
+                                                      +0.5f, +0.5f, 0.0f,
+                                                      +0.5f, -0.5f, 0.0f,
+                                                      -0.5f, -0.5f, 0.0f,
+                                                  });
   struct Buffer *texcoords = create_buffer(4 * 2, (float[4 * 2]){
-    0.0, 0.0,
-    1.0, 0.0,
-    1.0, 1.0,
-    0.0, 1.0
+      0.0, 0.0, 
+      1.0, 0.0, 
+      1.0, 1.0, 
+      0.0, 1.0,
   });
   struct Buffer *colors = create_buffer(4 * 4, (float[4 * 4]){
-    1.0f, 0.0f, 0.0f, 1.0f,
-    0.0f, 1.0f, 0.0f, 1.0f,
-    0.0f, 0.0f, 1.0f, 1.0f,
-    1.0f, 1.0f, 1.0f, 0.0f
+      1.0f, 0.0f, 0.0f, 1.0f, 
+      0.0f, 1.0f, 0.0f, 1.0f,
+      0.0f, 0.0f, 1.0f, 1.0f, 
+      1.0f, 1.0f, 1.0f, 0.0f
   });
   struct Buffer *indices = create_index_buffer(6, (unsigned int[6]){0, 1, 2, 0, 2, 3});
 
@@ -129,19 +132,19 @@ int main(int argc, char *argv[]) {
   glDisable(GL_DEPTH_TEST);
 
   srand(time(NULL));
-  //create our instance data amnd upload into a single buffer
+  // create our instance data amnd upload into a single buffer
   struct Buffer *mvps = create_buffer(NUM_SPRITES * 16, NULL);
-  mat4* mats = malloc(sizeof(mat4) * NUM_SPRITES);
-  struct Sprite* sprites = malloc(sizeof(struct Sprite) * NUM_SPRITES);
+  mat4 *mats = malloc(sizeof(mat4) * NUM_SPRITES);
+  struct Sprite *sprites = malloc(sizeof(struct Sprite) * NUM_SPRITES);
   int i;
   for (i = 0; i < NUM_SPRITES; ++i) {
-      glm_mat4_identity(mats[i]);
-      sprites[i].position[0] = ((float)rand() / (float)RAND_MAX) * (float)WIDTH;
-      sprites[i].position[1] = ((float)rand() / (float)RAND_MAX) * (float)HEIGHT;
-      sprites[i].velocity[0] = ((float)rand() / (float)RAND_MAX) * 16.0f;
-      sprites[i].velocity[1] = ((float)rand() / (float)RAND_MAX) * 16.0f;
-      sprites[i].rotation = ((float)rand() / (float)RAND_MAX) * 2.0f * M_PI;
-      sprites[i].rvelocity = ((float)rand() / (float)RAND_MAX) * 0.1f;
+    glm_mat4_identity(mats[i]);
+    sprites[i].position[0] = ((float)rand() / (float)RAND_MAX) * (float)WIDTH;
+    sprites[i].position[1] = ((float)rand() / (float)RAND_MAX) * (float)HEIGHT;
+    sprites[i].velocity[0] = ((float)rand() / (float)RAND_MAX) * 16.0f;
+    sprites[i].velocity[1] = ((float)rand() / (float)RAND_MAX) * 16.0f;
+    sprites[i].rotation = ((float)rand() / (float)RAND_MAX) * 2.0f * M_PI;
+    sprites[i].rvelocity = ((float)rand() / (float)RAND_MAX) * 0.1f;
   }
 
   bind_buffer(p, mvps, 3);
@@ -167,9 +170,9 @@ int main(int argc, char *argv[]) {
   printf("Starting main loop...\n");
   double then = glfwGetTime();
   int frames = 0;
-  char window_title[4];
+  char window_title[9];
   const char *uwu = "UwU";
-  memcpy(window_title, uwu, 4);
+  memcpy(window_title, uwu, 9);
   while (window_status(win) == RUNNING) {
     if (input_state(KEYBOARD_ESCAPE) == PRESSED) {
       close_window(win);
@@ -182,13 +185,13 @@ int main(int argc, char *argv[]) {
     }
 
     for (i = 0; i < NUM_SPRITES; ++i) {
-        update_sprite(&sprites[i], &mats[i]);
+      update_sprite(&sprites[i], &mats[i]);
     }
 
     begin_pass(rt);
     clear(1, 0, 1, 1);
-    buffer_sub_data(mvps, sizeof(mat4), 0, NUM_SPRITES, &mats[0][0]);
-    //buffer_data(mvps, NUM_SPRITES * 4 * 4, &mats[0][0]);
+    //buffer_sub_data(mvps, sizeof(mat4), 0, NUM_SPRITES, &mats[0][0]);
+    buffer_data(mvps, NUM_SPRITES * 4 * 4, &mats[0][0]);
     bind_pipeline(p);
     run_pipeline(p);
     end_pass(rt);
@@ -196,7 +199,7 @@ int main(int argc, char *argv[]) {
     begin_pass(screen(win));
     clear(0, 0, 0, 0);
     bind_pipeline(pp);
-    //push_constant_int(pp, "bnw", 1); // enable black-n-white
+    // push_constant_int(pp, "bnw", 1); // enable black-n-white
     run_pipeline_n(pp, 3);
     end_pass(screen(win));
 
@@ -205,12 +208,11 @@ int main(int argc, char *argv[]) {
     frames++;
     double now = glfwGetTime();
     if (now - then >= 1.0) {
-        sprintf(window_title, "%d.2", frames);
-        set_window_title(win, window_title);
-        frames = 0;
-        then = now;
+      sprintf(window_title, "%d", frames);
+      set_window_title(win, window_title);
+      frames = 0;
+      then = now;
     }
-
   }
 
   printf("Closing.\n");
