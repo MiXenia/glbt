@@ -2,6 +2,8 @@ import os, shutil, sys, glob
 from cffi import FFI
 ffibuilder = FFI()
 
+os.chdir(os.path.dirname(__file__))
+
 print(sys.platform)
 if sys.platform == "linux":
     library_dirs = []
