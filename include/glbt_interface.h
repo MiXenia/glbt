@@ -31,6 +31,22 @@ void bind_pipeline(struct Pipeline* p); //or NULL
 void run_pipeline(struct Pipeline* p);
 void run_pipeline_n(struct Pipeline* p, int n);
 
+//fixed-function stuff
+enum BlendState {
+	OPAQUE,
+	ALPHA_BLEND,
+	ADDITIVE_BLEND,
+	MULTIPLICATIVE_BLEND,
+};
+void set_blend_state(struct Pipeline* p, enum BlendState bs);
+enum PrimitiveType {
+	TRIANGLES,
+	TRIANGLE_STRIP,
+	LINES,
+	POINTS,
+};
+void set_primitive_type(struct Pipeline* p, enum PrimitiveType t, float size);
+
 struct Buffer* create_buffer(int length, float* data);
 struct Buffer* create_index_buffer(int length, unsigned int* indices);
 void destroy_buffer(struct Buffer* b);

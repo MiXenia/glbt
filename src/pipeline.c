@@ -34,6 +34,7 @@ struct Pipeline {
   int texture_input_size;
   struct TextureInput *texture_inputs;
   struct Buffer *index_buffer;
+  GLenum primitive_type;
   int count;
   int index_count;
   int instance_count;
@@ -44,6 +45,7 @@ struct Pipeline *create_pipeline(int vs_len, char *vs, int fs_len, char *fs,
                                  int texture_count, struct TextureInput *t) {
   struct Pipeline *p = malloc(sizeof(struct Pipeline));
   p->index_buffer = NULL;
+  p->primitive_type = GL_TRIANGLES;
   p->count = 0;
   p->index_count = 0;
   p->instance_count = 0;
@@ -249,22 +251,71 @@ void bind_pipeline(struct Pipeline *p) {
 void run_pipeline(struct Pipeline *p) {
   if (p->instance_count) {
     if (p->index_count) {
-      glDrawElementsInstanced(GL_TRIANGLES, p->index_count, GL_UNSIGNED_INT, 0, p->instance_count);
+      glDrawElementsInstanced(p->primitive_type, p->index_count, GL_UNSIGNED_INT, 0, p->instance_count);
     } else {
-      glDrawArraysInstanced(GL_TRIANGLES, 0, p->count, p->instance_count);
+      glDrawArraysInstanced(p->primitive_type, 0, p->count, p->instance_count);
     }
   } else {
     if (p->index_count) {
-      glDrawElements(GL_TRIANGLES, p->index_count, GL_UNSIGNED_INT, 0);
+      glDrawElements(p->primitive_type, p->index_count, GL_UNSIGNED_INT, 0);
     } else {
-      glDrawArrays(GL_TRIANGLES, 0, p->count);
+      glDrawArrays(p->primitive_type, 0, p->count);
     }
   }
 }
 
 void run_pipeline_n(struct Pipeline *p, int n) {
-  glDrawArrays(GL_TRIANGLES, 0, n);
+  glDrawArrays(p->primitive_type, 0, n);
 }
+
+//fixed function stuff
+void set_blend_state(struct Pipeline* p, enum BlendState bs) {
+    switch (bs) {
+        case OPAQUE:
+            glEnable(GL_DEPTH_TEST);
+            glDisable(GL_BLEND);
+            break;
+        case ALPHA_BLEND:
+            glDisable(GL_DEPTH_TEST);
+            glEnable(GL_BLEND);
+            glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+            break;
+        case ADDITIVE_BLEND:
+            glDisable(GL_DEPTH_TEST);
+            glEnable(GL_BLEND);
+            glBlendFunc(GL_ONE, GL_ONE);
+            break;
+        case MULTIPLICATIVE_BLEND:
+            glDisable(GL_DEPTH_TEST);
+            glEnable(GL_BLEND);
+            glBlendFunc(GL_ZERO, GL_SRC_COLOR);
+            break;
+    }
+}
+
+void set_primitive_type(struct Pipeline* p, enum PrimitiveType t, float size) {
+    switch (t) {
+    case TRIANGLES: 
+        p->primitive_type = GL_TRIANGLES;
+        break;
+    case TRIANGLE_STRIP:
+        p->primitive_type = GL_TRIANGLE_STRIP;
+        break;
+    case LINES:
+        p->primitive_type = GL_LINES;
+        glLineWidth(size);
+        break;
+    case POINTS:
+        p->primitive_type = GL_POINTS;
+        glDisable(GL_DEPTH_TEST);
+        //glEnable(GL_PROGRAM_POINT_SIZE);
+        glPointSize(size);
+        break;
+    }
+}
+
+
+//push constants (deprecated)
 
 void push_constant_float(struct Pipeline *p, const char *name, float t) {
   glUniform1f(glGetUniformLocation(p->program_id, name), t);
