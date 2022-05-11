@@ -129,7 +129,7 @@ int main(int argc, char *argv[]) {
   bind_buffer(p, texcoords, 2);
   bind_index_buffer(p, indices);
   bind_texture(p, texture, 0);
-  glDisable(GL_DEPTH_TEST);
+  set_blend_state(p, ADDITIVE_BLEND);
 
   srand(time(NULL));
   // create our instance data amnd upload into a single buffer
@@ -189,7 +189,7 @@ int main(int argc, char *argv[]) {
     }
 
     begin_pass(rt);
-    clear(1, 0, 1, 1);
+    clear(0, 0, 0, 0);
     //buffer_sub_data(mvps, sizeof(mat4), 0, NUM_SPRITES, &mats[0][0]);
     buffer_data(mvps, NUM_SPRITES * 4 * 4, &mats[0][0]);
     bind_pipeline(p);
